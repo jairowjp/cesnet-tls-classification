@@ -1,0 +1,44 @@
+# =============================================================================
+# Configuración de la aplicación web: seguridad y tema
+# -----------------------------------------------------------------------------
+# Streamlit lee este archivo al ejecutar `streamlit run app/principal.py` desde la raíz
+# del repositorio. Cada opción de seguridad indica qué riesgo del OWASP Top 10 mitiga.
+# =============================================================================
+
+[server]
+headless = true
+# Solo escucha en el propio equipo: en desarrollo, nadie más de la red puede abrir la app (A05).
+# El Dockerfile usa --server.address=0.0.0.0, porque dentro de un contenedor es necesario.
+address = "localhost"
+enableXsrfProtection = true      # A01/A05: protección contra falsificación de peticiones entre sitios
+enableCORS = true                # A05: solo acepta peticiones del propio origen
+maxUploadSize = 2                # A04: CSV de máximo 2 MB (coincide con core/seguridad.py)
+enableStaticServing = true       # necesario para servir la tipografía desde app/static
+fileWatcherType = "none"         # en producción no se vigilan archivos ni se recarga código
+runOnSave = false
+
+[client]
+showErrorDetails = "none"        # A05: los errores no muestran trazas ni detalles internos
+toolbarMode = "viewer"           # oculta las opciones de desarrollador (reiniciar, limpiar caché)
+
+[browser]
+gatherUsageStats = false         # privacidad: no se envían estadísticas de uso a terceros
+
+[theme]
+base = "light"
+primaryColor = "#2B59C3"         # cobalto: cliente → servidor
+backgroundColor = "#F4F6F8"
+secondaryBackgroundColor = "#E8ECF0"
+textColor = "#1B2530"
+borderColor = "#D5DCE3"
+linkColor = "#2B59C3"
+baseRadius = "small"
+font = "Archivo, sans-serif"
+headingFont = "Archivo, sans-serif"
+showSidebarBorder = false
+
+[[theme.fontFaces]]
+family = "Archivo"
+url = "app/static/fonts/Archivo-Variable.ttf"
+weight = "100 900"               # fuente variable: todos los pesos en un solo archivo
+style = "normal"

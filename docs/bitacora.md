@@ -66,6 +66,18 @@ Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `script
   **Modelo recomendado: XGBoost.** Matices: el Transformer es el que menos memoriza (pierde 0,5 puntos sin repetidos,
   frente a 2,3 de XGBoost) y supera a la CNN con significancia; las redes son hasta 300 veces más livianas.
 
+## Sprint 3: aplicación web (27/09/2026)
+- Aplicación Streamlit de ocho páginas con sistema de diseño propio: la firma del flujo como elemento central,
+  cobalto y ámbar reservados para la dirección de los paquetes, tipografía Archivo y portada con el logo UEES.
+- Participación guiada: recorrido de siete pasos, sugerencias en contexto, reto "Tú contra los modelos" y
+  encuesta SUS con código de respuesta (el sitio no guarda datos personales).
+- Seguridad desde el diseño: verificación SHA-256 del modelo, validación estricta de CSV, protección contra XSS e
+  inyección de fórmulas, configuración endurecida, contenedor sin privilegios y página de Seguridad para el usuario.
+- Hallazgos corregidos durante el desarrollo: función obsoleta de Streamlit (components.html), st.iframe no aísla
+  el HTML (se protegió y se probó contra inyección), barras superpuestas en la firma, texto justificado en columnas
+  y la app escuchando en todas las interfaces de red (ahora solo localhost en desarrollo).
+- 53 pruebas automáticas: 14 de seguridad, 12 de interfaz y el resto de datos, modelos y encuesta.
+
 ## Herramientas utilizadas
 Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;
 Google Colab para pruebas. El código se desarrolló con apoyo de un asistente de IA (Claude, de Anthropic);

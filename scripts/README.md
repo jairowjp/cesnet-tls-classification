@@ -12,6 +12,8 @@ existe y cómo se usa. El orden de los números es el orden en que se ejecutan.
 | `02_crear_muestra_app.py` | Muestra pequeña del mes de prueba (hasta 300 flujos por categoría) y plantilla CSV para la aplicación | Muestra del 2 % | `data/samples/` | 27/09/2026 |
 | `03_entrenar_clasicos.py` | Entrena y evalúa Random Forest o XGBoost con el protocolo del proyecto | Muestra del 2 % | `results/modelos/<modelo>/` y `models/<modelo>.joblib` | 27/09/2026 |
 | `05_entrenar_profundos.py` | Entrena y evalúa la CNN 1D, el Transformer o la LSTM con el mismo protocolo y formato de resultados; latencia siempre medida en CPU | Muestra del 2 % | `results/modelos/<modelo>/` y `models/<modelo>.pt` | 27/09/2026 |
+| `06_preparar_app.py` | Predicciones de los 4 modelos sobre la muestra de la app y registro del modelo XGBoost con su huella SHA-256 | `models/`, `data/samples/` | `app/assets/`, `app/models/` | 27/09/2026 |
+| `07_consolidar_sus.py` | Verifica los códigos de la encuesta SUS, recalcula cada puntaje y comprueba la meta del hito H6 | `results/sus/codigos.txt` | `results/sus/resumen_sus.json` | 27/09/2026 |
 | `04_comparar_modelos.py` | Tabla comparativa, prueba de McNemar por pares con corrección de Holm, gráfica F1 frente a latencia y recomendación | `results/modelos/*/` | `results/comparativa/` | 27/09/2026 |
 
 El EDA no es un script sino un notebook: `notebooks/01_eda.ipynb`. Las redes profundas también se pueden entrenar
@@ -45,6 +47,8 @@ python scripts/03_entrenar_clasicos.py --modelo xgboost
 python scripts/05_entrenar_profundos.py --modelo cnn1d
 python scripts/05_entrenar_profundos.py --modelo transformer
 python scripts/04_comparar_modelos.py
+python scripts/06_preparar_app.py
+streamlit run app/principal.py
 ```
 
 El registro de cuándo y por qué se ejecutó cada paso está en `docs/bitacora.md`.

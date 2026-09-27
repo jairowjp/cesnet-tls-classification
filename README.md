@@ -68,7 +68,7 @@ Sobre una muestra aleatoria del 2 % de septiembre a diciembre de 2022 (3 133 138
 ├── tests/                      pruebas unitarias (pytest)
 ├── results/eda/                figuras, tablas y resumen del EDA
 ├── data/samples/               muestra pequeña publicada (CC BY 4.0)
-├── app/                        aplicación web (Sprint 3)
+├── app/                        aplicación web Streamlit: páginas, núcleo seguro, modelo y tipografía propia
 ├── docs/                       entregables del curso por semana (PDF)
 ├── .vscode/                    espacio de trabajo: intérprete, tareas, depuración y extensiones
 ├── SECURITY.md                 controles de seguridad y plan OWASP Top 10 / OWASP ZAP
@@ -107,6 +107,20 @@ python scripts/05_entrenar_profundos.py --modelo cnn1d
 python scripts/05_entrenar_profundos.py --modelo transformer
 python scripts/04_comparar_modelos.py
 ```
+
+## Aplicación web
+
+```bash
+uv pip install -r requirements-app.txt      # Streamlit y Plotly
+python scripts/06_preparar_app.py           # predicciones precalculadas y modelo con su huella SHA-256
+streamlit run app/principal.py              # http://localhost:8501
+```
+
+Ocho páginas, con un recorrido guiado de siete pasos: **Inicio** (portada institucional y la firma de un flujo
+real clasificada en vivo por los cuatro modelos), **Datos**, **Modelos**, **Reto** (el usuario compite contra
+los modelos), **Clasificar** (flujos de octubre o un CSV propio), **Conclusiones**, **Tu opinión** (encuesta
+SUS) y **Seguridad** (cómo se tratan los datos y cómo se protege el sitio).
+Los controles de seguridad están descritos en `SECURITY.md`.
 
 En VS Code, los mismos pasos están disponibles como tareas: **Ctrl + Shift + P → Tasks: Run Task**.
 

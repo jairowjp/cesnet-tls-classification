@@ -2,6 +2,24 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
+## [Sin publicar] · Sprint 3: aplicación web
+### Añadido
+- Aplicación Streamlit de cinco páginas (`app/`) con sistema de diseño propio: la firma del flujo como elemento
+  central, cobalto y ámbar reservados para la dirección de los paquetes y tipografía Archivo servida desde la app.
+- Núcleo de seguridad (`app/core/seguridad.py`): verificación SHA-256 del modelo antes de cargarlo, validación
+  estricta de CSV (tamaño, filas, columnas, tipos y rangos) y neutralización de fórmulas en las descargas.
+- Configuración segura de Streamlit (`.streamlit/config.toml`), `Dockerfile` con usuario sin privilegios y
+  `requirements-app.txt` sin PyTorch.
+- `scripts/06_preparar_app.py` y 22 pruebas nuevas: 14 de seguridad (incluidos intentos de inyección) y 8 de interfaz.
+- Participación guiada: recorrido de siete pasos con invitación al siguiente en cada página, sugerencias en contexto
+  y portada institucional con el logo y el granate de la UEES.
+- Página **Reto**: el usuario adivina la categoría de flujos reales y compite contra los modelos en cinco rondas.
+- Página **Tu opinión**: encuesta SUS con puntaje inmediato y un código de respuesta corto que el evaluador copia y
+  envía (el sitio no guarda nada ni pide datos personales). El código lleva caracteres de control que detectan el
+  100 % de los errores de copia de un carácter. `scripts/07_consolidar_sus.py` los verifica y recalcula cada puntaje.
+- Página **Seguridad**: qué datos se usan, qué pasa con lo que sube el usuario y cómo verificar cada control.
+- Clasificar y la portada muestran la predicción y la confianza de los cuatro modelos, no solo de XGBoost.
+
 ## [0.3.0] – 2026-09-27 · Sprint 1: modelado completo
 ### Añadido
 - `src/models/classic.py`: Random Forest y XGBoost con pesos por clase (misma fórmula del EDA).

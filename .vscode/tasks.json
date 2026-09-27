@@ -51,6 +51,25 @@
       "problemMatcher": []
     },
     {
+      "label": "9. Preparar datos de la aplicación",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/06_preparar_app.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "10. Ejecutar la aplicación web",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/streamlit run app/principal.py",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "11. Consolidar la encuesta SUS",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/07_consolidar_sus.py",
+      "problemMatcher": []
+    },
+    {
       "label": "Pruebas unitarias",
       "type": "shell",
       "command": "${workspaceFolder}/../.venv/bin/python -m pytest -q",

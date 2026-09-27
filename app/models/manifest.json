@@ -1,0 +1,34 @@
+{
+ "xgboost.joblib": {
+  "sha256": "4a7662b492a083ec2fcba3b6b5a69a1d41acf7e1b092ff91987cad4d6aff3a08",
+  "bytes": 36017650,
+  "clases": [
+   "Advertising",
+   "Analytics & Telemetry",
+   "Antivirus",
+   "Authentication",
+   "File sharing",
+   "Games",
+   "Information systems",
+   "Instant messaging",
+   "Internet banking",
+   "Location",
+   "Mail",
+   "Media",
+   "Music",
+   "Notifications",
+   "Other APIs",
+   "Other services",
+   "Remote desktop",
+   "Search",
+   "Social",
+   "Software updates",
+   "Videoconferencing",
+   "Virtual assistant",
+   "Weather"
+  ],
+  "variables": 60,
+  "origen": "models/xgboost.joblib, generado por scripts/03_entrenar_clasicos.py",
+  "preparado": "2026-09-27"
+ }
+}

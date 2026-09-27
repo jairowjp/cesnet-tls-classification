@@ -38,3 +38,8 @@ results/*.zip
 # Archivos del sistema y del editor
 .DS_Store
 *.swp
+
+# Encuesta SUS: los códigos individuales son respuestas de terceros. Solo se publica el resumen
+# agregado (results/sus/resumen_sus.json), generado por scripts/07_consolidar_sus.py.
+results/sus/*.csv
+results/sus/codigos.txt
