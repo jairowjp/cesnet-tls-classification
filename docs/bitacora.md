@@ -57,6 +57,14 @@ Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `script
 - 27/09/2026 — **McNemar con corrección de Holm, Random Forest frente a XGBoost:** en los flujos donde discrepan,
   XGBoost acierta 63 820 veces y Random Forest 16 315; diferencia significativa (p de Holm < 0,05).
   XGBoost pasa a ser la línea base que deben superar la CNN 1D y el Transformer.
+- 27/09/2026 — **Redes profundas en CPU (hito H4, adelantado al 18/10):** 15 épocas cada una.
+  CNN 1D: F1 macro 0,700 (mínimo cumplido al límite), sin repetidos 0,683, 28 695 parámetros (0,12 MB), 12,4 min.
+  Transformer: F1 macro 0,747, sin repetidos 0,743, 70 743 parámetros (0,29 MB), 62,6 min.
+  Ninguna red convergió: ambas lograron su mejor F1 de validación en la última época (limitación a abordar en US-12).
+- 27/09/2026 — **Comparación final con McNemar y Holm (hito H5, adelantado al 25/10):** los 6 pares difieren con
+  significancia. Orden: XGBoost (0,886) > Random Forest (0,804) > Transformer (0,747) > CNN 1D (0,700).
+  **Modelo recomendado: XGBoost.** Matices: el Transformer es el que menos memoriza (pierde 0,5 puntos sin repetidos,
+  frente a 2,3 de XGBoost) y supera a la CNN con significancia; las redes son hasta 300 veces más livianas.
 
 ## Herramientas utilizadas
 Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;

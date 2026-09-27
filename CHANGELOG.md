@@ -12,6 +12,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
   de umbrales. Incluye un modo de prueba rápida (`--limite-filas`).
 - `scripts/04_comparar_modelos.py`: tabla comparativa, McNemar por pares con corrección de Holm, gráfica F1 frente a
   latencia y recomendación del modelo más simple entre los estadísticamente equivalentes al mejor.
+- `src/models/deep.py`: CNN 1D, Transformer encoder ligero (69 703 parámetros, con máscara de relleno) y LSTM
+  opcional; los tres ignoran el contenido del relleno (verificado con pruebas).
+- `scripts/05_entrenar_profundos.py`: entrenamiento con parada temprana, mismo protocolo y formato de resultados que
+  los modelos clásicos; latencia medida en CPU para comparar en igualdad.
+- `notebooks/02_entrenar_profundos_colab.ipynb`: entrenamiento con GPU gratuita en Google Colab.
+- `src/evaluation/report.py`: matriz de confusión compartida por todos los modelos.
 ### Cambiado
 - Random Forest acotado (150 árboles, hojas de ≥ 10 flujos, 50 % de datos por árbol) para que quepa en la
   memoria del equipo: con 23 clases, sin límites superaría los 16 GB de RAM.

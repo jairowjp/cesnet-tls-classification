@@ -33,6 +33,18 @@
       "problemMatcher": []
     },
     {
+      "label": "7. Entrenar CNN 1D",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/05_entrenar_profundos.py --modelo cnn1d",
+      "problemMatcher": []
+    },
+    {
+      "label": "8. Entrenar Transformer",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/05_entrenar_profundos.py --modelo transformer",
+      "problemMatcher": []
+    },
+    {
       "label": "6. Comparar modelos (McNemar + Holm)",
       "type": "shell",
       "command": "${workspaceFolder}/../.venv/bin/python scripts/04_comparar_modelos.py",

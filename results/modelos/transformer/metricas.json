@@ -1,0 +1,127 @@
+{
+ "modelo": "transformer",
+ "modo_prueba": false,
+ "parametros": {
+  "d_model": 64,
+  "cabezas": 4,
+  "capas": 2,
+  "ff": 128,
+  "dropout": 0.1,
+  "epocas": 15,
+  "lr": 0.0005
+ },
+ "entrenamiento": {
+  "flujos": 640102,
+  "segundos": 3758.9,
+  "dispositivo": "cpu",
+  "epocas_ejecutadas": 15,
+  "historial": [
+   {
+    "epoca": 1,
+    "perdida": 2.240194012988968,
+    "f1_macro_validacion": 0.3998092765350889
+   },
+   {
+    "epoca": 2,
+    "perdida": 1.4324780813534757,
+    "f1_macro_validacion": 0.5506632989937226
+   },
+   {
+    "epoca": 3,
+    "perdida": 1.1450279934665943,
+    "f1_macro_validacion": 0.6046973567171797
+   },
+   {
+    "epoca": 4,
+    "perdida": 1.0025223428328676,
+    "f1_macro_validacion": 0.6328365450615488
+   },
+   {
+    "epoca": 5,
+    "perdida": 0.90531278242003,
+    "f1_macro_validacion": 0.6653965319052562
+   },
+   {
+    "epoca": 6,
+    "perdida": 0.8411189932280061,
+    "f1_macro_validacion": 0.6861996645294688
+   },
+   {
+    "epoca": 7,
+    "perdida": 0.7893238565335822,
+    "f1_macro_validacion": 0.6973696633505583
+   },
+   {
+    "epoca": 8,
+    "perdida": 0.7479948561318817,
+    "f1_macro_validacion": 0.7009631720903444
+   },
+   {
+    "epoca": 9,
+    "perdida": 0.719276701169546,
+    "f1_macro_validacion": 0.6968517185365399
+   },
+   {
+    "epoca": 10,
+    "perdida": 0.6837464698234784,
+    "f1_macro_validacion": 0.7190321710036409
+   },
+   {
+    "epoca": 11,
+    "perdida": 0.6627765415029557,
+    "f1_macro_validacion": 0.7354428310141593
+   },
+   {
+    "epoca": 12,
+    "perdida": 0.6355037906474266,
+    "f1_macro_validacion": 0.7443940970028864
+   },
+   {
+    "epoca": 13,
+    "perdida": 0.6174774664190986,
+    "f1_macro_validacion": 0.7356346769423938
+   },
+   {
+    "epoca": 14,
+    "perdida": 0.6009738218168603,
+    "f1_macro_validacion": 0.7429158947025781
+   },
+   {
+    "epoca": 15,
+    "perdida": 0.5886214936293691,
+    "f1_macro_validacion": 0.7606819825450175
+   }
+  ]
+ },
+ "validacion": {
+  "f1_macro": 0.7606819825450175,
+  "f1_weighted": 0.8083200101909608,
+  "accuracy": 0.8064064589504205
+ },
+ "prueba_octubre": {
+  "f1_macro": 0.7474357590677083,
+  "f1_weighted": 0.7981258125949954,
+  "accuracy": 0.7964630567723617
+ },
+ "prueba_sin_repetidos": {
+  "f1_macro_sin_repetidos": 0.7426197719258966,
+  "flujos_evaluados": 608031,
+  "fraccion_excluida": 0.30330078798621796
+ },
+ "deriva_f1_macro": {
+  "2022-11": 0.7152288493378699,
+  "2022-12": 0.7017430574417142
+ },
+ "caida_f1_octubre_a_diciembre_puntos": 4.57,
+ "costo": {
+  "latencia_ms_por_flujo": 0.04997,
+  "tamano_modelo_MB": 0.29,
+  "parametros_entrenables": 70743
+ },
+ "umbrales": {
+  "f1_macro_minimo_cumplido": true,
+  "f1_macro_excelencia_cumplido": false,
+  "latencia_cumplida": true,
+  "transformer_menos_de_2M_parametros": true
+ }
+}

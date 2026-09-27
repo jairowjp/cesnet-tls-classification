@@ -62,8 +62,8 @@ Sobre una muestra aleatoria del 2 % de septiembre a diciembre de 2022 (3 133 138
 
 ```
 ├── configs/experiment.yaml     configuración única: meses, semilla, exclusiones, modelos y umbrales
-├── scripts/                    pipeline numerado (01–04) y utilidades/; índice y origen en scripts/README.md
-├── notebooks/01_eda.ipynb      EDA ejecutado, con todas sus salidas
+├── scripts/                    pipeline numerado (01–05) y utilidades/; índice y origen en scripts/README.md
+├── notebooks/                  01: EDA ejecutado · 02: entrenamiento de redes profundas en Colab (GPU)
 ├── src/                        código reutilizable: datos (src/data), modelos (src/models) y evaluación (src/evaluation)
 ├── tests/                      pruebas unitarias (pytest)
 ├── results/eda/                figuras, tablas y resumen del EDA
@@ -103,6 +103,8 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 python -m pytest -q
 python scripts/03_entrenar_clasicos.py --modelo random_forest
 python scripts/03_entrenar_clasicos.py --modelo xgboost
+python scripts/05_entrenar_profundos.py --modelo cnn1d
+python scripts/05_entrenar_profundos.py --modelo transformer
 python scripts/04_comparar_modelos.py
 ```
 

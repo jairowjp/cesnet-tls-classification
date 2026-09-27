@@ -1,0 +1,28 @@
+Entrenamiento: 640,102 · validación: 160,026 · 23 clases · dispositivo: cpu (carga en 2 s)
+Parámetros entrenables: 70,743
+Época  1/15 · pérdida 2.2402 · F1 macro validación 0.3998 · 251 s  ← mejor
+Época  2/15 · pérdida 1.4325 · F1 macro validación 0.5507 · 251 s  ← mejor
+Época  3/15 · pérdida 1.1450 · F1 macro validación 0.6047 · 251 s  ← mejor
+Época  4/15 · pérdida 1.0025 · F1 macro validación 0.6328 · 253 s  ← mejor
+Época  5/15 · pérdida 0.9053 · F1 macro validación 0.6654 · 249 s  ← mejor
+Época  6/15 · pérdida 0.8411 · F1 macro validación 0.6862 · 250 s  ← mejor
+Época  7/15 · pérdida 0.7893 · F1 macro validación 0.6974 · 251 s  ← mejor
+Época  8/15 · pérdida 0.7480 · F1 macro validación 0.7010 · 251 s  ← mejor
+Época  9/15 · pérdida 0.7193 · F1 macro validación 0.6969 · 250 s
+Época 10/15 · pérdida 0.6837 · F1 macro validación 0.7190 · 251 s  ← mejor
+Época 11/15 · pérdida 0.6628 · F1 macro validación 0.7354 · 251 s  ← mejor
+Época 12/15 · pérdida 0.6355 · F1 macro validación 0.7444 · 250 s  ← mejor
+Época 13/15 · pérdida 0.6175 · F1 macro validación 0.7356 · 251 s
+Época 14/15 · pérdida 0.6010 · F1 macro validación 0.7429 · 250 s
+Época 15/15 · pérdida 0.5886 · F1 macro validación 0.7607 · 250 s  ← mejor
+
+================ RESULTADOS ================
+F1 macro octubre ............ 0.7474  (mínimo 0.7, excelencia 0.85)
+F1 macro sin repetidos ...... 0.7426  (30.3% de la prueba excluida)
+F1 ponderado / exactitud .... 0.7981 / 0.7965
+Deriva (F1 macro) ........... 2022-11: 0.7152 · 2022-12: 0.7017
+Latencia por flujo (CPU) .... 0.0500 ms (máximo 10 ms)
+Parámetros / tamaño ......... 70,743 / 0.29 MB
+Entrenamiento ............... 62.6 min en cpu, 15 épocas
+Umbrales .................... {'f1_macro_minimo_cumplido': True, 'f1_macro_excelencia_cumplido': False, 'latencia_cumplida': True, 'transformer_menos_de_2M_parametros': True}
+Resultados en ............... results/modelos/transformer

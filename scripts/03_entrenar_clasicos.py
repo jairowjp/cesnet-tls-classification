@@ -33,10 +33,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # permite importar src/ al ejecutar el script
 
 import joblib  # noqa: E402
-import matplotlib  # noqa: E402
-
-matplotlib.use("Agg")  # genera las figuras sin necesidad de ventana gráfica
-import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from sklearn.metrics import classification_report, confusion_matrix  # noqa: E402
@@ -45,23 +41,8 @@ from sklearn.model_selection import train_test_split  # noqa: E402
 from src.config import ROOT, load_config  # noqa: E402
 from src.data.loader import TABULAR, labels, load_months, load_split, tabular_features  # noqa: E402
 from src.evaluation.metrics import f1_without_repeats, latency_ms_per_flow, performance  # noqa: E402
+from src.evaluation.report import plot_confusion  # noqa: E402
 from src.models.classic import MODELS, top_features  # noqa: E402
-
-
-def plot_confusion(cm: np.ndarray, classes: list[str], path: Path, title: str) -> None:
-    """Matriz de confusión normalizada por fila: cada fila suma 1 y muestra el recall de esa clase."""
-    cmn = cm / np.clip(cm.sum(axis=1, keepdims=True), 1, None)
-    fig, ax = plt.subplots(figsize=(11, 9))
-    im = ax.imshow(cmn, cmap="Greys", vmin=0, vmax=1)
-    ax.set_xticks(range(len(classes)), classes, rotation=90, fontsize=7)
-    ax.set_yticks(range(len(classes)), classes, fontsize=7)
-    ax.set_xlabel("Categoría predicha")
-    ax.set_ylabel("Categoría real")
-    ax.set_title(title)
-    fig.colorbar(im, ax=ax, fraction=0.04, label="Proporción de la fila")
-    fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
 
 
 def main():

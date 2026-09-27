@@ -1,3 +1,5 @@
 modelo,f1_macro,f1_macro_sin_repetidos,f1_ponderado,exactitud,f1_macro_2022-11,f1_macro_2022-12,latencia_ms,tamano_MB,entrenamiento_min
 random_forest,0.8041,0.775,0.8323,0.8302,0.7763,0.7687,0.0444,142.0,0.6
 xgboost,0.8861,0.8634,0.8848,0.8846,0.8494,0.8346,0.0415,36.0,23.7
+cnn1d,0.7004,0.6831,0.7388,0.7377,0.6746,0.6665,0.0163,0.12,12.4
+transformer,0.7474,0.7426,0.7981,0.7965,0.7152,0.7017,0.05,0.29,62.6
