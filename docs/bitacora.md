@@ -50,6 +50,13 @@ Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `script
   "balanced" (precisión macro 0,775 frente a recall macro 0,861). Se evaluarán pesos más suaves y ajuste de
   umbrales en el Sprint 3 (US-12). Mejores clases: Notifications (F1 0,969) y Analytics & Telemetry (0,953);
   más difíciles entre las grandes: Media (0,749) y Search (0,754).
+- 27/09/2026 — **XGBoost (hito H3, adelantado al 11/10):** 23,7 min de entrenamiento con parada temprana.
+  F1 macro en octubre 0,886 (umbral de excelencia de 0,85 cumplido); sin secuencias repetidas 0,863;
+  deriva: noviembre 0,849 y diciembre 0,835 (cae 5,2 puntos, frente a 3,5 de Random Forest);
+  latencia 0,042 ms por flujo; modelo de 36 MB (4 veces más liviano que Random Forest).
+- 27/09/2026 — **McNemar con corrección de Holm, Random Forest frente a XGBoost:** en los flujos donde discrepan,
+  XGBoost acierta 63 820 veces y Random Forest 16 315; diferencia significativa (p de Holm < 0,05).
+  XGBoost pasa a ser la línea base que deben superar la CNN 1D y el Transformer.
 
 ## Herramientas utilizadas
 Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;

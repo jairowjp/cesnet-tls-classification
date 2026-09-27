@@ -21,6 +21,24 @@
       "problemMatcher": []
     },
     {
+      "label": "4. Entrenar Random Forest (línea base)",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/03_entrenar_clasicos.py --modelo random_forest",
+      "problemMatcher": []
+    },
+    {
+      "label": "5. Entrenar XGBoost",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/03_entrenar_clasicos.py --modelo xgboost",
+      "problemMatcher": []
+    },
+    {
+      "label": "6. Comparar modelos (McNemar + Holm)",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/04_comparar_modelos.py",
+      "problemMatcher": []
+    },
+    {
       "label": "Pruebas unitarias",
       "type": "shell",
       "command": "${workspaceFolder}/../.venv/bin/python -m pytest -q",

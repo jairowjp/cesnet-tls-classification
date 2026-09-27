@@ -10,6 +10,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
 - `scripts/03_entrenar_clasicos.py`: entrenamiento y evaluación con el protocolo del proyecto: F1 macro,
   F1 sin secuencias repetidas, deriva en noviembre y diciembre, latencia, tamaño del modelo y verificación
   de umbrales. Incluye un modo de prueba rápida (`--limite-filas`).
+- `scripts/04_comparar_modelos.py`: tabla comparativa, McNemar por pares con corrección de Holm, gráfica F1 frente a
+  latencia y recomendación del modelo más simple entre los estadísticamente equivalentes al mejor.
 ### Cambiado
 - Random Forest acotado (150 árboles, hojas de ≥ 10 flujos, 50 % de datos por árbol) para que quepa en la
   memoria del equipo: con 23 clases, sin límites superaría los 16 GB de RAM.
