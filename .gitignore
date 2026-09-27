@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Qué NO se sube a GitHub y por qué
+# ---------------------------------------------------------------------------
+
+# Dataset completo (28,4 GB). Supera el límite de GitHub (100 MB por archivo)
+# y ya tiene su fuente oficial: Zenodo, DOI 10.5281/zenodo.10608607.
+datasets/
+
+# Muestra completa del 2 % (377 MB). Se regenera en minutos con
+# scripts/01_extraer_muestra.py. Solo se sube la muestra pequeña de data/samples/.
+data/processed/
+
+# Modelos entrenados pesados: se publican con la app, no en el repositorio de código.
+models/*.joblib
+models/*.pt
+models/*.onnx
+
+# Entornos virtuales y cachés de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Resultados temporales y paquetes generados
+results/*.zip
+*.tmp
+
+# Secretos: nunca deben llegar al repositorio (OWASP A02/A05)
+.env
+.env.*
+*.pem
+*.key
+.streamlit/secrets.toml
+
+# Archivos del sistema y del editor
+.DS_Store
+*.swp

@@ -1,0 +1,24 @@
+# Configuración de herramientas del proyecto (no es un paquete para publicar en PyPI).
+[project]
+name = "cesnet-tls-classification"
+version = "0.2.0"
+description = "Clasificación de tráfico de red cifrado con aprendizaje automático y Transformers sobre CESNET-TLS-Year22"
+requires-python = ">=3.13,<3.14"
+authors = [{ name = "Jairo Wladimir Jhayya Perlaza" }]
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+# E/F: errores y nombres indefinidos · I: orden de imports · B: errores comunes · S: reglas de seguridad (bandit)
+select = ["E", "F", "I", "B", "S"]
+ignore = ["S101"]            # assert está permitido en las pruebas
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["E501", "S"]

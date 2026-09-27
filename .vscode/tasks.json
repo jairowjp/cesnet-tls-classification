@@ -1,0 +1,37 @@
+{
+  // Tareas del proyecto: Ctrl+Shift+P → "Tasks: Run Task". Cada una ejecuta un paso reproducible del pipeline.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Extraer muestra del 2 % (sep–dic 2022)",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/01_extraer_muestra.py --zip datasets/CESNET-TLS-Year22.zip",
+      "problemMatcher": []
+    },
+    {
+      "label": "2. Ejecutar el EDA completo",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=proyecto_integrador notebooks/01_eda.ipynb",
+      "problemMatcher": []
+    },
+    {
+      "label": "3. Crear muestra pequeña para la app",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python scripts/02_crear_muestra_app.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Pruebas unitarias",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/python -m pytest -q",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Seguridad: auditar dependencias (pip-audit)",
+      "type": "shell",
+      "command": "${workspaceFolder}/../.venv/bin/pip-audit -r requirements-lock.txt",
+      "problemMatcher": []
+    }
+  ]
+}

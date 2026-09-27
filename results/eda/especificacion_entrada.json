@@ -1,0 +1,106 @@
+{
+ "etiqueta": "CATEGORY",
+ "particiones": {
+  "entrenamiento": "2022-09 (20 % para validacion)",
+  "prueba": "2022-10",
+  "deriva": [
+   "2022-11",
+   "2022-12"
+  ]
+ },
+ "rama_A_tabular": {
+  "modelos": [
+   "Random Forest",
+   "XGBoost"
+  ],
+  "variables": [
+   "DURATION",
+   "BYTES",
+   "BYTES_REV",
+   "PACKETS",
+   "PACKETS_REV",
+   "PPI_LEN",
+   "PPI_DURATION",
+   "PPI_ROUNDTRIPS",
+   "FLAG_CWR",
+   "FLAG_CWR_REV",
+   "FLAG_ECE",
+   "FLAG_ECE_REV",
+   "FLAG_URG",
+   "FLAG_URG_REV",
+   "FLAG_ACK",
+   "FLAG_ACK_REV",
+   "FLAG_PSH",
+   "FLAG_PSH_REV",
+   "FLAG_RST",
+   "FLAG_RST_REV",
+   "FLAG_SYN",
+   "FLAG_SYN_REV",
+   "FLAG_FIN",
+   "FLAG_FIN_REV",
+   "FLOW_ENDREASON_IDLE",
+   "FLOW_ENDREASON_ACTIVE",
+   "FLOW_ENDREASON_END",
+   "FLOW_ENDREASON_OTHER",
+   "PHIST_SRC_SIZES_0",
+   "PHIST_SRC_SIZES_1",
+   "PHIST_SRC_SIZES_2",
+   "PHIST_SRC_SIZES_3",
+   "PHIST_SRC_SIZES_4",
+   "PHIST_SRC_SIZES_5",
+   "PHIST_SRC_SIZES_6",
+   "PHIST_SRC_SIZES_7",
+   "PHIST_DST_SIZES_0",
+   "PHIST_DST_SIZES_1",
+   "PHIST_DST_SIZES_2",
+   "PHIST_DST_SIZES_3",
+   "PHIST_DST_SIZES_4",
+   "PHIST_DST_SIZES_5",
+   "PHIST_DST_SIZES_6",
+   "PHIST_DST_SIZES_7",
+   "PHIST_SRC_IPT_0",
+   "PHIST_SRC_IPT_1",
+   "PHIST_SRC_IPT_2",
+   "PHIST_SRC_IPT_3",
+   "PHIST_SRC_IPT_4",
+   "PHIST_SRC_IPT_5",
+   "PHIST_SRC_IPT_6",
+   "PHIST_SRC_IPT_7",
+   "PHIST_DST_IPT_0",
+   "PHIST_DST_IPT_1",
+   "PHIST_DST_IPT_2",
+   "PHIST_DST_IPT_3",
+   "PHIST_DST_IPT_4",
+   "PHIST_DST_IPT_5",
+   "PHIST_DST_IPT_6",
+   "PHIST_DST_IPT_7"
+  ],
+  "transformacion": "log10(1 + x) en variables asimetricas y escalado estandar"
+ },
+ "rama_B_secuencia": {
+  "modelos": [
+   "CNN 1D",
+   "Transformer encoder"
+  ],
+  "forma": [
+   30,
+   3
+  ],
+  "canales": [
+   "SIZE_i",
+   "DIR_i",
+   "IPT_i"
+  ],
+  "relleno": "ceros en posiciones sin paquete"
+ },
+ "excluidas": {
+  "TLS_SNI": "fuente de la etiqueta",
+  "TLS_JA3": "identifica al cliente",
+  "SRC_IP, DST_IP": "identifican usuarios y servidores",
+  "DST_ASN, DST_PORT": "fuga de informacion (seccion 7)",
+  "PROTOCOL": "constante",
+  "APP": "etiqueta fina; no es entrada",
+  "TIME_FIRST": "solo para particionar"
+ },
+ "pesos_por_clase": "pesos_por_clase.json"
+}

@@ -1,0 +1,27 @@
+{
+  // Intérprete: el entorno virtual del proyecto (Python 3.13), que está un nivel arriba del repositorio
+  "python.defaultInterpreterPath": "${workspaceFolder}/../.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+
+  // Los notebooks se ejecutan desde la raíz del repositorio, así src/ y configs/ se encuentran igual que en los scripts
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+
+  // Pruebas con pytest, integradas en la barra lateral de VS Code
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+
+  // Formato y revisión automática al guardar (Ruff): código uniforme y detección temprana de errores
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": { "source.organizeImports": "explicit" }
+  },
+  "editor.rulers": [120],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Ocultar y no indexar carpetas enormes (dataset de 28 GB y muestra de 377 MB): VS Code se mantiene ágil
+  "files.exclude": { "**/__pycache__": true, "**/.pytest_cache": true, "**/.ruff_cache": true },
+  "files.watcherExclude": { "datasets/**": true, "data/processed/**": true },
+  "search.exclude": { "datasets/**": true, "data/processed/**": true }
+}

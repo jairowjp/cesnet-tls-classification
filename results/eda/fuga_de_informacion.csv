@@ -1,0 +1,5 @@
+,valores_distintos,NMI_con_categoria,pureza_ponderada
+DST_ASN,139.0,0.4302,0.4131
+DST_PORT,1.0,0.0,0.1074
+PPI_LEN (referencia),,0.08,
+PPI_ROUNDTRIPS (referencia),,0.0469,

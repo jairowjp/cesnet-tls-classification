@@ -1,0 +1,17 @@
+# Dependencias directas del proyecto (Python 3.13).
+# Las versiones exactas de todo el entorno están en requirements-lock.txt.
+# Instalación recomendada:  uv pip install -r requirements-lock.txt
+pandas>=2.2,<3        # DataZoo y el pipeline se probaron con la rama 2.x
+numpy>=2.1
+pyarrow>=20           # lectura y escritura de la muestra en Parquet
+scikit-learn>=1.6
+xgboost>=3.0
+torch>=2.6            # versión CPU en local; GPU gratuita en Colab/Kaggle para entrenar
+statsmodels>=0.14     # prueba de McNemar
+scipy>=1.14
+matplotlib>=3.9
+seaborn>=0.13
+pyyaml>=6.0
+jupyter>=1.1
+ipykernel>=6.29
+pytest>=8.0

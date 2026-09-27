@@ -1,0 +1,23 @@
+{
+  // Configuraciones de depuración: F5 ejecuta con puntos de interrupción
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Depurar: extracción de un día",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/01_extraer_muestra.py",
+      "args": ["--zip", "datasets/CESNET-TLS-Year22.zip", "--limit-days", "1", "--workers", "1", "--out", "data/processed/depuracion"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Depurar: archivo actual",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+ "anio": {
+  "dias": 357,
+  "flujos_totales": 507739073,
+  "servicios": 180,
+  "servicios_en_servicemap": 180,
+  "categorias": 23,
+  "servicios_sin_categoria": [],
+  "flujos_diarios_media": 1391065.9534246575,
+  "flujos_diarios_min": 0,
+  "flujos_diarios_max": 2770538
+ },
+ "deriva_anio_js_vs_septiembre": {
+  "2022-01": 0.0799,
+  "2022-02": 0.0659,
+  "2022-03": 0.0669,
+  "2022-04": 0.0677,
+  "2022-05": 0.0655,
+  "2022-06": 0.0738,
+  "2022-07": 0.0862,
+  "2022-08": 0.0851,
+  "2022-09": 0.0,
+  "2022-10": 0.0507,
+  "2022-11": 0.0617,
+  "2022-12": 0.0609
+ },
+ "muestra": {
+  "archivos_dia": 117,
+  "dias_sin_flujos_en_el_dataset": [
+   "20221212",
+   "20221213",
+   "20221229",
+   "20221230",
+   "20221231"
+  ],
+  "filas": 3133138,
+  "columnas": 190,
+  "memoria_GB": 2.47,
+  "flujos_poblacion_sep_dic": 156643599,
+  "fraccion_real": 0.02,
+  "filas_por_particion": {
+   "deriva": 1460279,
+   "prueba": 872731,
+   "entrenamiento": 800128
+  }
+ },
+ "calidad": {
+  "completitud_%": 100.0,
+  "columnas_con_nulos": {},
+  "duracion_negativa": 0,
+  "bytes_negativos": 0,
+  "ppi_len_fuera_de_1_30": 0,
+  "ppi_len_distinto_a_secuencia": 0,
+  "paquetes_menores_que_ppi_len": 0,
+  "tamanos_fuera_0_1500": 0,
+  "protocolos": {
+   "6": 3133138
+  },
+  "filas_duplicadas_exactas_%": 0.0005
+ },
+ "clases": {
+  "categorias_en_muestra": 23,
+  "categorias_en_entrenamiento": 23,
+  "clase_mayor": [
+   "Advertising",
+   85927,
+   10.74
+  ],
+  "clase_menor": [
+   "Virtual assistant",
+   593,
+   0.0741
+  ],
+  "razon_desbalance": 144.9,
+  "clases_con_menos_de_1000_en_entrenamiento": [
+   "Remote desktop",
+   "Virtual assistant"
+  ],
+  "categorias_ausentes_en_prueba": []
+ },
+ "muestra_vs_poblacion": {
+  "diferencia_absoluta_max_pp": 0.075,
+  "correlacion": 1.0
+ },
+ "variables_flujo": {
+  "asimetria": {
+   "DURATION": 3.36,
+   "BYTES": 485.1,
+   "BYTES_REV": 935.99,
+   "PACKETS": 400.03,
+   "PACKETS_REV": 910.4,
+   "PPI_LEN": 0.83,
+   "PPI_DURATION": 5.17,
+   "PPI_ROUNDTRIPS": 1.81
+  },
+  "variables_muy_asimetricas": [
+   "DURATION",
+   "BYTES",
+   "BYTES_REV",
+   "PACKETS",
+   "PACKETS_REV",
+   "PPI_DURATION"
+  ]
+ },
+ "pares_correlacion_mayor_0_9": 4,
+ "secuencia": {
+  "ppi_len_mediana": 11.0,
+  "ppi_len_media": 14.51,
+  "flujos_con_30_paquetes_%": 20.18,
+  "flujos_con_menos_de_5_paquetes_%": 5.05,
+  "posiciones_de_relleno_%": 51.62
+ },
+ "fuga": {
+  "DST_ASN": {
+   "valores_distintos": 139,
+   "NMI_con_categoria": 0.4302,
+   "pureza_ponderada": 0.4131
+  },
+  "DST_PORT": {
+   "valores_distintos": 1,
+   "NMI_con_categoria": 0.0,
+   "pureza_ponderada": 0.1074
+  },
+  "PPI_LEN (referencia)": {
+   "NMI_con_categoria": 0.08
+  },
+  "PPI_ROUNDTRIPS (referencia)": {
+   "NMI_con_categoria": 0.0469
+  }
+ },
+ "repetidos": {
+  "prueba_con_secuencia_vista_en_entrenamiento_%": 30.33,
+  "por_longitud_%": {
+   "(0, 2]": NaN,
+   "(2, 5]": 81.76,
+   "(5, 10]": 48.52,
+   "(10, 20]": 15.76,
+   "(20, 30]": 2.31
+  },
+  "repetidos_dentro_de_entrenamiento_%": 31.87
+ },
+ "deriva_muestra": {
+  "2022-10": {
+   "JS_categorias": 0.0499,
+   "KS_variables": {
+    "BYTES": 0.0121,
+    "BYTES_REV": 0.0169,
+    "DURATION": 0.0244,
+    "PPI_LEN": 0.0125,
+    "SIZE_0": 0.0306,
+    "SIZE_1": 0.0324
+   }
+  },
+  "2022-11": {
+   "JS_categorias": 0.0616,
+   "KS_variables": {
+    "BYTES": 0.0098,
+    "BYTES_REV": 0.0147,
+    "DURATION": 0.0413,
+    "PPI_LEN": 0.0146,
+    "SIZE_0": 0.0276,
+    "SIZE_1": 0.0369
+   }
+  },
+  "2022-12": {
+   "JS_categorias": 0.0605,
+   "KS_variables": {
+    "BYTES": 0.0155,
+    "BYTES_REV": 0.0244,
+    "DURATION": 0.0266,
+    "PPI_LEN": 0.0102,
+    "SIZE_0": 0.038,
+    "SIZE_1": 0.0338
+   }
+  }
+ }
+}
