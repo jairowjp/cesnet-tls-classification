@@ -2,7 +2,7 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
-## [Sin publicar] · Sprint 1
+## [0.3.0] – 2026-09-27 · Sprint 1: modelado completo
 ### Añadido
 - `src/models/classic.py`: Random Forest y XGBoost con pesos por clase (misma fórmula del EDA).
 - `scripts/utilidades/`: configuración del entorno, descarga y verificación del dataset, inspección y reparación de la muestra.
