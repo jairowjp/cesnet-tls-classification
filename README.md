@@ -62,9 +62,9 @@ Sobre una muestra aleatoria del 2 % de septiembre a diciembre de 2022 (3 133 138
 
 ```
 ├── configs/experiment.yaml     configuración única: meses, semilla, exclusiones, modelos y umbrales
-├── scripts/                    01: muestra del 2 % desde Zenodo · 02: muestra pequeña para la app
+├── scripts/                    pipeline numerado (01–03) y utilidades/; índice y origen en scripts/README.md
 ├── notebooks/01_eda.ipynb      EDA ejecutado, con todas sus salidas
-├── src/                        código reutilizable: carga de datos (src/data) y evaluación (src/evaluation)
+├── src/                        código reutilizable: datos (src/data), modelos (src/models) y evaluación (src/evaluation)
 ├── tests/                      pruebas unitarias (pytest)
 ├── results/eda/                figuras, tablas y resumen del EDA
 ├── data/samples/               muestra pequeña publicada (CC BY 4.0)
@@ -72,7 +72,8 @@ Sobre una muestra aleatoria del 2 % de septiembre a diciembre de 2022 (3 133 138
 ├── docs/                       entregables del curso por semana (PDF)
 ├── .vscode/                    espacio de trabajo: intérprete, tareas, depuración y extensiones
 ├── SECURITY.md                 controles de seguridad y plan OWASP Top 10 / OWASP ZAP
-└── CHANGELOG.md                cambios por entrega, con fechas reales
+├── CHANGELOG.md                cambios por entrega, con fechas reales
+└── docs/bitacora.md            registro cronológico: qué se ejecutó, qué falló y cómo se resolvió
 ```
 
 ## Cómo reproducir el proyecto
@@ -96,10 +97,12 @@ wget "https://zenodo.org/records/10608607/files/servicemap.csv?download=1" -O se
 md5sum CESNET-TLS-Year22.zip        # debe dar d0dd7c84e2140bba362f6bd23de5cab7
 cd ..
 
-# 4. Muestra, EDA y pruebas
+# 4. Muestra, EDA, pruebas y línea base
 python scripts/01_extraer_muestra.py --zip datasets/CESNET-TLS-Year22.zip
 jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb
 python -m pytest -q
+python scripts/03_entrenar_clasicos.py --modelo random_forest
+python scripts/03_entrenar_clasicos.py --modelo xgboost
 ```
 
 En VS Code, los mismos pasos están disponibles como tareas: **Ctrl + Shift + P → Tasks: Run Task**.
@@ -111,3 +114,15 @@ En VS Code, los mismos pasos están disponibles como tareas: **Ctrl + Shift + P 
   dataset from backbone lines," *Scientific Data*, vol. 11, 2024, doi: 10.1038/s41597-024-03927-4.
 - **Código de este repositorio:** licencia MIT (`LICENSE`).
 - **Privacidad:** los modelos y la muestra publicada no contienen direcciones IP, dominios (SNI), huellas JA3 ni ASN.
+
+## Documentos del curso
+
+Cada documento se puede ver en GitHub o descargar con el botón de descarga de su página.
+
+| Semana | Documento | Enlace |
+|---|---|---|
+| 1 | Workshop de Metodología SMART | [01_workshop_smart.xlsx](docs/semana1/01_workshop_smart.xlsx) |
+| 1 | Presentación del Proyecto | [02_presentacion_del_proyecto.pdf](docs/semana1/02_presentacion_del_proyecto.pdf) |
+| 2 | Ficha de Decisión Técnica | [01_ficha_decision_tecnica.pdf](docs/semana2/01_ficha_decision_tecnica.pdf) |
+| 2 | Análisis comparativo de algoritmos | [02_analisis_comparativo_algoritmos.pdf](docs/semana2/02_analisis_comparativo_algoritmos.pdf) |
+| 2 | Análisis exploratorio de datos (EDA) | [03_eda_cesnet_tls_year22.pdf](docs/semana2/03_eda_cesnet_tls_year22.pdf) |

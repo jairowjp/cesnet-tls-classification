@@ -34,8 +34,13 @@ excluidos:
   TIME_FIRST: solo para particionar
 
 modelos:
-  random_forest: {n_estimators: 300, max_depth: null, n_jobs: -1}
-  xgboost: {n_estimators: 400, max_depth: 8, learning_rate: 0.1, tree_method: hist}
+  # Random Forest acotado a propósito. Con 23 clases, scikit-learn guarda 23 valores por nodo:
+  # 300 árboles sin límite entrenados con ~640 000 flujos superarían la RAM del equipo (16 GB).
+  # Con estos límites (150 árboles, hojas de ≥ 10 flujos, cada árbol ve el 50 % de los datos)
+  # el modelo cabe en unos 2 GB de memoria. El ajuste fino se hace en el Sprint 3 (US-12).
+  random_forest: {n_estimators: 150, max_depth: 25, min_samples_leaf: 10, max_samples: 0.5, max_features: sqrt, n_jobs: -1}
+  # XGBoost: hasta 400 árboles; se detiene antes si la validación no mejora en 30 rondas seguidas.
+  xgboost: {n_estimators: 400, max_depth: 8, learning_rate: 0.1, tree_method: hist, early_stopping_rounds: 30, n_jobs: -1}
   cnn1d: {canales: [64, 128], kernel: 3, dropout: 0.2, epocas: 15, lr: 0.001}
   transformer: {d_model: 64, cabezas: 4, capas: 2, ff: 128, dropout: 0.1, epocas: 15, lr: 0.0005}
   lstm_opcional: {unidades: 128, capas: 1}

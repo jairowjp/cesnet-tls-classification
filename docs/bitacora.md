@@ -1,0 +1,57 @@
+# Bitácora del proyecto
+
+Registro cronológico de lo que se hizo, los problemas encontrados y cómo se resolvieron.
+Las fechas y horas son las reales de cada ejecución (hora de Ecuador, UTC−5).
+
+## Semana 1 (hasta el 22/09/2026)
+- Participación en el foro con tres problemas candidatos y selección del problema de tráfico cifrado.
+- Workshop de Metodología SMART y Presentación del Proyecto (`docs/semana1/`).
+
+## Semana 2
+
+### 26/09/2026 — Obtención de los datos
+| Hora | Acción | Resultado |
+|---|---|---|
+| Mañana | Intento con Google Colab y la librería DataZoo | Instalación correcta, pero el servidor de DataZoo (liberouter.org) respondió con error 503 y luego no respondió |
+| 14:12 | Descarga desde Zenodo en Colab (28,4 GB) | Terminó en 3 h 56 min, pero la sesión se desconectó y Colab asignó una máquina nueva: el archivo se perdió |
+| 14:54 | Descarga desde Zenodo en el equipo local (Kali), dentro de `tmux` | Terminó a las 18:38 (3 h 43 min). MD5 verificado: `d0dd7c84e2140bba362f6bd23de5cab7` |
+| Noche | Inspección del contenido real del zip | 1 203 archivos, 45 columnas por flujo, 122 días entre septiembre y diciembre (9,7 GB) |
+
+Script derivado: `scripts/utilidades/01_descargar_dataset.sh` y `02_inspeccionar_dataset.sh`.
+
+### 26–27/09/2026 — Entorno de trabajo
+| Problema | Causa | Solución |
+|---|---|---|
+| Falló la instalación de `pydantic-core` | Kali trae Python 3.14 y esa versión no tiene paquete compilado | Entorno con Python 3.13 instalado con `uv`, sin modificar el sistema |
+| Riesgo de errores sutiles | Se instaló pandas 3, más nuevo que la versión probada | Se fijó `pandas < 3` (2.3.3) |
+| `/tmp` de solo 408 MB | Partición pequeña del sistema | Temporales redirigidos a `~/tmp` con `TMPDIR` |
+
+Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `scripts/utilidades/00_configurar_entorno.sh`.
+
+### 27/09/2026 — Muestra y EDA
+| Hora | Acción | Resultado |
+|---|---|---|
+| Madrugada | Prueba de extracción con un día | 27 485 de 1 369 296 flujos (2,007 %) en 6,6 s |
+| Madrugada | Extracción completa | Falló: un día de diciembre no tiene flujos en el dataset original |
+| Madrugada | Versión 2 del script: registra días vacíos y no se detiene por un día con error | 117 días con datos y 5 vacíos (12, 13, 29, 30 y 31 de diciembre) |
+| Madrugada | Reparación de 18 días sin registrar en el manifiesto | Script derivado: `scripts/utilidades/03_limpiar_parquet_huerfanos.py` |
+| 07:36 | Ejecución completa del notebook del EDA | 3 133 138 flujos; hallazgos en `results/eda/` y en `docs/semana2/03_eda_cesnet_tls_year22.pdf` |
+| Mañana | Actualización de la Ficha de Decisión Técnica con las cifras reales | Corrección de 24 a 23 categorías; riesgo de secuencias repetidas (30,3 %) incorporado |
+| 10:25 | Publicación del repositorio en GitHub | https://github.com/jairowjp/cesnet-tls-classification |
+
+## Sprint 1 (28/09 – 04/10/2026)
+- Script de entrenamiento de la línea base (`scripts/03_entrenar_clasicos.py`), probado con datos sintéticos.
+- Random Forest acotado para no superar los 16 GB de RAM del equipo (con 23 clases, sin límites no cabría).
+- 27/09/2026 — Prueba rápida con 50 000 flujos: F1 macro 0,635 (confirmó el pipeline con datos reales).
+- 27/09/2026 — **Línea base oficial, Random Forest (hito H2):** 640 102 flujos de entrenamiento, 0,6 min.
+  F1 macro en octubre 0,804 (mínimo de 0,70 cumplido); sin secuencias repetidas 0,775;
+  deriva: noviembre 0,776 y diciembre 0,769; latencia 0,044 ms por flujo; modelo de 142 MB.
+- Hallazgo: las clases pequeñas tienen recall alto (≈ 0,9) y precisión baja (0,46–0,63) por los pesos
+  "balanced" (precisión macro 0,775 frente a recall macro 0,861). Se evaluarán pesos más suaves y ajuste de
+  umbrales en el Sprint 3 (US-12). Mejores clases: Notifications (F1 0,969) y Analytics & Telemetry (0,953);
+  más difíciles entre las grandes: Media (0,749) y Search (0,754).
+
+## Herramientas utilizadas
+Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;
+Google Colab para pruebas. El código se desarrolló con apoyo de un asistente de IA (Claude, de Anthropic);
+cada script fue revisado, ejecutado y validado por el autor, como consta en esta bitácora.

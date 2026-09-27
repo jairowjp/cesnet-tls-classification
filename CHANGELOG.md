@@ -2,6 +2,20 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
+## [Sin publicar] · Sprint 1
+### Añadido
+- `src/models/classic.py`: Random Forest y XGBoost con pesos por clase (misma fórmula del EDA).
+- `scripts/utilidades/`: configuración del entorno, descarga y verificación del dataset, inspección y reparación de la muestra.
+- `scripts/README.md` (índice y origen de cada script) y `docs/bitacora.md` (registro cronológico).
+- `scripts/03_entrenar_clasicos.py`: entrenamiento y evaluación con el protocolo del proyecto: F1 macro,
+  F1 sin secuencias repetidas, deriva en noviembre y diciembre, latencia, tamaño del modelo y verificación
+  de umbrales. Incluye un modo de prueba rápida (`--limite-filas`).
+### Cambiado
+- Random Forest acotado (150 árboles, hojas de ≥ 10 flujos, 50 % de datos por árbol) para que quepa en la
+  memoria del equipo: con 23 clases, sin límites superaría los 16 GB de RAM.
+- Prueba de McNemar: devuelve p = 1 cuando los modelos no discrepan (antes podía declarar diferencia falsa).
+- Pruebas de carga sin advertencias de rendimiento.
+
 ## [0.2.0] – 2026-09-27 · Semana 2
 ### Añadido
 - Descarga del dataset completo desde Zenodo y verificación de integridad con MD5.
