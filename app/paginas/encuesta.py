@@ -2,8 +2,8 @@
 Tu opinión: encuesta de usabilidad SUS (Brooke, 1996), integrada en el sitio.
 
 Alimenta el hito H6 del proyecto: la prueba de usabilidad con al menos cinco evaluadores y un
-puntaje SUS de 68 o más. El sitio NO guarda las respuestas (el disco de Hugging Face se borra al
-reiniciar y guardar datos de terceros agregaría riesgos). Al terminar, el evaluador recibe un código
+puntaje SUS de 68 o más. El sitio NO guarda las respuestas (el almacenamiento de la plataforma gratuita no es
+permanente y guardar datos de terceros agregaría riesgos). Al terminar, el evaluador recibe un código
 corto que copia y envía al autor por mensaje o correo; el autor los reúne con scripts/07_consolidar_sus.py.
 El código no contiene nombre ni alias: solo el perfil, las respuestas y las tareas.
 """

@@ -33,6 +33,7 @@ para que cualquiera pueda repetir exactamente los mismos pasos.
 | `01_descargar_dataset.sh` | Descarga el dataset desde Zenodo y verifica su MD5 oficial | El servidor de DataZoo estaba caído (error 503); Zenodo es el registro oficial |
 | `02_inspeccionar_dataset.sh` | Muestra la estructura del zip, las columnas y los días disponibles | Se usó para diseñar el EDA sobre el formato real, sin suposiciones |
 | `03_limpiar_parquet_huerfanos.py` | Borra archivos de la muestra que no están en el manifiesto (simula por defecto) | Reparó los 18 días que quedaron sin registrar tras el primer fallo de la extracción |
+| `04_ejecutar_app_local.sh` | Lanza la aplicación en tu equipo, escuchando solo en `localhost` | Un escaneo mostró que, sin esta restricción, la app quedaba accesible desde toda la red local |
 
 ## Orden para reproducir todo desde cero
 
@@ -48,7 +49,7 @@ python scripts/05_entrenar_profundos.py --modelo cnn1d
 python scripts/05_entrenar_profundos.py --modelo transformer
 python scripts/04_comparar_modelos.py
 python scripts/06_preparar_app.py
-streamlit run app/principal.py
+bash scripts/utilidades/04_ejecutar_app_local.sh
 ```
 
 El registro de cuándo y por qué se ejecutó cada paso está en `docs/bitacora.md`.

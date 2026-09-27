@@ -1,12 +1,3 @@
-# Dependencias de la aplicación web (imagen de Docker / Hugging Face Spaces).
-# Más liviana que el entorno completo: no incluye PyTorch ni Jupyter, porque la app solo
-# ejecuta XGBoost y lee resultados ya calculados. Menos paquetes, menos superficie de ataque.
-streamlit==1.64.0
-plotly>=6.0
-pandas>=2.2,<3
-numpy>=2.1
-pyarrow>=20
-scikit-learn>=1.6
-xgboost>=3.0
-joblib>=1.4
-pyyaml>=6.0
+# Las dependencias de la aplicación están en app/requirements.txt (única fuente, la que usa Community Cloud).
+# Este archivo las incluye para Docker y para `pip-audit -r requirements-app.txt`.
+-r app/requirements.txt

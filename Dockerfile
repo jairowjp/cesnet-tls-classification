@@ -1,5 +1,5 @@
 # =============================================================================
-# Imagen de la aplicación web para Hugging Face Spaces (y para ejecutarla en local con Docker)
+# Imagen de la aplicación web: plan B de publicación (Docker local o cualquier servidor con Docker)
 # -----------------------------------------------------------------------------
 # Construir:  docker build -t cesnet-app .
 # Ejecutar:   docker run --rm -p 7860:7860 cesnet-app      →  http://localhost:7860
@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Seguridad: la app corre con un usuario sin privilegios, nunca como root.
-# Hugging Face Spaces exige además que ese usuario tenga el id 1000.
 RUN useradd --create-home --uid 1000 usuario
 USER usuario
 ENV HOME=/home/usuario PATH=/home/usuario/.local/bin:$PATH PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
@@ -25,7 +24,7 @@ RUN pip install --no-cache-dir --user -r requirements-app.txt
 COPY --chown=usuario . .
 
 EXPOSE 7860
-# Hugging Face y Docker comprueban que la app responde en el endpoint de salud de Streamlit
+# Docker comprueba que la app responde en el endpoint de salud de Streamlit
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7860/_stcore/health', timeout=4)"
 CMD ["streamlit", "run", "app/principal.py", "--server.port=7860", "--server.address=0.0.0.0"]

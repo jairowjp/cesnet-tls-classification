@@ -59,7 +59,7 @@
     {
       "label": "10. Ejecutar la aplicación web",
       "type": "shell",
-      "command": "${workspaceFolder}/../.venv/bin/streamlit run app/principal.py",
+      "command": "bash scripts/utilidades/04_ejecutar_app_local.sh",
       "isBackground": true,
       "problemMatcher": []
     },

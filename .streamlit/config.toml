@@ -7,9 +7,8 @@
 
 [server]
 headless = true
-# Solo escucha en el propio equipo: en desarrollo, nadie más de la red puede abrir la app (A05).
-# El Dockerfile usa --server.address=0.0.0.0, porque dentro de un contenedor es necesario.
-address = "localhost"
+# La dirección de escucha NO se fija aquí: en la nube la define la plataforma. En tu equipo, lanza la app con
+# scripts/utilidades/04_ejecutar_app_local.sh, que la restringe a localhost (nadie más de la red puede abrirla, A05).
 enableXsrfProtection = true      # A01/A05: protección contra falsificación de peticiones entre sitios
 enableCORS = true                # A05: solo acepta peticiones del propio origen
 maxUploadSize = 2                # A04: CSV de máximo 2 MB (coincide con core/seguridad.py)

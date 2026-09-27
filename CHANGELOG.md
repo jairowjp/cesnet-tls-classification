@@ -19,6 +19,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
   100 % de los errores de copia de un carácter. `scripts/07_consolidar_sus.py` los verifica y recalcula cada puntaje.
 - Página **Seguridad**: qué datos se usan, qué pasa con lo que sube el usuario y cómo verificar cada control.
 - Clasificar y la portada muestran la predicción y la confianza de los cuatro modelos, no solo de XGBoost.
+- Publicación en Streamlit Community Cloud (gratuito): dependencias propias de la app en `app/requirements.txt`,
+  sin PyTorch. Hugging Face dejó de ofrecer Docker en su plan gratuito; el `Dockerfile` queda como plan B.
+- `scripts/utilidades/04_ejecutar_app_local.sh`: la app se lanza en local solo en `localhost`.
+- Auditoría de dependencias con pip-audit sin vulnerabilidades conocidas (`docs/seguridad/01_pip_audit.txt`) y
+  escaneo activo con OWASP ZAP sin vulnerabilidades explotables (`docs/seguridad/02_zap_local.json`).
 
 ## [0.3.0] – 2026-09-27 · Sprint 1: modelado completo
 ### Añadido

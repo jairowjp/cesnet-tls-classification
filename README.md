@@ -8,7 +8,7 @@ Autor: **Jairo Wladimir Jhayya Perlaza** · Docente: Gladys María Villegas Ruge
 | Enlace | Estado |
 |---|---|
 | Repositorio: https://github.com/jairowjp/cesnet-tls-classification | Activo |
-| Aplicación web: `https://huggingface.co/spaces/jairowjp/cesnet-tls-classification` | Se publica en el Sprint 3 (hito H6, 01/11/2026) |
+| **Aplicación web: https://trafico-cifrado-uees.streamlit.app** | Publicada en Streamlit Community Cloud. Si muestra que está dormida, pulsa el botón para despertarla (tarda alrededor de un minuto) |
 | Tablero Scrum: pestaña *Projects* de este repositorio | Se habilita en el Sprint 1 |
 
 ---
@@ -111,9 +111,9 @@ python scripts/04_comparar_modelos.py
 ## Aplicación web
 
 ```bash
-uv pip install -r requirements-app.txt      # Streamlit y Plotly
+uv pip install -r requirements-app.txt      # dependencias de la app (app/requirements.txt)
 python scripts/06_preparar_app.py           # predicciones precalculadas y modelo con su huella SHA-256
-streamlit run app/principal.py              # http://localhost:8501
+bash scripts/utilidades/04_ejecutar_app_local.sh   # http://localhost:8501, solo en tu equipo
 ```
 
 Ocho páginas, con un recorrido guiado de siete pasos: **Inicio** (portada institucional y la firma de un flujo

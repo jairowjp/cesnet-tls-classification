@@ -1,0 +1,13 @@
+# Dependencias de la aplicación web (Streamlit Community Cloud y Docker).
+# Community Cloud busca este archivo primero en la carpeta del punto de entrada (app/principal.py), así
+# instala solo lo que la app necesita: sin PyTorch ni Jupyter. Menos paquetes, menos superficie de ataque
+# y menos memoria en el plan gratuito.
+streamlit==1.64.0
+plotly>=6.0
+pandas>=2.2,<3
+numpy>=2.1
+pyarrow>=20
+scikit-learn>=1.6
+xgboost>=3.0
+joblib>=1.4
+pyyaml>=6.0

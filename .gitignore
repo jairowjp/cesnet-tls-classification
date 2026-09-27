@@ -43,3 +43,4 @@ results/*.zip
 # agregado (results/sus/resumen_sus.json), generado por scripts/07_consolidar_sus.py.
 results/sus/*.csv
 results/sus/codigos.txt
+
