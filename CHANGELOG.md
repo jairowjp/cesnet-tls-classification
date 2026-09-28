@@ -22,6 +22,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
 - Publicación en Streamlit Community Cloud (gratuito): dependencias propias de la app en `app/requirements.txt`,
   sin PyTorch. Hugging Face dejó de ofrecer Docker en su plan gratuito; el `Dockerfile` queda como plan B.
 - `scripts/utilidades/04_ejecutar_app_local.sh`: la app se lanza en local solo en `localhost`.
+- Informe de seguridad (`docs/seguridad/README.md`): pip-audit, ZAP activo en local, ZAP pasivo en la URL pública
+  y `scripts/utilidades/05_resumen_zap.py`, que clasifica cada alerta. Sin alertas de riesgo alto ni
+  vulnerabilidades en el código del proyecto.
 - Auditoría de dependencias con pip-audit sin vulnerabilidades conocidas (`docs/seguridad/01_pip_audit.txt`) y
   escaneo activo con OWASP ZAP sin vulnerabilidades explotables (`docs/seguridad/02_zap_local.json`).
 

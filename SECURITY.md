@@ -23,7 +23,7 @@ Cada control tiene al menos una prueba automática que lo verifica (`python -m p
 | A03 Inyección (XSS en la firma del flujo) | JSON con `<`, `>` y `&` escapados; textos insertados con `textContent`, nunca `innerHTML`; nunca HTML del usuario | `app/core/firma.py` | `test_firma_no_permite_inyectar_codigo_en_textos` |
 | A03 Inyección de fórmulas en descargas | Textos que empiezan con `= + - @` se neutralizan con apóstrofo | `app/core/seguridad.py` → `neutralizar_formulas` | `test_formulas_neutralizadas_en_descargas` |
 | A04 Diseño inseguro | Límites de subida coherentes en Streamlit (`maxUploadSize = 2`) y en la validación; mensajes de error que no repiten el contenido del archivo | `.streamlit/config.toml`, `validar_csv` | `test_columnas_faltantes_se_rechaza_sin_listar_nombres` |
-| A05 Configuración insegura | XSRF y CORS activos, errores sin trazas (`showErrorDetails = "none"`), sin opciones de desarrollador, sin estadísticas de uso, sin recarga de código; en desarrollo la app se lanza solo en `localhost` (`scripts/utilidades/04_ejecutar_app_local.sh`) | `.streamlit/config.toml` | Revisión con OWASP ZAP (pendiente) |
+| A05 Configuración insegura | XSRF y CORS activos, errores sin trazas (`showErrorDetails = "none"`), sin opciones de desarrollador, sin estadísticas de uso, sin recarga de código; en desarrollo la app se lanza solo en `localhost` (`scripts/utilidades/04_ejecutar_app_local.sh`) | `.streamlit/config.toml` | Escaneos OWASP ZAP (ver `docs/seguridad/`) |
 | A06 Componentes vulnerables | Dependencias mínimas de la app (sin PyTorch ni Jupyter) y versiones fijadas | `requirements-app.txt` | `pip-audit -r requirements-app.txt` |
 | A08 Integridad de software y datos | El modelo solo se carga si su SHA-256 coincide con `app/models/manifest.json`; nunca se cargan modelos del usuario | `app/core/seguridad.py` → `verificar_integridad` | `test_modelo_alterado_no_se_carga` |
 | Mínimo privilegio | El contenedor corre con un usuario sin privilegios (id 1000), nunca como root | `Dockerfile` | Inspección de la imagen |
@@ -52,7 +52,7 @@ Cada control tiene al menos una prueba automática que lo verifica (`python -m p
 | **Activo** (ataques simulados) | Copia local de la app en Docker (`http://localhost:7860`) | Se prueba a fondo sin afectar infraestructura ajena |
 | **Pasivo** (solo observa respuestas) | URL pública en Streamlit Community Cloud | Verifica cabeceras y configuración reales sin atacar servidores de terceros |
 
-Los reportes de ZAP y las correcciones aplicadas se guardarán en `docs/seguridad/`.
+**Resultado (27/09/2026):** ningún escaneo encontró alertas de riesgo alto ni vulnerabilidades en el código del proyecto. El informe completo, con las evidencias y la clasificación de cada alerta, está en `docs/seguridad/README.md`.
 
 **Limitación conocida:** Streamlit no permite configurar todas las cabeceras HTTP de seguridad (por ejemplo, una
 Content-Security-Policy estricta), y en Streamlit Community Cloud la plataforma controla parte de ellas.

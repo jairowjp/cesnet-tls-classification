@@ -34,6 +34,7 @@ para que cualquiera pueda repetir exactamente los mismos pasos.
 | `02_inspeccionar_dataset.sh` | Muestra la estructura del zip, las columnas y los días disponibles | Se usó para diseñar el EDA sobre el formato real, sin suposiciones |
 | `03_limpiar_parquet_huerfanos.py` | Borra archivos de la muestra que no están en el manifiesto (simula por defecto) | Reparó los 18 días que quedaron sin registrar tras el primer fallo de la extracción |
 | `04_ejecutar_app_local.sh` | Lanza la aplicación en tu equipo, escuchando solo en `localhost` | Un escaneo mostró que, sin esta restricción, la app quedaba accesible desde toda la red local |
+| `05_resumen_zap.py` | Compara los escaneos ZAP local y público y clasifica cada alerta por responsable y tratamiento | Deja el informe de seguridad sin cifras transcritas a mano |
 
 ## Orden para reproducir todo desde cero
 

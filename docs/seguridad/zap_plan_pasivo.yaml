@@ -1,0 +1,32 @@
+# Plan de OWASP ZAP: escaneo SOLO PASIVO de la aplicación publicada.
+# No incluye "activeScan": no se envían ataques a la infraestructura de Streamlit Community Cloud.
+env:
+  contexts:
+    - name: app-publica
+      urls:
+        - https://trafico-cifrado-uees.streamlit.app
+        - https://trafico-cifrado-uees.streamlit.app/~/+/   # ruta directa: la principal redirige a la autenticación de la plataforma
+      includePaths:
+        - https://trafico-cifrado-uees.streamlit.app.*
+  parameters:
+    failOnError: true
+    progressToStdout: true
+jobs:
+  - type: spider                 # navega como un visitante normal (solo peticiones GET)
+    parameters:
+      context: app-publica
+      maxDuration: 2             # minutos: exploración breve y respetuosa
+      maxDepth: 3
+  - type: passiveScan-wait       # analiza las respuestas recibidas, sin enviar nada nuevo
+    parameters:
+      maxDuration: 5
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: /home/ransomware/proyecto_integrador/jairojhayya/docs/seguridad
+      reportFile: 04_zap_publica_pasivo
+  - type: report
+    parameters:
+      template: traditional-html
+      reportDir: /home/ransomware/proyecto_integrador/jairojhayya/docs/seguridad
+      reportFile: 04_zap_publica_pasivo

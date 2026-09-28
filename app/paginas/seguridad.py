@@ -82,11 +82,13 @@ st.markdown(
 )
 
 st.header("Límites que conviene conocer", divider="gray")
-st.markdown("""
+st.markdown(f"""
 - **Cabeceras de seguridad del navegador:** la plataforma Streamlit no permite configurar todas, por ejemplo
   una política de contenido (CSP) estricta. En la publicación, parte de ellas depende de la plataforma de alojamiento.
-- **Revisión externa:** la aplicación se escanea con OWASP ZAP antes de publicarse; los resultados y las
-  correcciones se documentan en el repositorio.
+- **Revisión externa:** la aplicación se escaneó con OWASP ZAP (de forma activa en una copia local y de forma
+  pasiva en la versión publicada) y sus dependencias se auditaron con pip-audit. No se encontraron vulnerabilidades
+  explotables; las alertas restantes dependen de la plataforma de alojamiento y están documentadas en el
+  [informe de seguridad]({ARCHIVO}/docs/seguridad/README.md).
 """)
 
 st.header("Reportar un problema", divider="gray")

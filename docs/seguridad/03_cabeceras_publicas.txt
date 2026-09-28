@@ -1,0 +1,33 @@
+Cabeceras HTTP de la aplicación publicada
+dom 27 sep 2026 19:08:26 -05
+
+== Página principal
+HTTP/2 303 
+server: nginx/1.31.3
+date: Mon, 28 Sep 2026 00:08:26 GMT
+content-type: text/html; charset=utf-8
+location: https://share.streamlit.io/-/auth/app?redirect_uri=https%3A%2F%2Ftrafico-cifrado-uees.streamlit.app%2F
+set-cookie: streamlit_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000
+
+== Aplicación
+HTTP/2 200 
+accept-ranges: bytes
+cache-control: no-cache
+content-length: 7260
+content-type: text/html; charset=utf-8
+date: Mon, 28 Sep 2026 00:08:27 GMT
+etag: "45a0eaed5dc0b79a76350fdc3e586ac6"
+last-modified: Sun, 27 Sep 2026 23:52:05 GMT
+server: uvicorn
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+== HTTP sin cifrar (debe redirigir a HTTPS)
+HTTP/1.1 303 See Other
+Server: nginx/1.31.3
+Date: Mon, 28 Sep 2026 00:10:07 GMT
+Content-Type: text/html; charset=utf-8
+location: https://share.streamlit.io/-/auth/app?redirect_uri=https%3A%2F%2Ftrafico-cifrado-uees.streamlit.app%2F
