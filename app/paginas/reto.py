@@ -54,7 +54,7 @@ if "reto" not in st.session_state:
     reiniciar()
 R = st.session_state.reto
 
-st.title("Tú contra los modelos")
+st.title("Tú contra los modelos", anchor=False)
 st.markdown(
     "Esta es la firma de una conexión real de octubre de 2022, sin su categoría. Solo ves lo mismo que el modelo: "
     "tamaños, direcciones y tiempos de sus paquetes. ¿A qué tipo de servicio pertenece?"
@@ -71,7 +71,7 @@ st.markdown(
 
 if terminado:
     # ------------------------------------------------------------------ resultado final
-    st.header("Resultado", divider="gray")
+    st.header("Resultado", divider="gray", anchor=False)
     tuyos, modelo = R["tuyos"], R["modelo"]
     if tuyos > modelo:
         mensaje = "Le ganaste al modelo. Pocas personas lo logran: tienes buen ojo para el tráfico."

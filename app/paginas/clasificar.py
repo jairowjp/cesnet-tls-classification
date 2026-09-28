@@ -44,7 +44,7 @@ except Exception:
 
 modelo, clases = paquete["modelo"], list(paquete["clases"])
 
-st.title("Clasificar un flujo")
+st.title("Clasificar un flujo", anchor=False)
 st.markdown(
     "El modelo recomendado, **XGBoost**, clasifica aquí en vivo. Puedes usar flujos reales de octubre de 2022 "
     "o subir los tuyos con el formato de la plantilla."
@@ -94,7 +94,7 @@ with tab_real:
         alto=270,
     )
 
-    st.subheader("Qué dice cada modelo")
+    st.subheader("Qué dice cada modelo", anchor=False)
     st.markdown(
         '<p class="nota">Cada gráfico muestra las cinco categorías que cada modelo considera más probables. '
         "XGBoost clasifica en vivo; los otros tres usan sus probabilidades calculadas y guardadas con los modelos "

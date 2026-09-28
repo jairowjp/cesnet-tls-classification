@@ -25,7 +25,7 @@ R = E["resumen"]
 clases = E["clases"]
 categorias = list(clases.index)
 
-st.title("Los datos")
+st.title("Los datos", anchor=False)
 st.markdown(
     f"El dataset CESNET-TLS-Year22 registró **{miles(R['anio']['flujos_totales'])}** conexiones TLS durante 2022 en la "
     f"red académica nacional de la República Checa. Para este proyecto se tomó una muestra aleatoria del 2 % de "
@@ -33,7 +33,7 @@ st.markdown(
     f"**{len(categorias)}** categorías de servicio."
 )
 
-st.header("La forma de cada servicio", divider="gray")
+st.header("La forma de cada servicio", divider="gray", anchor=False)
 st.markdown("Elige dos categorías para comparar cómo empieza una conexión típica de cada una.")
 c1, c2 = st.columns(2)
 por_defecto_a = categorias.index("Media") if "Media" in categorias else 0
@@ -68,7 +68,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.header("Cuánto tráfico hay de cada tipo", divider="gray")
+st.header("Cuánto tráfico hay de cada tipo", divider="gray", anchor=False)
 entr = clases["entrenamiento"].sort_values()
 # Cobalto y ámbar se reservan para la dirección de los paquetes; las categorías usan tinta
 colores = [TINTA if c == cat_a else (TINTA_SUAVE if c == cat_b else NEUTRO) for c in entr.index]
@@ -93,7 +93,7 @@ st.markdown(
     f"mismo peso a todas las categorías."
 )
 
-st.header("Cómo cambia el tráfico durante el año", divider="gray")
+st.header("Cómo cambia el tráfico durante el año", divider="gray", anchor=False)
 mes = E["cat_mes"].T * 100  # meses en filas, categorías en columnas, en porcentaje
 fig = go.Figure()
 for cat, color, trazo in [(cat_a, TINTA, "solid"), (cat_b, TINTA_SUAVE, "dash")]:
@@ -122,7 +122,7 @@ st.markdown(
     f"cuánto pierden cuando el tráfico cambia."
 )
 
-st.header("Calidad y precauciones", divider="gray")
+st.header("Calidad y precauciones", divider="gray", anchor=False)
 Q, S, F = R["calidad"], R["repetidos"], R["fuga"]
 tabla = pd.DataFrame(
     {

@@ -30,9 +30,9 @@ for m in ("cnn1d", "transformer"):
         if mejor_epoca == len(hist):
             sin_converger.append((NOMBRES[m], len(hist)))
 
-st.title("Conclusiones")
+st.title("Conclusiones", anchor=False)
 
-st.header("Qué se recomienda", divider="gray")
+st.header("Qué se recomienda", divider="gray", anchor=False)
 st.markdown(
     f"Para clasificar tráfico cifrado usando solo metadatos de flujo, el modelo recomendado es **{NOMBRES[mejor]}**. "
     f"Alcanza un F1 macro de **{decimal(t.loc[mejor, 'f1_macro'])}** en octubre, se mantiene en "
@@ -45,7 +45,7 @@ st.markdown(
     "un modelo clásico bien ajustado iguala o supera a arquitecturas profundas mucho más costosas de entrenar."
 )
 
-st.header("Lo que matiza el resultado", divider="gray")
+st.header("Lo que matiza el resultado", divider="gray", anchor=False)
 st.markdown(f"""
 - **{NOMBRES[menos_memoriza]} es el que menos memoriza:** pierde solo {decimal(perdida_rep[menos_memoriza], 1)} puntos
   de F1 al excluir las secuencias repetidas, frente a {decimal(perdida_rep[mejor], 1)} de {NOMBRES[mejor]}.
@@ -55,7 +55,7 @@ st.markdown(f"""
   En producción habría que reentrenarlos de forma periódica.
 """)
 
-st.header("Limitaciones", divider="gray")
+st.header("Limitaciones", divider="gray", anchor=False)
 limitacion_epocas = ""
 if sin_converger:
     detalle = " y ".join(f"{n} ({e} épocas)" for n, e in sin_converger)
@@ -75,7 +75,7 @@ st.markdown(
 """
 )
 
-st.header("Datos, código y créditos", divider="gray")
+st.header("Datos, código y créditos", divider="gray", anchor=False)
 st.markdown(f"""
 - **Dataset:** CESNET-TLS-Year22 de K. Hynek, J. Luxemburk, J. Pešek, T. Čejka y P. Šiška, publicado en
   *Scientific Data* (2024). © CESNET, licencia CC BY 4.0, doi:10.5281/zenodo.10608607.

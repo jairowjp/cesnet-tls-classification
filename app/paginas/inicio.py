@@ -40,7 +40,7 @@ st.html(
     </header>
     """
 )
-st.title("Clasificar tráfico cifrado sin descifrarlo")
+st.title("Clasificar tráfico cifrado sin descifrarlo", anchor=False)
 st.html(
     """
     <p class="portada-oficial">Análisis comparativo de modelos de aprendizaje automático y arquitecturas Transformer
@@ -115,7 +115,7 @@ with st.container(border=True):
     a.page_link("paginas/datos.py", label="Empezar el recorrido por los datos")
     b.page_link("paginas/reto.py", label="Ir directo al reto contra los modelos")
 
-st.header("Cómo se construyó", divider="gray")
+st.header("Cómo se construyó", divider="gray", anchor=False)
 anio = comp["metricas"].get("xgboost", {})
 pasos = st.columns(4)
 contenido = [
@@ -148,7 +148,7 @@ if anio:
         comp["metricas"][m]["costo"]["tamano_modelo_MB"] for m in ("cnn1d", "transformer") if m in comp["metricas"]
     ]
     veces = anio["costo"]["tamano_modelo_MB"] / min(redes) if redes else None
-    st.header("Qué se encontró", divider="gray")
+    st.header("Qué se encontró", divider="gray", anchor=False)
     st.markdown(
         f"El mejor modelo es **{NOMBRES['xgboost']}**: acierta con un F1 macro de **{decimal(f1)}** en octubre, "
         f"clasifica un flujo en **{decimal(anio['costo']['latencia_ms_por_flujo'])} ms** y supera a los demás con "

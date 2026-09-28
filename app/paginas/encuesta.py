@@ -15,7 +15,7 @@ from core.sus import PERFILES, PREGUNTAS, RESULTADOS_TAREA, TAREAS, codificar, i
 
 ESCALA = {1: "1  Totalmente en desacuerdo", 2: "2", 3: "3", 4: "4", 5: "5  Totalmente de acuerdo"}
 
-st.title("Tu opinión")
+st.title("Tu opinión", anchor=False)
 st.markdown(
     "Tu evaluación ayuda a medir qué tan fácil es usar este sitio. Son 10 afirmaciones de la escala SUS, "
     "un estándar internacional de usabilidad, y 4 preguntas sobre las tareas que intentaste. Toma unos 3 minutos."
@@ -29,14 +29,14 @@ st.markdown(
 with st.form("encuesta"):
     perfil = st.selectbox("Tu perfil", PERFILES)
 
-    st.subheader("Qué tan de acuerdo estás")
+    st.subheader("Qué tan de acuerdo estás", anchor=False)
     respuestas = []
     for n, texto in enumerate(PREGUNTAS, start=1):
         respuestas.append(
             st.radio(f"{n}. {texto}", list(ESCALA), format_func=ESCALA.get, index=None, horizontal=True, key=f"sus_{n}")
         )
 
-    st.subheader("Qué tareas lograste")
+    st.subheader("Qué tareas lograste", anchor=False)
     tareas = {
         t: st.radio(t, RESULTADOS_TAREA, index=None, horizontal=True, key=f"tarea_{k}")
         for k, t in enumerate(TAREAS, start=1)
@@ -56,12 +56,12 @@ if enviado:
 if "sus_resultado" in st.session_state:
     resultado = st.session_state.sus_resultado
     puntaje = resultado["puntaje"]
-    st.header(f"Tu puntaje: {puntaje:.1f} de 100".replace(".", ","), divider="gray")
+    st.header(f"Tu puntaje: {puntaje:.1f} de 100".replace(".", ","), divider="gray", anchor=False)
     st.markdown(
         f"Según la escala de referencia, tu evaluación indica una usabilidad **{interpretar(puntaje)}**. "
         "El proyecto se propuso alcanzar al menos 68, el promedio de referencia de la escala SUS."
     )
-    st.subheader("Tu código de respuesta")
+    st.subheader("Tu código de respuesta", anchor=False)
     st.markdown("Cópialo con el botón de la derecha y envíaselo al autor por WhatsApp o correo.")
     st.code(resultado["codigo"], language=None)  # st.code incluye un botón para copiar
     st.markdown(

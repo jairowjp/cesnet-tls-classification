@@ -25,7 +25,7 @@ tabla, mc, M = C["tabla"], C["mcnemar"], C["metricas"]
 modelos = [m for m in NOMBRES if m in tabla.index]
 nombre = lambda m: NOMBRES.get(m, m)  # noqa: E731
 
-st.title("Los modelos")
+st.title("Los modelos", anchor=False)
 st.markdown(
     "Se compararon cuatro modelos con el mismo protocolo: mismos datos, mismos meses y mismas métricas. "
     "Dos leen estadísticas del flujo (Random Forest y XGBoost) y dos leen la secuencia de paquetes "
@@ -33,7 +33,7 @@ st.markdown(
 )
 
 # ------------------------------------------------------------------ desempeño frente a costo
-st.header("Acierto frente a costo", divider="gray")
+st.header("Acierto frente a costo", divider="gray", anchor=False)
 sin_rep = st.toggle(
     "Evaluar solo con flujos cuya secuencia no apareció en entrenamiento",
     help="El 30 % de los flujos de octubre repite exactamente una secuencia de septiembre. "
@@ -115,7 +115,7 @@ st.dataframe(
 )
 
 # ------------------------------------------------------------------ McNemar
-st.header("¿La diferencia es real o es azar?", divider="gray")
+st.header("¿La diferencia es real o es azar?", divider="gray", anchor=False)
 st.markdown(
     "La prueba de McNemar compara dos modelos solo en los flujos donde **no están de acuerdo**. "
     "Elige un par para ver qué dice."
@@ -157,7 +157,7 @@ if not par.empty:
         )
 
 # ------------------------------------------------------------------ F1 por categoría
-st.header("Qué tan bien reconoce cada categoría", divider="gray")
+st.header("Qué tan bien reconoce cada categoría", divider="gray", anchor=False)
 elegidos = st.pills(
     "Modelos",
     modelos,
@@ -201,7 +201,7 @@ if elegidos:
     )
 
 # ------------------------------------------------------------------ matriz de confusión
-st.header("Con qué se confunde cada categoría", divider="gray")
+st.header("Con qué se confunde cada categoría", divider="gray", anchor=False)
 m_conf = st.selectbox(
     "Modelo",
     modelos,
@@ -231,7 +231,7 @@ fig.update_layout(
 st.plotly_chart(fig, config=CONFIG_GRAFICO, theme=None)
 
 # ------------------------------------------------------------------ deriva
-st.header("Cuánto pierden cuando el tráfico cambia", divider="gray")
+st.header("Cuánto pierden cuando el tráfico cambia", divider="gray", anchor=False)
 fig = go.Figure()
 meses = ["Octubre", "Noviembre", "Diciembre"]
 for i, m in enumerate(modelos):

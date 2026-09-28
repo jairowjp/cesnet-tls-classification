@@ -11,14 +11,14 @@ from core.pie import REPO, pie
 
 ARCHIVO = f"{REPO}/blob/main"
 
-st.title("Seguridad y privacidad")
+st.title("Seguridad y privacidad", anchor=False)
 st.markdown(
     "Este sitio se diseñó con la seguridad incluida desde el principio, siguiendo la guía OWASP Top 10, que "
     "reúne los riesgos más comunes de las aplicaciones web. Aquí se explica qué datos usa, qué hace con lo que "
     "subes y cómo se protege. Cada punto se puede verificar en el código publicado."
 )
 
-st.header("Qué datos usa", divider="gray")
+st.header("Qué datos usa", divider="gray", anchor=False)
 st.markdown("""
 - **Solo metadatos de conexiones:** tamaños, direcciones y tiempos de los primeros paquetes de cada flujo,
   registrados en 2022 en la red académica nacional de la República Checa (dataset CESNET-TLS-Year22).
@@ -27,7 +27,7 @@ st.markdown("""
   dominio (SNI), las huellas de los clientes (JA3) y el sistema autónomo de destino.
 """)
 
-st.header("Qué pasa con lo que haces aquí", divider="gray")
+st.header("Qué pasa con lo que haces aquí", divider="gray", anchor=False)
 st.markdown("""
 - **Los archivos CSV que subes se procesan en memoria** para clasificarlos y no se guardan ni se envían a nadie.
 - **La encuesta no se almacena en el sitio:** al terminar recibes un código corto con tus respuestas y tu
@@ -37,7 +37,7 @@ st.markdown("""
 - **Solo una cookie técnica:** la que usa la protección contra falsificación de peticiones (XSRF).
 """)
 
-st.header("Cómo se protege", divider="gray")
+st.header("Cómo se protege", divider="gray", anchor=False)
 controles = pd.DataFrame(
     [
         (
@@ -81,7 +81,7 @@ st.markdown(
     f"El detalle completo está en [SECURITY.md]({ARCHIVO}/SECURITY.md)."
 )
 
-st.header("Límites que conviene conocer", divider="gray")
+st.header("Límites que conviene conocer", divider="gray", anchor=False)
 st.markdown(f"""
 - **Cabeceras de seguridad del navegador:** la plataforma Streamlit no permite configurar todas, por ejemplo
   una política de contenido (CSP) estricta. En la publicación, parte de ellas depende de la plataforma de alojamiento.
@@ -91,7 +91,7 @@ st.markdown(f"""
   [informe de seguridad]({ARCHIVO}/docs/seguridad/README.md).
 """)
 
-st.header("Reportar un problema", divider="gray")
+st.header("Reportar un problema", divider="gray", anchor=False)
 st.markdown(
     f"Si encuentras una vulnerabilidad, repórtala en la sección de [issues del repositorio]({REPO}/issues), "
     f"sin incluir datos personales."

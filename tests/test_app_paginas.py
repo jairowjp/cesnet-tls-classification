@@ -144,3 +144,12 @@ def test_todas_las_paginas_del_recorrido_invitan_al_siguiente_paso():
         at.switch_page(pagina).run()
         textos = " ".join(m.value for m in at.markdown)
         assert "Recorrido: paso" in textos, pagina
+
+
+def test_ningun_titulo_muestra_el_icono_de_enlace():
+    """Streamlit agrega un ícono de enlace a cada título; en esta app no aporta nada y se oculta con anchor=False."""
+    at = _app()
+    for pagina in PAGINAS:
+        at.switch_page(pagina).run()
+        for titulo in [*at.title, *at.header, *at.subheader]:
+            assert titulo.proto.hide_anchor, f"{pagina}: el título «{titulo.value}» muestra el ícono de enlace"
