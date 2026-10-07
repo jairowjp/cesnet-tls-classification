@@ -1,0 +1,12 @@
+{
+ "f1_entrenamiento": 0.7367,
+ "f1_validacion": 0.6739,
+ "brecha_final": 0.0628,
+ "brecha_relativa": 0.0852,
+ "brecha_inicial": 0.1031,
+ "mejora_final": 0.0226,
+ "mejor_es_ultimo": true,
+ "pendiente_val": 0.0,
+ "pendiente_ent": 0.0,
+ "diagnostico": "mixto"
+}

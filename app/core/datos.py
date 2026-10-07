@@ -110,6 +110,29 @@ def comparativa() -> dict:
     }
 
 
+@st.cache_data(show_spinner=False)
+def diagnostico() -> dict | None:
+    """Resultados del diagnóstico de sobreajuste y subajuste (scripts/09_diagnostico.py, semana 3).
+
+    Devuelve None si todavía no se ejecutó el diagnóstico: la página lo informa sin mostrar un error.
+    """
+    base = ROOT / "results/diagnostico"
+    if not (base / "comparacion_antes_despues.csv").exists():
+        return None
+    historiales = {}
+    for modelo in ("xgboost", "cnn1d", "transformer"):
+        for momento in ("antes", "despues"):
+            ruta = base / modelo / momento / "historial.csv"
+            if ruta.exists():
+                historiales[(modelo, momento)] = pd.read_csv(ruta)
+    rf = base / "random_forest/curvas.json"
+    return {
+        "comparacion": pd.read_csv(base / "comparacion_antes_despues.csv"),
+        "historiales": historiales,
+        "rf": json.loads(rf.read_text(encoding="utf-8")) if rf.exists() else None,
+    }
+
+
 def mostrar_error_datos(e: Exception) -> None:
     """Mensaje claro y accionable cuando falta un archivo, sin trazas internas."""
     st.error(str(e) if isinstance(e, DatosFaltantes) else "No se pudieron cargar los datos de esta página.")

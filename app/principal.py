@@ -28,6 +28,7 @@ paginas = [
     st.Page("paginas/inicio.py", title="Inicio", default=True),
     st.Page("paginas/datos.py", title="Datos"),
     st.Page("paginas/modelos.py", title="Modelos"),
+    st.Page("paginas/diagnostico.py", title="Diagnóstico"),
     st.Page("paginas/reto.py", title="Reto"),
     st.Page("paginas/clasificar.py", title="Clasificar"),
     st.Page("paginas/conclusiones.py", title="Conclusiones"),

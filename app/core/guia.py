@@ -15,6 +15,10 @@ RECORRIDO = [
     ("paginas/inicio.py", ""),
     ("paginas/datos.py", "Conoce los datos con los que aprendieron los modelos."),
     ("paginas/modelos.py", "Ya viste los datos. Ahora descubre qué modelo los clasifica mejor."),
+    (
+        "paginas/diagnostico.py",
+        "Ya sabes cuál acierta más. Ahora mira si los modelos aprendieron bien o se quedaron cortos.",
+    ),
     ("paginas/reto.py", "¿Podrías hacerlo tú? Compite contra los modelos en cinco rondas."),
     ("paginas/clasificar.py", "Explora cualquier flujo de octubre o sube los tuyos."),
     ("paginas/conclusiones.py", "Mira qué modelo se recomienda y cuáles son los límites del estudio."),
@@ -23,6 +27,7 @@ RECORRIDO = [
 ETIQUETAS = {
     "paginas/datos.py": "Ir a los datos",
     "paginas/modelos.py": "Ir a los modelos",
+    "paginas/diagnostico.py": "Ver el diagnóstico",
     "paginas/reto.py": "Empezar el reto",
     "paginas/clasificar.py": "Ir a clasificar",
     "paginas/conclusiones.py": "Ver las conclusiones",

@@ -116,8 +116,9 @@ python scripts/06_preparar_app.py           # predicciones precalculadas y model
 bash scripts/utilidades/04_ejecutar_app_local.sh   # http://localhost:8501, solo en tu equipo
 ```
 
-Ocho páginas, con un recorrido guiado de siete pasos: **Inicio** (portada institucional y la firma de un flujo
-real clasificada en vivo por los cuatro modelos), **Datos**, **Modelos**, **Reto** (el usuario compite contra
+Nueve páginas, con un recorrido guiado de ocho pasos: **Inicio** (portada institucional y la firma de un flujo
+real clasificada en vivo por los cuatro modelos), **Datos**, **Modelos**, **Diagnóstico** (¿aprendieron bien los modelos? curvas de aprendizaje
+interactivas, semana 3), **Reto** (el usuario compite contra
 los modelos), **Clasificar** (flujos de octubre o un CSV propio), **Conclusiones**, **Tu opinión** (encuesta
 SUS) y **Seguridad** (cómo se tratan los datos y cómo se protege el sitio).
 Los controles de seguridad están descritos en `SECURITY.md`.

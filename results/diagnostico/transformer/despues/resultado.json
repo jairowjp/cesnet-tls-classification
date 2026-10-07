@@ -1,0 +1,29 @@
+{
+ "modelo": "Transformer",
+ "momento": "Después",
+ "pasos": 25,
+ "f1_entrenamiento": 0.7898,
+ "f1_validacion": 0.7692,
+ "mejor_f1_validacion": 0.7692,
+ "mejor_paso": 25,
+ "mejor_es_ultimo": true,
+ "brecha_final": 0.0205,
+ "brecha_relativa": 0.026,
+ "pendiente_val": -0.0135,
+ "pendiente_ent": -0.01887,
+ "mejora_final": 0.0272,
+ "f1_prueba": 0.7569932498653766,
+ "brecha": 0.0205,
+ "epocas_ejecutadas": 25,
+ "segundos": 2580.9,
+ "diagnostico": "subajuste",
+ "razones": [
+  "F1 de entrenamiento bajo (0.790 < 0.8) con brecha pequeña",
+  "seguía mejorando al terminar (+0.027 de F1 de validación en el tramo final)"
+ ],
+ "configuracion": {
+  "epocas": 25,
+  "programador": "onecycle",
+  "paciencia": 6
+ }
+}

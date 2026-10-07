@@ -1,0 +1,2802 @@
+[
+ {
+  "paso": 1,
+  "perdida_entrenamiento": 2.6494757458353044,
+  "perdida_validacion": 2.6607336319020454,
+  "f1_entrenamiento": 0.5768916071014905,
+  "f1_validacion": 0.5561098396332329
+ },
+ {
+  "paso": 2,
+  "perdida_entrenamiento": 2.407988353407383,
+  "perdida_validacion": 2.4267743917182156,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 3,
+  "perdida_entrenamiento": 2.2351153452324866,
+  "perdida_validacion": 2.2590745014188327,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 4,
+  "perdida_entrenamiento": 2.0979775166070462,
+  "perdida_validacion": 2.1262299908588154,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 5,
+  "perdida_entrenamiento": 1.9841344957327842,
+  "perdida_validacion": 2.016653133675553,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 6,
+  "perdida_entrenamiento": 1.885036516418457,
+  "perdida_validacion": 1.921016977752685,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 7,
+  "perdida_entrenamiento": 1.7996413692271709,
+  "perdida_validacion": 1.838906205568098,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 8,
+  "perdida_entrenamiento": 1.721904114676714,
+  "perdida_validacion": 1.7643113357757552,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 9,
+  "perdida_entrenamiento": 1.6518545135283471,
+  "perdida_validacion": 1.6974287708781755,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 10,
+  "perdida_entrenamiento": 1.5867301388967037,
+  "perdida_validacion": 1.6353085600423065,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 11,
+  "perdida_entrenamiento": 1.5276531308335066,
+  "perdida_validacion": 1.5788898130222166,
+  "f1_entrenamiento": 0.6931698885121187,
+  "f1_validacion": 0.6614902328876499
+ },
+ {
+  "paso": 12,
+  "perdida_entrenamiento": 1.473352864613533,
+  "perdida_validacion": 1.5274854018834865,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 13,
+  "perdida_entrenamiento": 1.4237452992367745,
+  "perdida_validacion": 1.4804915802820613,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 14,
+  "perdida_entrenamiento": 1.3778524311107396,
+  "perdida_validacion": 1.4373436978244034,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 15,
+  "perdida_entrenamiento": 1.3359079281008244,
+  "perdida_validacion": 1.3978621738551729,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 16,
+  "perdida_entrenamiento": 1.2976591234531998,
+  "perdida_validacion": 1.3618606278053376,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 17,
+  "perdida_entrenamiento": 1.258863545694351,
+  "perdida_validacion": 1.3252782383153692,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 18,
+  "perdida_entrenamiento": 1.2241620055571198,
+  "perdida_validacion": 1.2926520354767468,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 19,
+  "perdida_entrenamiento": 1.1912378437444568,
+  "perdida_validacion": 1.2620798072979067,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 20,
+  "perdida_entrenamiento": 1.159477199986279,
+  "perdida_validacion": 1.2324802873111722,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 21,
+  "perdida_entrenamiento": 1.1304251262426377,
+  "perdida_validacion": 1.2054599522492089,
+  "f1_entrenamiento": 0.7325833257403617,
+  "f1_validacion": 0.6963039714058826
+ },
+ {
+  "paso": 22,
+  "perdida_entrenamiento": 1.1013356585338712,
+  "perdida_validacion": 1.1786974567725401,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 23,
+  "perdida_entrenamiento": 1.074600453646034,
+  "perdida_validacion": 1.153695498818437,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 24,
+  "perdida_entrenamiento": 1.049283942102939,
+  "perdida_validacion": 1.1302299064490389,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 25,
+  "perdida_entrenamiento": 1.0261687917017936,
+  "perdida_validacion": 1.1088381150433075,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 26,
+  "perdida_entrenamiento": 1.0047123056901992,
+  "perdida_validacion": 1.089016141785218,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 27,
+  "perdida_entrenamiento": 0.9840594586230814,
+  "perdida_validacion": 1.0697409828170754,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 28,
+  "perdida_entrenamiento": 0.9652002499222755,
+  "perdida_validacion": 1.052396443693511,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 29,
+  "perdida_entrenamiento": 0.9470587002630532,
+  "perdida_validacion": 1.0358282308767126,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 30,
+  "perdida_entrenamiento": 0.9299419302278757,
+  "perdida_validacion": 1.0202421910890918,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 31,
+  "perdida_entrenamiento": 0.9138236100888252,
+  "perdida_validacion": 1.0055193774979094,
+  "f1_entrenamiento": 0.7663023901805822,
+  "f1_validacion": 0.7220989953099092
+ },
+ {
+  "paso": 32,
+  "perdida_entrenamiento": 0.8980552500730008,
+  "perdida_validacion": 0.9911536428431247,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 33,
+  "perdida_entrenamiento": 0.8826542247283459,
+  "perdida_validacion": 0.9770729686010939,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 34,
+  "perdida_entrenamiento": 0.8674685446758569,
+  "perdida_validacion": 0.9633465629294851,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 35,
+  "perdida_entrenamiento": 0.8527977986726165,
+  "perdida_validacion": 0.9500300158494508,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 36,
+  "perdida_entrenamiento": 0.8389817196617275,
+  "perdida_validacion": 0.9378242806245375,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 37,
+  "perdida_entrenamiento": 0.8256468494205922,
+  "perdida_validacion": 0.9258891165943193,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 38,
+  "perdida_entrenamiento": 0.8130109864454717,
+  "perdida_validacion": 0.9149110604480611,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 39,
+  "perdida_entrenamiento": 0.8005321477371454,
+  "perdida_validacion": 0.9039502694014234,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 40,
+  "perdida_entrenamiento": 0.7889375157523155,
+  "perdida_validacion": 0.8937674338011325,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 41,
+  "perdida_entrenamiento": 0.7777851359198242,
+  "perdida_validacion": 0.8839483443730288,
+  "f1_entrenamiento": 0.7932314432474006,
+  "f1_validacion": 0.7445879652041726
+ },
+ {
+  "paso": 42,
+  "perdida_entrenamiento": 0.7670132916304842,
+  "perdida_validacion": 0.8744302194666287,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 43,
+  "perdida_entrenamiento": 0.7565496867103875,
+  "perdida_validacion": 0.8651368282148594,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 44,
+  "perdida_entrenamiento": 0.7463076819640025,
+  "perdida_validacion": 0.8561151815025947,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 45,
+  "perdida_entrenamiento": 0.7371243080185353,
+  "perdida_validacion": 0.848031053976701,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 46,
+  "perdida_entrenamiento": 0.7279155788585544,
+  "perdida_validacion": 0.8399596120730637,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 47,
+  "perdida_entrenamiento": 0.7183599026021734,
+  "perdida_validacion": 0.8315186391143794,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 48,
+  "perdida_entrenamiento": 0.7098372065363079,
+  "perdida_validacion": 0.8242126111104627,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 49,
+  "perdida_entrenamiento": 0.7008809819092602,
+  "perdida_validacion": 0.8165345760712818,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 50,
+  "perdida_entrenamiento": 0.6924769920958579,
+  "perdida_validacion": 0.8091955453322254,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 51,
+  "perdida_entrenamiento": 0.6841680706026778,
+  "perdida_validacion": 0.802150409584413,
+  "f1_entrenamiento": 0.8172033407248075,
+  "f1_validacion": 0.7626334858872299
+ },
+ {
+  "paso": 52,
+  "perdida_entrenamiento": 0.6772261368708499,
+  "perdida_validacion": 0.796325997938177,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 53,
+  "perdida_entrenamiento": 0.670006548917219,
+  "perdida_validacion": 0.7902223072399032,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 54,
+  "perdida_entrenamiento": 0.6621978420699947,
+  "perdida_validacion": 0.783628082445036,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 55,
+  "perdida_entrenamiento": 0.6551695310379005,
+  "perdida_validacion": 0.7778138605121943,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 56,
+  "perdida_entrenamiento": 0.6484350559182651,
+  "perdida_validacion": 0.7721908974368973,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 57,
+  "perdida_entrenamiento": 0.641210384988226,
+  "perdida_validacion": 0.7661118944151016,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 58,
+  "perdida_entrenamiento": 0.6345588351554796,
+  "perdida_validacion": 0.7605004257864478,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 59,
+  "perdida_entrenamiento": 0.62736603908916,
+  "perdida_validacion": 0.7544925325955193,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 60,
+  "perdida_entrenamiento": 0.6212122718984261,
+  "perdida_validacion": 0.7492926718822556,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 61,
+  "perdida_entrenamiento": 0.615061603677515,
+  "perdida_validacion": 0.744273973143683,
+  "f1_entrenamiento": 0.8393601036952628,
+  "f1_validacion": 0.7774379231150143
+ },
+ {
+  "paso": 62,
+  "perdida_entrenamiento": 0.6089541938844137,
+  "perdida_validacion": 0.73919917451851,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 63,
+  "perdida_entrenamiento": 0.6028690761227533,
+  "perdida_validacion": 0.7341761409751667,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 64,
+  "perdida_entrenamiento": 0.5969321415398828,
+  "perdida_validacion": 0.7292788594945406,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 65,
+  "perdida_entrenamiento": 0.5916435545553267,
+  "perdida_validacion": 0.7250151185624817,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 66,
+  "perdida_entrenamiento": 0.5866195798260346,
+  "perdida_validacion": 0.7210552893297816,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 67,
+  "perdida_entrenamiento": 0.5811397533282824,
+  "perdida_validacion": 0.7165083513228465,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 68,
+  "perdida_entrenamiento": 0.5762889607133995,
+  "perdida_validacion": 0.71266242528049,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 69,
+  "perdida_entrenamiento": 0.5715263297724071,
+  "perdida_validacion": 0.7088528179487141,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 70,
+  "perdida_entrenamiento": 0.5669675764925778,
+  "perdida_validacion": 0.7051974161307646,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 71,
+  "perdida_entrenamiento": 0.5621139509498654,
+  "perdida_validacion": 0.7012574915807116,
+  "f1_entrenamiento": 0.8548818581697527,
+  "f1_validacion": 0.7911621186907499
+ },
+ {
+  "paso": 72,
+  "perdida_entrenamiento": 0.5571794691697928,
+  "perdida_validacion": 0.6973357473922196,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 73,
+  "perdida_entrenamiento": 0.5528757090528309,
+  "perdida_validacion": 0.6937973832596429,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 74,
+  "perdida_entrenamiento": 0.5489934671699116,
+  "perdida_validacion": 0.6907326357247545,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 75,
+  "perdida_entrenamiento": 0.5443163775803708,
+  "perdida_validacion": 0.6871889812883194,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 76,
+  "perdida_entrenamiento": 0.5401650286911801,
+  "perdida_validacion": 0.6838412625422597,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 77,
+  "perdida_entrenamiento": 0.5356439651042642,
+  "perdida_validacion": 0.6802354686143208,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 78,
+  "perdida_entrenamiento": 0.5311928234198038,
+  "perdida_validacion": 0.676806392165547,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 79,
+  "perdida_entrenamiento": 0.527477734761471,
+  "perdida_validacion": 0.6738008057617031,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 80,
+  "perdida_entrenamiento": 0.5239864096701331,
+  "perdida_validacion": 0.6711704695082109,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 81,
+  "perdida_entrenamiento": 0.5203991094590398,
+  "perdida_validacion": 0.6684090290272643,
+  "f1_entrenamiento": 0.8697210720826264,
+  "f1_validacion": 0.8024984140919647
+ },
+ {
+  "paso": 82,
+  "perdida_entrenamiento": 0.5161645274695474,
+  "perdida_validacion": 0.665087264140041,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 83,
+  "perdida_entrenamiento": 0.5126526680064062,
+  "perdida_validacion": 0.662345329786576,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 84,
+  "perdida_entrenamiento": 0.50892562492433,
+  "perdida_validacion": 0.6594895602189266,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 85,
+  "perdida_entrenamiento": 0.5052785322905657,
+  "perdida_validacion": 0.6566585904787071,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 86,
+  "perdida_entrenamiento": 0.5011994281091448,
+  "perdida_validacion": 0.6534046561317239,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 87,
+  "perdida_entrenamiento": 0.4971939738574624,
+  "perdida_validacion": 0.6503356026709738,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 88,
+  "perdida_entrenamiento": 0.49358521860637933,
+  "perdida_validacion": 0.6475233504384731,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 89,
+  "perdida_entrenamiento": 0.49044193589234725,
+  "perdida_validacion": 0.6450774667524903,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 90,
+  "perdida_entrenamiento": 0.4875337899820041,
+  "perdida_validacion": 0.6429570221965488,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 91,
+  "perdida_entrenamiento": 0.48419177763569865,
+  "perdida_validacion": 0.6404318710789839,
+  "f1_entrenamiento": 0.8827928777529274,
+  "f1_validacion": 0.812370395904611
+ },
+ {
+  "paso": 92,
+  "perdida_entrenamiento": 0.4809699932449637,
+  "perdida_validacion": 0.6379951411733411,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 93,
+  "perdida_entrenamiento": 0.4776413506012643,
+  "perdida_validacion": 0.6354683761994662,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 94,
+  "perdida_entrenamiento": 0.47497226124872455,
+  "perdida_validacion": 0.6333485482773157,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 95,
+  "perdida_entrenamiento": 0.47213847171486123,
+  "perdida_validacion": 0.631273545480786,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 96,
+  "perdida_entrenamiento": 0.4692478914690553,
+  "perdida_validacion": 0.6290906654855354,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 97,
+  "perdida_entrenamiento": 0.46588336039399963,
+  "perdida_validacion": 0.6265625185213871,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 98,
+  "perdida_entrenamiento": 0.4621514131051512,
+  "perdida_validacion": 0.6237245141439227,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 99,
+  "perdida_entrenamiento": 0.4590047232749942,
+  "perdida_validacion": 0.6213168683271537,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 100,
+  "perdida_entrenamiento": 0.45646443825926164,
+  "perdida_validacion": 0.6194589822916131,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 101,
+  "perdida_entrenamiento": 0.4537738484539115,
+  "perdida_validacion": 0.617477158250832,
+  "f1_entrenamiento": 0.8930874444166392,
+  "f1_validacion": 0.8204339956748102
+ },
+ {
+  "paso": 102,
+  "perdida_entrenamiento": 0.45055214565337404,
+  "perdida_validacion": 0.6149789857156651,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 103,
+  "perdida_entrenamiento": 0.44836196560333486,
+  "perdida_validacion": 0.613306661100004,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 104,
+  "perdida_entrenamiento": 0.4454155455611623,
+  "perdida_validacion": 0.6109746617529981,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 105,
+  "perdida_entrenamiento": 0.4425590075437119,
+  "perdida_validacion": 0.6089364136224461,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 106,
+  "perdida_entrenamiento": 0.4402423339975416,
+  "perdida_validacion": 0.6072740420004551,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 107,
+  "perdida_entrenamiento": 0.4380988434844697,
+  "perdida_validacion": 0.6057541379724786,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 108,
+  "perdida_entrenamiento": 0.4354235576509964,
+  "perdida_validacion": 0.6038000668721648,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 109,
+  "perdida_entrenamiento": 0.4325858791609737,
+  "perdida_validacion": 0.6016503509563902,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 110,
+  "perdida_entrenamiento": 0.43003073657834434,
+  "perdida_validacion": 0.5997092491615139,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 111,
+  "perdida_entrenamiento": 0.4278196229942434,
+  "perdida_validacion": 0.5981565950559838,
+  "f1_entrenamiento": 0.901961761644813,
+  "f1_validacion": 0.8264099679533927
+ },
+ {
+  "paso": 112,
+  "perdida_entrenamiento": 0.425717816655871,
+  "perdida_validacion": 0.5967414645830917,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 113,
+  "perdida_entrenamiento": 0.42318183652761626,
+  "perdida_validacion": 0.5948013854782005,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 114,
+  "perdida_entrenamiento": 0.42100852102127856,
+  "perdida_validacion": 0.5932219536250922,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 115,
+  "perdida_entrenamiento": 0.4184800318571704,
+  "perdida_validacion": 0.591398011727284,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 116,
+  "perdida_entrenamiento": 0.41559732954914563,
+  "perdida_validacion": 0.5893404696180555,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 117,
+  "perdida_entrenamiento": 0.41335285678107875,
+  "perdida_validacion": 0.5877333469241032,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 118,
+  "perdida_entrenamiento": 0.41097345297203514,
+  "perdida_validacion": 0.5860341358751732,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 119,
+  "perdida_entrenamiento": 0.40894503830296103,
+  "perdida_validacion": 0.5846185646269417,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 120,
+  "perdida_entrenamiento": 0.40646578540486517,
+  "perdida_validacion": 0.582858667788228,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 121,
+  "perdida_entrenamiento": 0.4041860899319779,
+  "perdida_validacion": 0.5811688028071522,
+  "f1_entrenamiento": 0.9103627623737469,
+  "f1_validacion": 0.8314389960500731
+ },
+ {
+  "paso": 122,
+  "perdida_entrenamiento": 0.4024541217541229,
+  "perdida_validacion": 0.5799630304256741,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 123,
+  "perdida_entrenamiento": 0.39987306611007895,
+  "perdida_validacion": 0.5781416706103845,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 124,
+  "perdida_entrenamiento": 0.39792466697928847,
+  "perdida_validacion": 0.5767683540155584,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 125,
+  "perdida_entrenamiento": 0.3956746345522802,
+  "perdida_validacion": 0.5751898837775069,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 126,
+  "perdida_entrenamiento": 0.3935925248662778,
+  "perdida_validacion": 0.5736132958885789,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 127,
+  "perdida_entrenamiento": 0.3914701398018969,
+  "perdida_validacion": 0.5720394501119062,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 128,
+  "perdida_entrenamiento": 0.3892096291916538,
+  "perdida_validacion": 0.5704394145087095,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 129,
+  "perdida_entrenamiento": 0.38693085401089045,
+  "perdida_validacion": 0.5687122268839087,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 130,
+  "perdida_entrenamiento": 0.3849720544664236,
+  "perdida_validacion": 0.567287762133379,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 131,
+  "perdida_entrenamiento": 0.3825754099463101,
+  "perdida_validacion": 0.565604683991736,
+  "f1_entrenamiento": 0.91816776981454,
+  "f1_validacion": 0.8368022843619513
+ },
+ {
+  "paso": 132,
+  "perdida_entrenamiento": 0.380542100032749,
+  "perdida_validacion": 0.5641686819918379,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 133,
+  "perdida_entrenamiento": 0.3784645263159531,
+  "perdida_validacion": 0.5627429092723117,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 134,
+  "perdida_entrenamiento": 0.375884600026813,
+  "perdida_validacion": 0.5608832711607965,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 135,
+  "perdida_entrenamiento": 0.37394908004852595,
+  "perdida_validacion": 0.5596415864843073,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 136,
+  "perdida_entrenamiento": 0.3721065334623243,
+  "perdida_validacion": 0.5583615393146045,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 137,
+  "perdida_entrenamiento": 0.37075948266485415,
+  "perdida_validacion": 0.5574783895617378,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 138,
+  "perdida_entrenamiento": 0.36857204655041625,
+  "perdida_validacion": 0.5559680883015131,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 139,
+  "perdida_entrenamiento": 0.3668618420663121,
+  "perdida_validacion": 0.5548065345365776,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 140,
+  "perdida_entrenamiento": 0.364708989475774,
+  "perdida_validacion": 0.5532548320821984,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 141,
+  "perdida_entrenamiento": 0.36277911740304497,
+  "perdida_validacion": 0.5519496274855012,
+  "f1_entrenamiento": 0.9244941250075377,
+  "f1_validacion": 0.8408264534711379
+ },
+ {
+  "paso": 142,
+  "perdida_entrenamiento": 0.3610662772558886,
+  "perdida_validacion": 0.5508225348413048,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 143,
+  "perdida_entrenamiento": 0.359232234630991,
+  "perdida_validacion": 0.5495360370458549,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 144,
+  "perdida_entrenamiento": 0.35750719439554496,
+  "perdida_validacion": 0.5483372680239647,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 145,
+  "perdida_entrenamiento": 0.35546081538514757,
+  "perdida_validacion": 0.5468754990680667,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 146,
+  "perdida_entrenamiento": 0.3538588338999008,
+  "perdida_validacion": 0.5457940691656937,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 147,
+  "perdida_entrenamiento": 0.3521383080647193,
+  "perdida_validacion": 0.5445837723831706,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 148,
+  "perdida_entrenamiento": 0.35040715155010227,
+  "perdida_validacion": 0.5433736920341719,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 149,
+  "perdida_entrenamiento": 0.3486621891656105,
+  "perdida_validacion": 0.5422219948408454,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 150,
+  "perdida_entrenamiento": 0.34678961092676036,
+  "perdida_validacion": 0.5409674002877165,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 151,
+  "perdida_entrenamiento": 0.34546187062114186,
+  "perdida_validacion": 0.5401993566834676,
+  "f1_entrenamiento": 0.9295476705656319,
+  "f1_validacion": 0.8443511603606397
+ },
+ {
+  "paso": 152,
+  "perdida_entrenamiento": 0.34403761438891,
+  "perdida_validacion": 0.5392527921511692,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 153,
+  "perdida_entrenamiento": 0.34241485672043026,
+  "perdida_validacion": 0.5382551336106558,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 154,
+  "perdida_entrenamiento": 0.34057285295029693,
+  "perdida_validacion": 0.5369252623840739,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 155,
+  "perdida_entrenamiento": 0.3386724192901471,
+  "perdida_validacion": 0.5356508145778798,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 156,
+  "perdida_entrenamiento": 0.33714146808836815,
+  "perdida_validacion": 0.5345982175572753,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 157,
+  "perdida_entrenamiento": 0.3354056707809394,
+  "perdida_validacion": 0.5334317652201546,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 158,
+  "perdida_entrenamiento": 0.33383698262586464,
+  "perdida_validacion": 0.5323970464579879,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 159,
+  "perdida_entrenamiento": 0.33265996638896295,
+  "perdida_validacion": 0.5316535517818881,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 160,
+  "perdida_entrenamiento": 0.33062217323138116,
+  "perdida_validacion": 0.530203820031944,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 161,
+  "perdida_entrenamiento": 0.32920877286297967,
+  "perdida_validacion": 0.529251502478491,
+  "f1_entrenamiento": 0.9348243406520175,
+  "f1_validacion": 0.8470501858511913
+ },
+ {
+  "paso": 162,
+  "perdida_entrenamiento": 0.32755462298062193,
+  "perdida_validacion": 0.5282182938986113,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 163,
+  "perdida_entrenamiento": 0.32600151883553946,
+  "perdida_validacion": 0.5270874414941323,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 164,
+  "perdida_entrenamiento": 0.3244983191459341,
+  "perdida_validacion": 0.5261731736041356,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 165,
+  "perdida_entrenamiento": 0.3228982081981393,
+  "perdida_validacion": 0.525160125133752,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 166,
+  "perdida_entrenamiento": 0.3214637285119909,
+  "perdida_validacion": 0.524206375113618,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 167,
+  "perdida_entrenamiento": 0.3201296957024216,
+  "perdida_validacion": 0.5233629048442312,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 168,
+  "perdida_entrenamiento": 0.31859740357394795,
+  "perdida_validacion": 0.5223360206697513,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 169,
+  "perdida_entrenamiento": 0.31715477444979684,
+  "perdida_validacion": 0.5213710701478385,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 170,
+  "perdida_entrenamiento": 0.31589649373022954,
+  "perdida_validacion": 0.5205864989626345,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 171,
+  "perdida_entrenamiento": 0.3143357355787148,
+  "perdida_validacion": 0.5194231898918786,
+  "f1_entrenamiento": 0.9401461722297172,
+  "f1_validacion": 0.8502881840171628
+ },
+ {
+  "paso": 172,
+  "perdida_entrenamiento": 0.3126818653024876,
+  "perdida_validacion": 0.518290436015657,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 173,
+  "perdida_entrenamiento": 0.3111008166396507,
+  "perdida_validacion": 0.5173624177110886,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 174,
+  "perdida_entrenamiento": 0.3097055523854762,
+  "perdida_validacion": 0.5164520080870982,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 175,
+  "perdida_entrenamiento": 0.30798301984781223,
+  "perdida_validacion": 0.5153084599053864,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 176,
+  "perdida_entrenamiento": 0.3067315911895523,
+  "perdida_validacion": 0.5144950374137771,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 177,
+  "perdida_entrenamiento": 0.30545377368528104,
+  "perdida_validacion": 0.5136119248824816,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 178,
+  "perdida_entrenamiento": 0.3042472515771881,
+  "perdida_validacion": 0.5128675025289882,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 179,
+  "perdida_entrenamiento": 0.3029968519794314,
+  "perdida_validacion": 0.5121023728461229,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 180,
+  "perdida_entrenamiento": 0.30142419955176214,
+  "perdida_validacion": 0.5109546841191586,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 181,
+  "perdida_entrenamiento": 0.3001648576458964,
+  "perdida_validacion": 0.5101353522211084,
+  "f1_entrenamiento": 0.9448004880815136,
+  "f1_validacion": 0.8528923773255417
+ },
+ {
+  "paso": 182,
+  "perdida_entrenamiento": 0.29879030798453127,
+  "perdida_validacion": 0.509293442907164,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 183,
+  "perdida_entrenamiento": 0.2975116713047106,
+  "perdida_validacion": 0.508527293964779,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 184,
+  "perdida_entrenamiento": 0.29628836318876844,
+  "perdida_validacion": 0.5078016006373198,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 185,
+  "perdida_entrenamiento": 0.2947021638041406,
+  "perdida_validacion": 0.5068269552043315,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 186,
+  "perdida_entrenamiento": 0.29356077085731985,
+  "perdida_validacion": 0.5061257602192873,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 187,
+  "perdida_entrenamiento": 0.2925716911343238,
+  "perdida_validacion": 0.5055500607857444,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 188,
+  "perdida_entrenamiento": 0.2912126369506354,
+  "perdida_validacion": 0.5046602178998713,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 189,
+  "perdida_entrenamiento": 0.2899255971818158,
+  "perdida_validacion": 0.5037918390393892,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 190,
+  "perdida_entrenamiento": 0.28849940487616477,
+  "perdida_validacion": 0.5029269906887113,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 191,
+  "perdida_entrenamiento": 0.2873127072484697,
+  "perdida_validacion": 0.5021975174309339,
+  "f1_entrenamiento": 0.9486810997563148,
+  "f1_validacion": 0.8552500608991206
+ },
+ {
+  "paso": 192,
+  "perdida_entrenamiento": 0.2860311922426903,
+  "perdida_validacion": 0.5013793740356731,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 193,
+  "perdida_entrenamiento": 0.28485030151560176,
+  "perdida_validacion": 0.500671943263406,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 194,
+  "perdida_entrenamiento": 0.2834353591237389,
+  "perdida_validacion": 0.4998432871119386,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 195,
+  "perdida_entrenamiento": 0.2822403549562994,
+  "perdida_validacion": 0.4990928055320305,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 196,
+  "perdida_entrenamiento": 0.2810872852219775,
+  "perdida_validacion": 0.4983386606744633,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 197,
+  "perdida_entrenamiento": 0.2797811625897659,
+  "perdida_validacion": 0.49751907858456196,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 198,
+  "perdida_entrenamiento": 0.2786250486339617,
+  "perdida_validacion": 0.4968191564413611,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 199,
+  "perdida_entrenamiento": 0.2778295856093719,
+  "perdida_validacion": 0.4963939463202355,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 200,
+  "perdida_entrenamiento": 0.27666027563558454,
+  "perdida_validacion": 0.4956409744832612,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 201,
+  "perdida_entrenamiento": 0.2757815665207329,
+  "perdida_validacion": 0.49518684837724425,
+  "f1_entrenamiento": 0.9512055502652942,
+  "f1_validacion": 0.8567905764324009
+ },
+ {
+  "paso": 202,
+  "perdida_entrenamiento": 0.2747706431943354,
+  "perdida_validacion": 0.49454239917207937,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 203,
+  "perdida_entrenamiento": 0.27370304473799656,
+  "perdida_validacion": 0.4939065784801918,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 204,
+  "perdida_entrenamiento": 0.2725211689177422,
+  "perdida_validacion": 0.493242651158052,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 205,
+  "perdida_entrenamiento": 0.271244155321828,
+  "perdida_validacion": 0.4924188349949068,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 206,
+  "perdida_entrenamiento": 0.27016738887697356,
+  "perdida_validacion": 0.4917975314805864,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 207,
+  "perdida_entrenamiento": 0.2689156917215556,
+  "perdida_validacion": 0.491034762267745,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 208,
+  "perdida_entrenamiento": 0.26802670169299264,
+  "perdida_validacion": 0.4904484360844655,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 209,
+  "perdida_entrenamiento": 0.26675604170654943,
+  "perdida_validacion": 0.48959379109876083,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 210,
+  "perdida_entrenamiento": 0.2655641677718067,
+  "perdida_validacion": 0.4888681417101349,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 211,
+  "perdida_entrenamiento": 0.264295556390624,
+  "perdida_validacion": 0.4881004065803491,
+  "f1_entrenamiento": 0.9546013424849875,
+  "f1_validacion": 0.858553917511803
+ },
+ {
+  "paso": 212,
+  "perdida_entrenamiento": 0.2631980792546093,
+  "perdida_validacion": 0.4873488999841447,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 213,
+  "perdida_entrenamiento": 0.2622245291577158,
+  "perdida_validacion": 0.48678536369121905,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 214,
+  "perdida_entrenamiento": 0.26097681855186305,
+  "perdida_validacion": 0.48593770436918,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 215,
+  "perdida_entrenamiento": 0.2600411052334869,
+  "perdida_validacion": 0.4854005412071193,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 216,
+  "perdida_entrenamiento": 0.25905585344827986,
+  "perdida_validacion": 0.48474191480817325,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 217,
+  "perdida_entrenamiento": 0.258214034445026,
+  "perdida_validacion": 0.4842253381032786,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 218,
+  "perdida_entrenamiento": 0.25725379807578924,
+  "perdida_validacion": 0.4836910790581716,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 219,
+  "perdida_entrenamiento": 0.2564727127923513,
+  "perdida_validacion": 0.48326892116930587,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 220,
+  "perdida_entrenamiento": 0.25524408107000796,
+  "perdida_validacion": 0.48243288895329706,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 221,
+  "perdida_entrenamiento": 0.2542099507280692,
+  "perdida_validacion": 0.4818580495543888,
+  "f1_entrenamiento": 0.957292253977581,
+  "f1_validacion": 0.8604805223206803
+ },
+ {
+  "paso": 222,
+  "perdida_entrenamiento": 0.2533862556848554,
+  "perdida_validacion": 0.48141658632582424,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 223,
+  "perdida_entrenamiento": 0.25251868621592205,
+  "perdida_validacion": 0.48086595339960564,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 224,
+  "perdida_entrenamiento": 0.25151395750666206,
+  "perdida_validacion": 0.48034491822237385,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 225,
+  "perdida_entrenamiento": 0.2507945939003725,
+  "perdida_validacion": 0.47990647754363525,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 226,
+  "perdida_entrenamiento": 0.2500166809443202,
+  "perdida_validacion": 0.4794764095015316,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 227,
+  "perdida_entrenamiento": 0.24933348123180193,
+  "perdida_validacion": 0.47910360899702137,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 228,
+  "perdida_entrenamiento": 0.24850261161474635,
+  "perdida_validacion": 0.47863036996377656,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 229,
+  "perdida_entrenamiento": 0.24761421991021526,
+  "perdida_validacion": 0.4780599247269025,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 230,
+  "perdida_entrenamiento": 0.24672260010142527,
+  "perdida_validacion": 0.47755852276109206,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 231,
+  "perdida_entrenamiento": 0.24559537735964368,
+  "perdida_validacion": 0.47689487943546366,
+  "f1_entrenamiento": 0.9594766583240417,
+  "f1_validacion": 0.8617629493604105
+ },
+ {
+  "paso": 232,
+  "perdida_entrenamiento": 0.24483069012097353,
+  "perdida_validacion": 0.47647563268041687,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 233,
+  "perdida_entrenamiento": 0.24386915941524873,
+  "perdida_validacion": 0.47593999743379917,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 234,
+  "perdida_entrenamiento": 0.24298728395826888,
+  "perdida_validacion": 0.4754254359015645,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 235,
+  "perdida_entrenamiento": 0.242114710593368,
+  "perdida_validacion": 0.4749181041918457,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 236,
+  "perdida_entrenamiento": 0.24094190542371777,
+  "perdida_validacion": 0.4741562512814795,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 237,
+  "perdida_entrenamiento": 0.24009622032483022,
+  "perdida_validacion": 0.4736637272448126,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 238,
+  "perdida_entrenamiento": 0.23912172155304703,
+  "perdida_validacion": 0.4731446728591454,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 239,
+  "perdida_entrenamiento": 0.23828513103773039,
+  "perdida_validacion": 0.47263180505694274,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 240,
+  "perdida_entrenamiento": 0.23740582918787004,
+  "perdida_validacion": 0.4720777370617956,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 241,
+  "perdida_entrenamiento": 0.23672543051941494,
+  "perdida_validacion": 0.47167588368817703,
+  "f1_entrenamiento": 0.9622999552311845,
+  "f1_validacion": 0.8634299867723848
+ },
+ {
+  "paso": 242,
+  "perdida_entrenamiento": 0.23587008436890344,
+  "perdida_validacion": 0.47117145883419637,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 243,
+  "perdida_entrenamiento": 0.2350628609556872,
+  "perdida_validacion": 0.47072953767093895,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 244,
+  "perdida_entrenamiento": 0.23428590474470748,
+  "perdida_validacion": 0.47035102866673434,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 245,
+  "perdida_entrenamiento": 0.2333547794044399,
+  "perdida_validacion": 0.46977463518070905,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 246,
+  "perdida_entrenamiento": 0.23238830075023836,
+  "perdida_validacion": 0.4692940537345974,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 247,
+  "perdida_entrenamiento": 0.2313749894267144,
+  "perdida_validacion": 0.46867954376341053,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 248,
+  "perdida_entrenamiento": 0.23046615600609646,
+  "perdida_validacion": 0.46814782846184916,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 249,
+  "perdida_entrenamiento": 0.22953813002442813,
+  "perdida_validacion": 0.46764691617599535,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 250,
+  "perdida_entrenamiento": 0.22863682461479576,
+  "perdida_validacion": 0.4671391854813172,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 251,
+  "perdida_entrenamiento": 0.22776153767876453,
+  "perdida_validacion": 0.4666693581840293,
+  "f1_entrenamiento": 0.9641890895603472,
+  "f1_validacion": 0.8647363844723964
+ },
+ {
+  "paso": 252,
+  "perdida_entrenamiento": 0.2268759877969157,
+  "perdida_validacion": 0.4661800149954182,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 253,
+  "perdida_entrenamiento": 0.22608477673656632,
+  "perdida_validacion": 0.46571068589104264,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 254,
+  "perdida_entrenamiento": 0.22526686509402397,
+  "perdida_validacion": 0.46523855678686277,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 255,
+  "perdida_entrenamiento": 0.2245346418363522,
+  "perdida_validacion": 0.4648577233139848,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 256,
+  "perdida_entrenamiento": 0.22366157738495498,
+  "perdida_validacion": 0.46439078587929356,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 257,
+  "perdida_entrenamiento": 0.22282594174257644,
+  "perdida_validacion": 0.46386996218983156,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 258,
+  "perdida_entrenamiento": 0.22221036482386636,
+  "perdida_validacion": 0.4635163007327643,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 259,
+  "perdida_entrenamiento": 0.22141430137593696,
+  "perdida_validacion": 0.46302077093824556,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 260,
+  "perdida_entrenamiento": 0.2207101709262006,
+  "perdida_validacion": 0.4626266259118781,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 261,
+  "perdida_entrenamiento": 0.22007130640550138,
+  "perdida_validacion": 0.4622502388458061,
+  "f1_entrenamiento": 0.9661081475323826,
+  "f1_validacion": 0.866177144211833
+ },
+ {
+  "paso": 262,
+  "perdida_entrenamiento": 0.21930899240495436,
+  "perdida_validacion": 0.46183459897804213,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 263,
+  "perdida_entrenamiento": 0.21834054911374876,
+  "perdida_validacion": 0.4612601408132617,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 264,
+  "perdida_entrenamiento": 0.21765604428697513,
+  "perdida_validacion": 0.4608394362644944,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 265,
+  "perdida_entrenamiento": 0.21685162307347805,
+  "perdida_validacion": 0.4604131690037658,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 266,
+  "perdida_entrenamiento": 0.21609159053110502,
+  "perdida_validacion": 0.46003398843477805,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 267,
+  "perdida_entrenamiento": 0.2152777405040047,
+  "perdida_validacion": 0.4596091580157361,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 268,
+  "perdida_entrenamiento": 0.2144694134310485,
+  "perdida_validacion": 0.4592346254540224,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 269,
+  "perdida_entrenamiento": 0.21382397409175855,
+  "perdida_validacion": 0.45885268925605294,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 270,
+  "perdida_entrenamiento": 0.21315818296605007,
+  "perdida_validacion": 0.45847461088941566,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 271,
+  "perdida_entrenamiento": 0.21252652401040062,
+  "perdida_validacion": 0.4581032105453317,
+  "f1_entrenamiento": 0.9681359053343338,
+  "f1_validacion": 0.8676273564413242
+ },
+ {
+  "paso": 272,
+  "perdida_entrenamiento": 0.21186696196629676,
+  "perdida_validacion": 0.4577553783013306,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 273,
+  "perdida_entrenamiento": 0.21117975540602468,
+  "perdida_validacion": 0.45736408111038795,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 274,
+  "perdida_entrenamiento": 0.21049042038086951,
+  "perdida_validacion": 0.45698267732226033,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 275,
+  "perdida_entrenamiento": 0.20983694181642437,
+  "perdida_validacion": 0.456616175328875,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 276,
+  "perdida_entrenamiento": 0.20908037293788057,
+  "perdida_validacion": 0.4561520470500435,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 277,
+  "perdida_entrenamiento": 0.20844942436191038,
+  "perdida_validacion": 0.45575697916233054,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 278,
+  "perdida_entrenamiento": 0.20785592540617748,
+  "perdida_validacion": 0.45541754162079295,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 279,
+  "perdida_entrenamiento": 0.2072329766746999,
+  "perdida_validacion": 0.45507244795460183,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 280,
+  "perdida_entrenamiento": 0.20663317257780628,
+  "perdida_validacion": 0.4547776924393225,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 281,
+  "perdida_entrenamiento": 0.20589640324601555,
+  "perdida_validacion": 0.4543277967887015,
+  "f1_entrenamiento": 0.9699915285429334,
+  "f1_validacion": 0.8685893128275631
+ },
+ {
+  "paso": 282,
+  "perdida_entrenamiento": 0.20511602132465417,
+  "perdida_validacion": 0.45382455947401185,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 283,
+  "perdida_entrenamiento": 0.20446313921139658,
+  "perdida_validacion": 0.4534352932354432,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 284,
+  "perdida_entrenamiento": 0.20383188912860153,
+  "perdida_validacion": 0.45307711715777155,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 285,
+  "perdida_entrenamiento": 0.20323272224294012,
+  "perdida_validacion": 0.45273290874467614,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 286,
+  "perdida_entrenamiento": 0.20243760283639262,
+  "perdida_validacion": 0.4522724534461067,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 287,
+  "perdida_entrenamiento": 0.20168235098029902,
+  "perdida_validacion": 0.4518256815662509,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 288,
+  "perdida_entrenamiento": 0.200965460210472,
+  "perdida_validacion": 0.45139329945307877,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 289,
+  "perdida_entrenamiento": 0.20035163608618947,
+  "perdida_validacion": 0.4511108548611102,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 290,
+  "perdida_entrenamiento": 0.19971243007245493,
+  "perdida_validacion": 0.4507553627047238,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 291,
+  "perdida_entrenamiento": 0.199034817425993,
+  "perdida_validacion": 0.45044930457047144,
+  "f1_entrenamiento": 0.9716903967484278,
+  "f1_validacion": 0.8699855936340141
+ },
+ {
+  "paso": 292,
+  "perdida_entrenamiento": 0.1984242878949608,
+  "perdida_validacion": 0.45013649891633384,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 293,
+  "perdida_entrenamiento": 0.1978821383116142,
+  "perdida_validacion": 0.44985723760505486,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 294,
+  "perdida_entrenamiento": 0.19719406550638396,
+  "perdida_validacion": 0.4494154205908112,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 295,
+  "perdida_entrenamiento": 0.19648665906436544,
+  "perdida_validacion": 0.44902282021016404,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 296,
+  "perdida_entrenamiento": 0.19591855269167613,
+  "perdida_validacion": 0.44875415479690894,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 297,
+  "perdida_entrenamiento": 0.1951590630746459,
+  "perdida_validacion": 0.44829866782727906,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 298,
+  "perdida_entrenamiento": 0.1945665907400643,
+  "perdida_validacion": 0.44797348621500754,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 299,
+  "perdida_entrenamiento": 0.19394298935206095,
+  "perdida_validacion": 0.44763129741539276,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 300,
+  "perdida_entrenamiento": 0.19340188252270263,
+  "perdida_validacion": 0.44733608758607757,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 301,
+  "perdida_entrenamiento": 0.1929853771577358,
+  "perdida_validacion": 0.447070559898263,
+  "f1_entrenamiento": 0.9732065455863786,
+  "f1_validacion": 0.8708283127797962
+ },
+ {
+  "paso": 302,
+  "perdida_entrenamiento": 0.1924847517018794,
+  "perdida_validacion": 0.4467875744324125,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 303,
+  "perdida_entrenamiento": 0.19191559122406812,
+  "perdida_validacion": 0.44647510977936294,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 304,
+  "perdida_entrenamiento": 0.1913437117279897,
+  "perdida_validacion": 0.4461807997653182,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 305,
+  "perdida_entrenamiento": 0.19073042720486966,
+  "perdida_validacion": 0.44582505510199183,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 306,
+  "perdida_entrenamiento": 0.1899799152632623,
+  "perdida_validacion": 0.4453678994864132,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 307,
+  "perdida_entrenamiento": 0.18929494181474368,
+  "perdida_validacion": 0.44488745629792215,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 308,
+  "perdida_entrenamiento": 0.1887242403153326,
+  "perdida_validacion": 0.44451837990082027,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 309,
+  "perdida_entrenamiento": 0.18822414429760495,
+  "perdida_validacion": 0.4442469811318561,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 310,
+  "perdida_entrenamiento": 0.1874830299587294,
+  "perdida_validacion": 0.4437648081759457,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 311,
+  "perdida_entrenamiento": 0.18697359552337003,
+  "perdida_validacion": 0.44346059478359917,
+  "f1_entrenamiento": 0.9748816127048796,
+  "f1_validacion": 0.8722569682454121
+ },
+ {
+  "paso": 312,
+  "perdida_entrenamiento": 0.1864721161173095,
+  "perdida_validacion": 0.44320148335822607,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 313,
+  "perdida_entrenamiento": 0.18590253087500846,
+  "perdida_validacion": 0.44289389169009635,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 314,
+  "perdida_entrenamiento": 0.18540396413899815,
+  "perdida_validacion": 0.4425797064399886,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 315,
+  "perdida_entrenamiento": 0.18496269953080274,
+  "perdida_validacion": 0.44235266757240194,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 316,
+  "perdida_entrenamiento": 0.18439300515222087,
+  "perdida_validacion": 0.44201200182924594,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 317,
+  "perdida_entrenamiento": 0.18392286448794806,
+  "perdida_validacion": 0.44175418903566116,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 318,
+  "perdida_entrenamiento": 0.18330067892144122,
+  "perdida_validacion": 0.4413734108704547,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 319,
+  "perdida_entrenamiento": 0.18275473801266814,
+  "perdida_validacion": 0.44108702162841146,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 320,
+  "perdida_entrenamiento": 0.18232818667897543,
+  "perdida_validacion": 0.44087237969467513,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 321,
+  "perdida_entrenamiento": 0.1817940923759603,
+  "perdida_validacion": 0.4405938254190329,
+  "f1_entrenamiento": 0.9758429287621536,
+  "f1_validacion": 0.8732679106443137
+ },
+ {
+  "paso": 322,
+  "perdida_entrenamiento": 0.18109665803529187,
+  "perdida_validacion": 0.4402129582900507,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 323,
+  "perdida_entrenamiento": 0.18051982585837079,
+  "perdida_validacion": 0.4398802646612176,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 324,
+  "perdida_entrenamiento": 0.17996776713712942,
+  "perdida_validacion": 0.43956353727503195,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 325,
+  "perdida_entrenamiento": 0.1793665018477982,
+  "perdida_validacion": 0.4392352489785177,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 326,
+  "perdida_entrenamiento": 0.178859610025183,
+  "perdida_validacion": 0.4389034492799223,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 327,
+  "perdida_entrenamiento": 0.17838639344091078,
+  "perdida_validacion": 0.438655370622461,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 328,
+  "perdida_entrenamiento": 0.17786174902177854,
+  "perdida_validacion": 0.4383901764529013,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 329,
+  "perdida_entrenamiento": 0.17738835014207768,
+  "perdida_validacion": 0.43807609709445416,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 330,
+  "perdida_entrenamiento": 0.1769022420736462,
+  "perdida_validacion": 0.43782060539633305,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 331,
+  "perdida_entrenamiento": 0.17650407959219763,
+  "perdida_validacion": 0.43757697936248086,
+  "f1_entrenamiento": 0.9771314803364975,
+  "f1_validacion": 0.8738307573967112
+ },
+ {
+  "paso": 332,
+  "perdida_entrenamiento": 0.1758588523056898,
+  "perdida_validacion": 0.43723213793005,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 333,
+  "perdida_entrenamiento": 0.17528557691146843,
+  "perdida_validacion": 0.43692926436201274,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 334,
+  "perdida_entrenamiento": 0.1748096342119013,
+  "perdida_validacion": 0.4366889571687653,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 335,
+  "perdida_entrenamiento": 0.17436032913646246,
+  "perdida_validacion": 0.4364293586953221,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 336,
+  "perdida_entrenamiento": 0.17389376567915832,
+  "perdida_validacion": 0.4361603118353237,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 337,
+  "perdida_entrenamiento": 0.17338976659027475,
+  "perdida_validacion": 0.4359148649305125,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 338,
+  "perdida_entrenamiento": 0.1729007010994722,
+  "perdida_validacion": 0.4356661450890017,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 339,
+  "perdida_entrenamiento": 0.17237676610053088,
+  "perdida_validacion": 0.43544212476567995,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 340,
+  "perdida_entrenamiento": 0.1718556235482751,
+  "perdida_validacion": 0.4352112874070001,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 341,
+  "perdida_entrenamiento": 0.17152953269323595,
+  "perdida_validacion": 0.43504136740802957,
+  "f1_entrenamiento": 0.9780397515419124,
+  "f1_validacion": 0.8746296470791889
+ },
+ {
+  "paso": 342,
+  "perdida_entrenamiento": 0.17097798358917923,
+  "perdida_validacion": 0.4347417228740177,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 343,
+  "perdida_entrenamiento": 0.17058800516617834,
+  "perdida_validacion": 0.43455828625952625,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 344,
+  "perdida_entrenamiento": 0.1700529342227414,
+  "perdida_validacion": 0.43424111386003306,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 345,
+  "perdida_entrenamiento": 0.1695271496147292,
+  "perdida_validacion": 0.43396175556554306,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 346,
+  "perdida_entrenamiento": 0.16906070323464156,
+  "perdida_validacion": 0.43368742843817176,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 347,
+  "perdida_entrenamiento": 0.16856985749980893,
+  "perdida_validacion": 0.4334847101491413,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 348,
+  "perdida_entrenamiento": 0.16806537385944445,
+  "perdida_validacion": 0.4332006893811113,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 349,
+  "perdida_entrenamiento": 0.167561483719557,
+  "perdida_validacion": 0.4329020160942294,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 350,
+  "perdida_entrenamiento": 0.16704313772894086,
+  "perdida_validacion": 0.43256666102284197,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 351,
+  "perdida_entrenamiento": 0.16654520455017738,
+  "perdida_validacion": 0.43227662443703296,
+  "f1_entrenamiento": 0.9789651092940069,
+  "f1_validacion": 0.8758265532643128
+ },
+ {
+  "paso": 352,
+  "perdida_entrenamiento": 0.166048868079889,
+  "perdida_validacion": 0.43206751104391,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 353,
+  "perdida_entrenamiento": 0.16554603346117044,
+  "perdida_validacion": 0.43181311343075457,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 354,
+  "perdida_entrenamiento": 0.16496405657101693,
+  "perdida_validacion": 0.431516777600256,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 355,
+  "perdida_entrenamiento": 0.16432338432078553,
+  "perdida_validacion": 0.4311610376514023,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 356,
+  "perdida_entrenamiento": 0.16374233778202843,
+  "perdida_validacion": 0.43084564093684147,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 357,
+  "perdida_entrenamiento": 0.1632451840808528,
+  "perdida_validacion": 0.4306046972876056,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 358,
+  "perdida_entrenamiento": 0.16296340372800228,
+  "perdida_validacion": 0.4304715281951119,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 359,
+  "perdida_entrenamiento": 0.16262256005949496,
+  "perdida_validacion": 0.43025529279168206,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 360,
+  "perdida_entrenamiento": 0.1620840466594938,
+  "perdida_validacion": 0.4299755828386933,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 361,
+  "perdida_entrenamiento": 0.1616148717479524,
+  "perdida_validacion": 0.4297499635034169,
+  "f1_entrenamiento": 0.9799990529918196,
+  "f1_validacion": 0.876318067340272
+ },
+ {
+  "paso": 362,
+  "perdida_entrenamiento": 0.1611736511387667,
+  "perdida_validacion": 0.42956000086592167,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 363,
+  "perdida_entrenamiento": 0.16077383200946702,
+  "perdida_validacion": 0.42933346534532923,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 364,
+  "perdida_entrenamiento": 0.1601692045462858,
+  "perdida_validacion": 0.42900253274284467,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 365,
+  "perdida_entrenamiento": 0.15976651717414234,
+  "perdida_validacion": 0.4288351526650191,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 366,
+  "perdida_entrenamiento": 0.15931977863522553,
+  "perdida_validacion": 0.42858838154924317,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 367,
+  "perdida_entrenamiento": 0.15887611500341461,
+  "perdida_validacion": 0.42835492201616016,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 368,
+  "perdida_entrenamiento": 0.15859053382697866,
+  "perdida_validacion": 0.4282299017930698,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 369,
+  "perdida_entrenamiento": 0.1581418149431778,
+  "perdida_validacion": 0.4280373902490269,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 370,
+  "perdida_entrenamiento": 0.15777858229229264,
+  "perdida_validacion": 0.42789524529248246,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 371,
+  "perdida_entrenamiento": 0.15731869223994757,
+  "perdida_validacion": 0.4276698113259147,
+  "f1_entrenamiento": 0.9810846128242937,
+  "f1_validacion": 0.876775145066449
+ },
+ {
+  "paso": 372,
+  "perdida_entrenamiento": 0.15688566137222357,
+  "perdida_validacion": 0.4274462001012507,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 373,
+  "perdida_entrenamiento": 0.1564773184780068,
+  "perdida_validacion": 0.42725425497633174,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 374,
+  "perdida_entrenamiento": 0.1559443792124388,
+  "perdida_validacion": 0.426976564577039,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 375,
+  "perdida_entrenamiento": 0.1555089890698736,
+  "perdida_validacion": 0.4267164423140118,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 376,
+  "perdida_entrenamiento": 0.15507641092215887,
+  "perdida_validacion": 0.42648700296429,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 377,
+  "perdida_entrenamiento": 0.1546914612815147,
+  "perdida_validacion": 0.4263090409821905,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 378,
+  "perdida_entrenamiento": 0.15429767998483934,
+  "perdida_validacion": 0.42611657537049735,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 379,
+  "perdida_entrenamiento": 0.15386181853267628,
+  "perdida_validacion": 0.4259226173660071,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 380,
+  "perdida_entrenamiento": 0.153479014645281,
+  "perdida_validacion": 0.4257191257432103,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 381,
+  "perdida_entrenamiento": 0.1529727847442374,
+  "perdida_validacion": 0.42547676300102094,
+  "f1_entrenamiento": 0.9820971078956304,
+  "f1_validacion": 0.8775446623225606
+ },
+ {
+  "paso": 382,
+  "perdida_entrenamiento": 0.15255906479494064,
+  "perdida_validacion": 0.42527641516910186,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 383,
+  "perdida_entrenamiento": 0.1521651336946357,
+  "perdida_validacion": 0.425115170811395,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 384,
+  "perdida_entrenamiento": 0.15187874446401353,
+  "perdida_validacion": 0.4249765397440598,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 385,
+  "perdida_entrenamiento": 0.15149716235493607,
+  "perdida_validacion": 0.4248023294664594,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 386,
+  "perdida_entrenamiento": 0.15112369504675427,
+  "perdida_validacion": 0.42462948807122036,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 387,
+  "perdida_entrenamiento": 0.15070641035608628,
+  "perdida_validacion": 0.4243821544525031,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 388,
+  "perdida_entrenamiento": 0.150275778649443,
+  "perdida_validacion": 0.4241795925577501,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 389,
+  "perdida_entrenamiento": 0.149883686368568,
+  "perdida_validacion": 0.4239755656187325,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 390,
+  "perdida_entrenamiento": 0.14955428840077753,
+  "perdida_validacion": 0.4238267994073916,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 391,
+  "perdida_entrenamiento": 0.14922297599061232,
+  "perdida_validacion": 0.4236521943380638,
+  "f1_entrenamiento": 0.9825405263136291,
+  "f1_validacion": 0.8778562178511357
+ },
+ {
+  "paso": 392,
+  "perdida_entrenamiento": 0.14887029934274112,
+  "perdida_validacion": 0.4235057074532239,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 393,
+  "perdida_entrenamiento": 0.14855792069470017,
+  "perdida_validacion": 0.4233899550650235,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 394,
+  "perdida_entrenamiento": 0.14814793157052888,
+  "perdida_validacion": 0.42319140647037573,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 395,
+  "perdida_entrenamiento": 0.14771312268351575,
+  "perdida_validacion": 0.4229734554621241,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 396,
+  "perdida_entrenamiento": 0.1474258372359567,
+  "perdida_validacion": 0.4228639562372466,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 397,
+  "perdida_entrenamiento": 0.14704804825167533,
+  "perdida_validacion": 0.42265877248309325,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 398,
+  "perdida_entrenamiento": 0.14663270150290933,
+  "perdida_validacion": 0.4224601792790531,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 399,
+  "perdida_entrenamiento": 0.14623606555271826,
+  "perdida_validacion": 0.4222124924037209,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ },
+ {
+  "paso": 400,
+  "perdida_entrenamiento": 0.14586264473775126,
+  "perdida_validacion": 0.4220691848789671,
+  "f1_entrenamiento": null,
+  "f1_validacion": null
+ }
+]

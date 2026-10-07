@@ -110,7 +110,7 @@ with col_leyenda:
     )
 
 with st.container(border=True):
-    st.markdown("**¿Por dónde empezar?** Recorre el proyecto en siete pasos o pon a prueba tu intuición directamente.")
+    st.markdown("**¿Por dónde empezar?** Recorre el proyecto en ocho pasos o pon a prueba tu intuición directamente.")
     a, b = st.columns(2)
     a.page_link("paginas/datos.py", label="Empezar el recorrido por los datos")
     b.page_link("paginas/reto.py", label="Ir directo al reto contra los modelos")

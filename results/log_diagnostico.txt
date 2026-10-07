@@ -1,0 +1,155 @@
+
+===== 1/7 Random Forest: curvas C y D, diagnóstico y estrategia 1  (20:30)
+Datos (tabular): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (4 s)
+2026/10/06 20:30:41 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/06 20:30:41 INFO mlflow.store.db.utils: Updating database tables
+2026/10/06 20:30:44 INFO mlflow.tracking.fluent: Experiment with name 'diagnostico-overfitting' does not exist. Creating a new experiment.
+Curva por tamaño del dataset (C)…
+Curva por hiperparámetro (D): min_samples_leaf…
+Curva por hiperparámetro (D): max_depth…
+Diagnóstico Random Forest: MIXTO · brecha final de 0.063 (mayor que 0.05); seguía mejorando al terminar (+0.023 de F1 de validación en el tramo final)
+2026/10/06 20:32:34 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/06 20:32:35 INFO mlflow.store.db.utils: Updating database tables
+2026/10/06 20:32:37 INFO mlflow.tracking.fluent: Experiment with name 'diagnostico-overfitting' does not exist. Creating a new experiment.
+  Antes    F1 ent. 0.7954 · val. 0.7468 · prueba 0.7417 · brecha 0.0486 · 53.53 MB
+  Después  F1 ent. 0.9710 · val. 0.8506 · prueba 0.8382 · brecha 0.1204 · 119.73 MB
+
+===== 2/7 CNN 1D base (15 épocas)  (20:33)
+Datos (secuencia): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (3 s)
+2026/10/06 20:33:25 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/06 20:33:25 INFO mlflow.store.db.utils: Updating database tables
+2026/10/06 20:33:28 INFO mlflow.tracking.fluent: Experiment with name 'diagnostico-overfitting' does not exist. Creating a new experiment.
+Época  1/15 · pérdida ent. 2.0624 · pérdida val. 2.0849 · F1 ent. 0.3402 · F1 val. 0.3386  ← mejor
+Época  2/15 · pérdida ent. 1.7211 · pérdida val. 1.7476 · F1 ent. 0.4187 · F1 val. 0.4172  ← mejor
+Época  3/15 · pérdida ent. 1.5524 · pérdida val. 1.5803 · F1 ent. 0.4716 · F1 val. 0.4697  ← mejor
+Época  4/15 · pérdida ent. 1.4433 · pérdida val. 1.4697 · F1 ent. 0.5003 · F1 val. 0.4961  ← mejor
+Época  5/15 · pérdida ent. 1.3590 · pérdida val. 1.3833 · F1 ent. 0.5254 · F1 val. 0.5205  ← mejor
+Época  6/15 · pérdida ent. 1.2933 · pérdida val. 1.3318 · F1 ent. 0.5572 · F1 val. 0.5534  ← mejor
+Época  7/15 · pérdida ent. 1.2407 · pérdida val. 1.2670 · F1 ent. 0.5447 · F1 val. 0.5404
+Época  8/15 · pérdida ent. 1.2075 · pérdida val. 1.2339 · F1 ent. 0.5342 · F1 val. 0.5285
+Época  9/15 · pérdida ent. 1.1512 · pérdida val. 1.1840 · F1 ent. 0.5715 · F1 val. 0.5657  ← mejor
+Época 10/15 · pérdida ent. 1.1192 · pérdida val. 1.1514 · F1 ent. 0.5873 · F1 val. 0.5815  ← mejor
+Época 11/15 · pérdida ent. 1.0780 · pérdida val. 1.1075 · F1 ent. 0.5715 · F1 val. 0.5656
+Época 12/15 · pérdida ent. 1.0440 · pérdida val. 1.0806 · F1 ent. 0.5999 · F1 val. 0.5925  ← mejor
+Época 13/15 · pérdida ent. 1.0184 · pérdida val. 1.0550 · F1 ent. 0.6111 · F1 val. 0.6060  ← mejor
+Época 14/15 · pérdida ent. 1.0023 · pérdida val. 1.0395 · F1 ent. 0.6149 · F1 val. 0.6063  ← mejor
+Época 15/15 · pérdida ent. 0.9881 · pérdida val. 1.0259 · F1 ent. 0.6216 · F1 val. 0.6169  ← mejor
+CNN 1D Antes: SUBAJUSTE · F1 de entrenamiento bajo (0.622 < 0.8) con brecha pequeña; seguía mejorando al terminar (+0.051 de F1 de validación en el tramo final) · prueba 0.6118
+
+===== 3/7 CNN 1D mejorada (estrategia 2)  (20:38)
+Datos (secuencia): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (3 s)
+Época  1/40 · pérdida ent. 2.6366 · pérdida val. 2.6475 · F1 ent. 0.2145 · F1 val. 0.2121  ← mejor
+Época  2/40 · pérdida ent. 2.2090 · pérdida val. 2.2265 · F1 ent. 0.3195 · F1 val. 0.3188  ← mejor
+Época  3/40 · pérdida ent. 1.8692 · pérdida val. 1.8940 · F1 ent. 0.4023 · F1 val. 0.3978  ← mejor
+Época  4/40 · pérdida ent. 1.6478 · pérdida val. 1.6700 · F1 ent. 0.4444 · F1 val. 0.4410  ← mejor
+Época  5/40 · pérdida ent. 1.4785 · pérdida val. 1.5061 · F1 ent. 0.5054 · F1 val. 0.5032  ← mejor
+Época  6/40 · pérdida ent. 1.4072 · pérdida val. 1.4480 · F1 ent. 0.5197 · F1 val. 0.5131  ← mejor
+Época  7/40 · pérdida ent. 1.2738 · pérdida val. 1.2991 · F1 ent. 0.5306 · F1 val. 0.5282  ← mejor
+Época  8/40 · pérdida ent. 1.2090 · pérdida val. 1.2336 · F1 ent. 0.5247 · F1 val. 0.5191
+Época  9/40 · pérdida ent. 1.1185 · pérdida val. 1.1557 · F1 ent. 0.5722 · F1 val. 0.5651  ← mejor
+Época 10/40 · pérdida ent. 1.0666 · pérdida val. 1.1017 · F1 ent. 0.5998 · F1 val. 0.5930  ← mejor
+Época 11/40 · pérdida ent. 1.0317 · pérdida val. 1.0642 · F1 ent. 0.5881 · F1 val. 0.5821
+Época 12/40 · pérdida ent. 0.9634 · pérdida val. 1.0050 · F1 ent. 0.6366 · F1 val. 0.6296  ← mejor
+Época 13/40 · pérdida ent. 0.8972 · pérdida val. 0.9383 · F1 ent. 0.6439 · F1 val. 0.6352  ← mejor
+Época 14/40 · pérdida ent. 0.8614 · pérdida val. 0.9016 · F1 ent. 0.6595 · F1 val. 0.6515  ← mejor
+Época 15/40 · pérdida ent. 0.8535 · pérdida val. 0.8979 · F1 ent. 0.6450 · F1 val. 0.6372
+Época 16/40 · pérdida ent. 0.8402 · pérdida val. 0.8912 · F1 ent. 0.6678 · F1 val. 0.6581  ← mejor
+Época 17/40 · pérdida ent. 0.8093 · pérdida val. 0.8561 · F1 ent. 0.6949 · F1 val. 0.6870  ← mejor
+Época 18/40 · pérdida ent. 0.7708 · pérdida val. 0.8325 · F1 ent. 0.6835 · F1 val. 0.6721
+Época 19/40 · pérdida ent. 0.7415 · pérdida val. 0.7985 · F1 ent. 0.7034 · F1 val. 0.6951  ← mejor
+Época 20/40 · pérdida ent. 0.7324 · pérdida val. 0.7859 · F1 ent. 0.6895 · F1 val. 0.6811
+Época 21/40 · pérdida ent. 0.7114 · pérdida val. 0.7727 · F1 ent. 0.6965 · F1 val. 0.6856
+Época 22/40 · pérdida ent. 0.7031 · pérdida val. 0.7645 · F1 ent. 0.7053 · F1 val. 0.6948
+Época 23/40 · pérdida ent. 0.6677 · pérdida val. 0.7397 · F1 ent. 0.7176 · F1 val. 0.7063  ← mejor
+Época 24/40 · pérdida ent. 0.6492 · pérdida val. 0.7189 · F1 ent. 0.7363 · F1 val. 0.7233  ← mejor
+Época 25/40 · pérdida ent. 0.6528 · pérdida val. 0.7209 · F1 ent. 0.7288 · F1 val. 0.7188
+Época 26/40 · pérdida ent. 0.6199 · pérdida val. 0.6967 · F1 ent. 0.7406 · F1 val. 0.7285  ← mejor
+Época 27/40 · pérdida ent. 0.6136 · pérdida val. 0.6894 · F1 ent. 0.7365 · F1 val. 0.7238
+Época 28/40 · pérdida ent. 0.5966 · pérdida val. 0.6754 · F1 ent. 0.7575 · F1 val. 0.7431  ← mejor
+Época 29/40 · pérdida ent. 0.5862 · pérdida val. 0.6688 · F1 ent. 0.7551 · F1 val. 0.7405
+Época 30/40 · pérdida ent. 0.5844 · pérdida val. 0.6617 · F1 ent. 0.7512 · F1 val. 0.7389
+Época 31/40 · pérdida ent. 0.5658 · pérdida val. 0.6504 · F1 ent. 0.7668 · F1 val. 0.7491  ← mejor
+Época 32/40 · pérdida ent. 0.5573 · pérdida val. 0.6443 · F1 ent. 0.7654 · F1 val. 0.7469
+Época 33/40 · pérdida ent. 0.5497 · pérdida val. 0.6354 · F1 ent. 0.7629 · F1 val. 0.7479
+Época 34/40 · pérdida ent. 0.5476 · pérdida val. 0.6301 · F1 ent. 0.7600 · F1 val. 0.7444
+Época 35/40 · pérdida ent. 0.5395 · pérdida val. 0.6304 · F1 ent. 0.7716 · F1 val. 0.7561  ← mejor
+Época 36/40 · pérdida ent. 0.5383 · pérdida val. 0.6279 · F1 ent. 0.7744 · F1 val. 0.7574  ← mejor
+Época 37/40 · pérdida ent. 0.5345 · pérdida val. 0.6236 · F1 ent. 0.7719 · F1 val. 0.7554
+Época 38/40 · pérdida ent. 0.5315 · pérdida val. 0.6236 · F1 ent. 0.7749 · F1 val. 0.7583  ← mejor
+Época 39/40 · pérdida ent. 0.5312 · pérdida val. 0.6232 · F1 ent. 0.7754 · F1 val. 0.7579
+Época 40/40 · pérdida ent. 0.5319 · pérdida val. 0.6231 · F1 ent. 0.7745 · F1 val. 0.7576
+CNN 1D Después: SUBAJUSTE · F1 de entrenamiento bajo (0.774 < 0.8) con brecha pequeña; seguía mejorando al terminar (+0.017 de F1 de validación en el tramo final) · prueba 0.7456
+
+===== 4/7 XGBoost base y regularizado (estrategia 3)  (20:53)
+Datos (tabular): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (3 s)
+2026/10/06 20:53:59 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/06 20:53:59 INFO mlflow.store.db.utils: Updating database tables
+2026/10/06 20:54:02 INFO mlflow.tracking.fluent: Experiment with name 'diagnostico-overfitting' does not exist. Creating a new experiment.
+XGBoost Antes: MIXTO · F1 val. 0.8779 · prueba 0.8634 · brecha 0.1047 · 400 rondas
+XGBoost Después: MIXTO · F1 val. 0.8729 · prueba 0.8611 · brecha 0.0895 · 400 rondas
+
+===== 5/7 Transformer base (15 épocas)  (21:29)
+Datos (secuencia): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (3 s)
+2026/10/06 21:29:07 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/06 21:29:07 INFO mlflow.store.db.utils: Updating database tables
+2026/10/06 21:29:09 INFO mlflow.tracking.fluent: Experiment with name 'diagnostico-overfitting' does not exist. Creating a new experiment.
+Época  1/15 · pérdida ent. 2.4009 · pérdida val. 2.3996 · F1 ent. 0.2031 · F1 val. 0.2027  ← mejor
+Época  2/15 · pérdida ent. 1.9419 · pérdida val. 1.9428 · F1 ent. 0.3225 · F1 val. 0.3226  ← mejor
+Época  3/15 · pérdida ent. 1.6108 · pérdida val. 1.6135 · F1 ent. 0.4172 · F1 val. 0.4164  ← mejor
+Época  4/15 · pérdida ent. 1.4332 · pérdida val. 1.4449 · F1 ent. 0.4642 · F1 val. 0.4621  ← mejor
+Época  5/15 · pérdida ent. 1.2917 · pérdida val. 1.3139 · F1 ent. 0.5168 · F1 val. 0.5144  ← mejor
+Época  6/15 · pérdida ent. 1.1754 · pérdida val. 1.2072 · F1 ent. 0.5443 · F1 val. 0.5375  ← mejor
+Época  7/15 · pérdida ent. 1.1015 · pérdida val. 1.1305 · F1 ent. 0.5543 · F1 val. 0.5487  ← mejor
+Época  8/15 · pérdida ent. 1.0229 · pérdida val. 1.0587 · F1 ent. 0.5916 · F1 val. 0.5850  ← mejor
+Época  9/15 · pérdida ent. 0.9718 · pérdida val. 1.0080 · F1 ent. 0.5922 · F1 val. 0.5879  ← mejor
+Época 10/15 · pérdida ent. 0.9523 · pérdida val. 0.9854 · F1 ent. 0.6079 · F1 val. 0.6022  ← mejor
+Época 11/15 · pérdida ent. 0.8871 · pérdida val. 0.9320 · F1 ent. 0.6219 · F1 val. 0.6147  ← mejor
+Época 12/15 · pérdida ent. 0.8473 · pérdida val. 0.8952 · F1 ent. 0.6414 · F1 val. 0.6330  ← mejor
+Época 13/15 · pérdida ent. 0.8021 · pérdida val. 0.8510 · F1 ent. 0.6581 · F1 val. 0.6506  ← mejor
+Época 14/15 · pérdida ent. 0.7898 · pérdida val. 0.8479 · F1 ent. 0.6525 · F1 val. 0.6437
+Época 15/15 · pérdida ent. 0.7649 · pérdida val. 0.8165 · F1 ent. 0.6645 · F1 val. 0.6570  ← mejor
+Transformer Antes: SUBAJUSTE · F1 de entrenamiento bajo (0.664 < 0.8) con brecha pequeña; seguía mejorando al terminar (+0.042 de F1 de validación en el tramo final) · prueba 0.6447
+
+===== 6/7 Transformer mejorado (estrategia 2)  (21:54)
+Datos (secuencia): entrenamiento 200,000 · validación 160,026 · prueba 872,731 · 23 clases (3 s)
+Época  1/25 · pérdida ent. 2.8921 · pérdida val. 2.8961 · F1 ent. 0.0667 · F1 val. 0.0658  ← mejor
+Época  2/25 · pérdida ent. 2.2913 · pérdida val. 2.2911 · F1 ent. 0.2158 · F1 val. 0.2148  ← mejor
+Época  3/25 · pérdida ent. 1.8455 · pérdida val. 1.8458 · F1 ent. 0.3649 · F1 val. 0.3674  ← mejor
+Época  4/25 · pérdida ent. 1.4428 · pérdida val. 1.4571 · F1 ent. 0.4575 · F1 val. 0.4545  ← mejor
+Época  5/25 · pérdida ent. 1.2400 · pérdida val. 1.2687 · F1 ent. 0.5270 · F1 val. 0.5214  ← mejor
+Época  6/25 · pérdida ent. 1.0556 · pérdida val. 1.1016 · F1 ent. 0.5972 · F1 val. 0.5929  ← mejor
+Época  7/25 · pérdida ent. 0.9325 · pérdida val. 0.9784 · F1 ent. 0.5982 · F1 val. 0.5906
+Época  8/25 · pérdida ent. 0.8942 · pérdida val. 0.9366 · F1 ent. 0.5964 · F1 val. 0.5915
+Época  9/25 · pérdida ent. 0.7669 · pérdida val. 0.8145 · F1 ent. 0.6609 · F1 val. 0.6508  ← mejor
+Época 10/25 · pérdida ent. 0.8162 · pérdida val. 0.8656 · F1 ent. 0.6511 · F1 val. 0.6420
+Época 11/25 · pérdida ent. 0.6697 · pérdida val. 0.7394 · F1 ent. 0.6795 · F1 val. 0.6673  ← mejor
+Época 12/25 · pérdida ent. 0.6900 · pérdida val. 0.7574 · F1 ent. 0.6738 · F1 val. 0.6620
+Época 13/25 · pérdida ent. 0.6026 · pérdida val. 0.6711 · F1 ent. 0.7208 · F1 val. 0.7072  ← mejor
+Época 14/25 · pérdida ent. 0.5890 · pérdida val. 0.6635 · F1 ent. 0.7274 · F1 val. 0.7145  ← mejor
+Época 15/25 · pérdida ent. 0.5486 · pérdida val. 0.6256 · F1 ent. 0.7376 · F1 val. 0.7229  ← mejor
+Época 16/25 · pérdida ent. 0.5340 · pérdida val. 0.6161 · F1 ent. 0.7390 · F1 val. 0.7225
+Época 17/25 · pérdida ent. 0.5177 · pérdida val. 0.5979 · F1 ent. 0.7373 · F1 val. 0.7220
+Época 18/25 · pérdida ent. 0.4859 · pérdida val. 0.5788 · F1 ent. 0.7596 · F1 val. 0.7420  ← mejor
+Época 19/25 · pérdida ent. 0.4646 · pérdida val. 0.5559 · F1 ent. 0.7641 · F1 val. 0.7463  ← mejor
+Época 20/25 · pérdida ent. 0.4486 · pérdida val. 0.5432 · F1 ent. 0.7782 · F1 val. 0.7598  ← mejor
+Época 21/25 · pérdida ent. 0.4372 · pérdida val. 0.5341 · F1 ent. 0.7830 · F1 val. 0.7623  ← mejor
+Época 22/25 · pérdida ent. 0.4328 · pérdida val. 0.5302 · F1 ent. 0.7829 · F1 val. 0.7635  ← mejor
+Época 23/25 · pérdida ent. 0.4270 · pérdida val. 0.5253 · F1 ent. 0.7859 · F1 val. 0.7658  ← mejor
+Época 24/25 · pérdida ent. 0.4247 · pérdida val. 0.5233 · F1 ent. 0.7883 · F1 val. 0.7680  ← mejor
+Época 25/25 · pérdida ent. 0.4239 · pérdida val. 0.5229 · F1 ent. 0.7898 · F1 val. 0.7692  ← mejor
+Transformer Después: SUBAJUSTE · F1 de entrenamiento bajo (0.790 < 0.8) con brecha pequeña; seguía mejorando al terminar (+0.027 de F1 de validación en el tramo final) · prueba 0.7570
+
+===== 7/7 Resumen y comparación antes/después  (22:38)
+       modelo momento diagnostico  f1_entrenamiento  f1_validacion  f1_prueba  brecha  mejor_paso  pasos  rondas  epocas_ejecutadas  tamano_MB  segundos
+Random Forest   Antes   subajuste            0.7954         0.7468     0.7417  0.0486         NaN    NaN     NaN                NaN      53.53       5.8
+Random Forest Después sobreajuste            0.9710         0.8506     0.8382  0.1204         NaN    NaN     NaN                NaN     119.73       6.9
+      XGBoost   Antes       mixto            0.9825         0.8779     0.8634  0.1047       391.0  400.0   400.0                NaN      66.95    1089.0
+      XGBoost Después       mixto            0.9625         0.8729     0.8611  0.0895       391.0  400.0   400.0                NaN      51.05     934.9
+       CNN 1D   Antes   subajuste            0.6216         0.6169     0.6118  0.0047        15.0   15.0     NaN               15.0        NaN     287.1
+       CNN 1D Después   subajuste            0.7745         0.7576     0.7456  0.0169        38.0   40.0     NaN               40.0        NaN     882.0
+  Transformer   Antes   subajuste            0.6645         0.6570     0.6447  0.0075        15.0   15.0     NaN               15.0        NaN    1450.9
+  Transformer Después   subajuste            0.7898         0.7692     0.7570  0.0205        25.0   25.0     NaN               25.0        NaN    2580.9
+
+Resultados en results/diagnostico
+
+Listo en 128 minutos. Resultados en results/diagnostico/

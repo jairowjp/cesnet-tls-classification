@@ -1,0 +1,29 @@
+{
+ "modelo": "CNN 1D",
+ "momento": "Después",
+ "pasos": 40,
+ "f1_entrenamiento": 0.7745,
+ "f1_validacion": 0.7576,
+ "mejor_f1_validacion": 0.7583,
+ "mejor_paso": 38,
+ "mejor_es_ultimo": true,
+ "brecha_final": 0.0169,
+ "brecha_relativa": 0.0218,
+ "pendiente_val": -0.00638,
+ "pendiente_ent": -0.00936,
+ "mejora_final": 0.0172,
+ "f1_prueba": 0.7455889185307906,
+ "brecha": 0.0169,
+ "epocas_ejecutadas": 40,
+ "segundos": 882.0,
+ "diagnostico": "subajuste",
+ "razones": [
+  "F1 de entrenamiento bajo (0.774 < 0.8) con brecha pequeña",
+  "seguía mejorando al terminar (+0.017 de F1 de validación en el tramo final)"
+ ],
+ "configuracion": {
+  "epocas": 40,
+  "programador": "onecycle",
+  "paciencia": 6
+ }
+}

@@ -78,6 +78,13 @@ Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `script
   y la app escuchando en todas las interfaces de red (ahora solo localhost en desarrollo).
 - 53 pruebas automáticas: 14 de seguridad, 12 de interfaz y el resto de datos, modelos y encuesta.
 
+## Semana 3: diagnóstico de sobreajuste y subajuste (06/10/2026)
+- Tracking con MLflow, callback de XGBoost y bucle de PyTorch; curvas A-D a 300 DPI; diagnóstico con reglas cuantitativas.
+- Hallazgo: el problema dominante era el subajuste. Estrategias: F1 de prueba +9,6 (Random Forest), +13,4 (CNN 1D) y
+  +11,2 puntos (Transformer); en XGBoost la regularización redujo la brecha de 0,105 a 0,090.
+- Corrección posterior a la primera entrega: el informe indicaba +12,2 puntos para el Transformer; el valor correcto es
+  +11,2. El informe y el notebook ahora calculan todas sus cifras y frases desde los resultados.
+
 ## Herramientas utilizadas
 Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;
 Google Colab para pruebas. El código se desarrolló con apoyo de un asistente de IA (Claude, de Anthropic);

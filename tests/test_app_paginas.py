@@ -26,6 +26,7 @@ PAGINAS = [
     "paginas/inicio.py",
     "paginas/datos.py",
     "paginas/modelos.py",
+    "paginas/diagnostico.py",
     "paginas/reto.py",
     "paginas/clasificar.py",
     "paginas/conclusiones.py",
@@ -136,6 +137,7 @@ def test_todas_las_paginas_del_recorrido_invitan_al_siguiente_paso():
         "paginas/inicio.py",
         "paginas/datos.py",
         "paginas/modelos.py",
+        "paginas/diagnostico.py",
         "paginas/reto.py",
         "paginas/clasificar.py",
         "paginas/conclusiones.py",
@@ -153,3 +155,15 @@ def test_ningun_titulo_muestra_el_icono_de_enlace():
         at.switch_page(pagina).run()
         for titulo in [*at.title, *at.header, *at.subheader]:
             assert titulo.proto.hide_anchor, f"{pagina}: el título «{titulo.value}» muestra el ícono de enlace"
+
+
+def test_diagnostico_muestra_tabla_y_curvas_interactivas():
+    """La página de diagnóstico (semana 3) lee results/diagnostico y dibuja sus curvas."""
+    if not (ROOT / "results/diagnostico/comparacion_antes_despues.csv").exists():
+        pytest.skip("no hay resultados del diagnóstico")
+    at = _app()
+    at.switch_page("paginas/diagnostico.py").run()
+    assert not at.exception and not at.error
+    assert len(at.dataframe) >= 1 and len(at.get("plotly_chart")) >= 1
+    at.selectbox[0].set_value("transformer").run()                 # cambiar de modelo no rompe la página
+    assert not at.exception

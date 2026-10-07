@@ -1,0 +1,21 @@
+{
+ "modelo": "XGBoost",
+ "momento": "Antes",
+ "pasos": 400,
+ "f1_entrenamiento": 0.9825,
+ "f1_validacion": 0.8779,
+ "mejor_f1_validacion": 0.8779,
+ "mejor_paso": 391,
+ "mejor_es_ultimo": true,
+ "brecha_final": 0.1047,
+ "brecha_relativa": 0.1065,
+ "pendiente_val": -0.00062,
+ "pendiente_ent": -0.0029,
+ "mejora_final": 0.0093,
+ "f1_prueba": 0.8633513115766166,
+ "brecha": 0.1047,
+ "tamano_MB": 66.95,
+ "segundos": 1089.0,
+ "rondas": 400,
+ "diagnostico": "mixto"
+}

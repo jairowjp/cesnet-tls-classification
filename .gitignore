@@ -44,3 +44,11 @@ results/*.zip
 results/sus/*.csv
 results/sus/codigos.txt
 
+
+# MLflow local (Actividad semana 3): se regenera con scripts/09_diagnostico.py
+results/diagnostico/mlflow.db
+results/diagnostico/mlruns/
+
+# MLflow: bases y artefactos en cualquier carpeta (se regeneran con scripts/09_diagnostico.py)
+**/mlflow.db
+mlruns/

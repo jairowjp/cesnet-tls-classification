@@ -2,6 +2,19 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
+## [Sin publicar] · Semana 3: diagnóstico de sobreajuste y subajuste
+### Añadido
+- `src/diagnostico/`: tracking con MLflow (SQLite local), callback personalizado de XGBoost y bucle de PyTorch con
+  registro por época; curvas A-D a 300 DPI; diagnóstico cuantitativo con reglas y umbrales; análisis en lenguaje claro
+  calculado desde las métricas (`narrativa.py`), compartido por el informe y el notebook.
+- `scripts/09_diagnostico.py` y `06_correr_diagnostico.sh`: diagnóstico de los 4 modelos y 3 estrategias de mejora.
+  Resultado: el problema dominante era el subajuste; F1 macro de prueba +9,6 (Random Forest), +13,4 (CNN 1D) y
+  +11,2 puntos (Transformer); en XGBoost la regularización redujo la brecha de 0,105 a 0,090.
+- `scripts/10_informe_diagnostico.py`: informe técnico en formato UEES generado desde los resultados.
+- `notebooks/overfitting_analysis.ipynb`: las 8 secciones de la actividad.
+- Página **Diagnóstico** en la aplicación web, con curvas interactivas; el recorrido guiado pasa a ocho pasos.
+- 8 pruebas nuevas (reglas de diagnóstico, registro, narrativa y página web).
+
 ## [Sin publicar] · Sprint 3: aplicación web
 ### Añadido
 - Aplicación Streamlit de cinco páginas (`app/`) con sistema de diseño propio: la firma del flujo como elemento

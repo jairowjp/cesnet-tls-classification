@@ -1,12 +1,13 @@
 # Aplicación web
 
-Aplicación Streamlit de ocho páginas que demuestra el proyecto de forma interactiva.
+Aplicación Streamlit de nueve páginas que demuestra el proyecto de forma interactiva.
 
 | Página | Qué permite hacer |
 |---|---|
 | Inicio | Ver la firma de un flujo real de octubre reproducida paquete a paquete y clasificada en vivo por XGBoost |
 | Datos | Comparar la forma típica de dos categorías, el desbalance y la deriva durante el año |
 | Modelos | Explorar acierto frente a costo, la prueba de McNemar por pares, el F1 por categoría y la deriva |
+| Diagnóstico | Ver si los modelos sobreajustan o subajustan: curvas de aprendizaje interactivas y la mejora antes/después (semana 3) |
 | Reto | Adivinar la categoría de flujos reales y competir contra los modelos en cinco rondas |
 | Clasificar | Clasificar flujos reales de octubre o un CSV propio con el formato de la plantilla |
 | Conclusiones | Recomendación, matices, limitaciones y créditos |
