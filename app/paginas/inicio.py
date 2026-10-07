@@ -8,7 +8,7 @@ acertó o se equivocó: mostrar también los errores es parte de una evaluación
 
 import numpy as np
 import streamlit as st
-from core.datos import NOMBRES, comparativa, modelo_xgboost, mostrar_error_datos, muestra_octubre
+from core.datos import NOMBRES, comparativa, frase_significancia, modelo_xgboost, mostrar_error_datos, muestra_octubre
 from core.estilo import decimal
 from core.firma import mostrar_firma
 from core.guia import resultado_modelo, siguiente_paso, sugerencia
@@ -148,13 +148,17 @@ if anio:
         comp["metricas"][m]["costo"]["tamano_modelo_MB"] for m in ("cnn1d", "transformer") if m in comp["metricas"]
     ]
     veces = anio["costo"]["tamano_modelo_MB"] / min(redes) if redes else None
+    # "Memorizan menos" solo si cada red pierde menos F1 que XGBoost al excluir las secuencias repetidas
+    caida = (comp["tabla"]["f1_macro"] - comp["tabla"]["f1_macro_sin_repetidos"]).to_dict()
+    memorizan_menos = all(caida.get(r, 1) < caida.get("xgboost", 0) for r in ("cnn1d", "transformer") if r in caida)
     st.header("Qué se encontró", divider="gray", anchor=False)
     st.markdown(
         f"El mejor modelo es **{NOMBRES['xgboost']}**: acierta con un F1 macro de **{decimal(f1)}** en octubre, "
-        f"clasifica un flujo en **{decimal(anio['costo']['latencia_ms_por_flujo'])} ms** y supera a los demás con "
-        f"diferencias estadísticamente significativas. "
+        f"clasifica un flujo en **{decimal(anio['costo']['latencia_ms_por_flujo'])} ms** y "
+        f"{frase_significancia(comp['mcnemar'], 'xgboost')}. "
         + (
-            f"Las redes neuronales, en cambio, son hasta {veces:.0f} veces más livianas y memorizan menos. "
+            f"Las redes neuronales, en cambio, son hasta {veces:.0f} veces más livianas"
+            + (" y memorizan menos. " if memorizan_menos else ". ")
             if veces
             else ""
         )

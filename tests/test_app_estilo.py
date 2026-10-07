@@ -53,3 +53,25 @@ def test_isotipo_y_pie_en_todas_las_paginas():
     for pagina in paginas:
         at.switch_page(f"paginas/{pagina}.py").run()
         assert any("pie-banda" in m.value for m in at.markdown), f"la página {pagina} no muestra el pie de página"
+
+
+def test_la_significancia_se_afirma_solo_si_mcnemar_la_respalda():
+    """Las páginas no deben afirmar una superioridad estadística que la prueba no respalde."""
+    import sys
+
+    import pandas as pd
+
+    sys.path.insert(0, str(ROOT / "app"))
+    from core.datos import frase_significancia
+
+    def tabla(sig_rf):
+        return pd.DataFrame(
+            [
+                {"modelo_A": "random_forest", "modelo_B": "xgboost", "mejor": "xgboost", "significativo": sig_rf},
+                {"modelo_A": "xgboost", "modelo_B": "cnn1d", "mejor": "xgboost", "significativo": True},
+            ]
+        )
+
+    assert frase_significancia(tabla(True), "xgboost").startswith("supera a los demás")
+    frase = frase_significancia(tabla(False), "xgboost")
+    assert "no es estadísticamente significativa" in frase and "Random Forest" in frase and "CNN 1D" in frase

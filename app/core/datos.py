@@ -133,6 +133,38 @@ def diagnostico() -> dict | None:
     }
 
 
+def frase_significancia(mcnemar: pd.DataFrame, modelo: str) -> str:
+    """Describe, según la prueba de McNemar con corrección de Holm, frente a quién gana el modelo con significancia.
+
+    Así ninguna página afirma una superioridad estadística que los resultados no respalden.
+    """
+    supera, empata, pierde = [], [], []
+    for _, fila in mcnemar.iterrows():
+        if modelo not in (fila["modelo_A"], fila["modelo_B"]):
+            continue
+        otro = NOMBRES.get(fila["modelo_B"] if fila["modelo_A"] == modelo else fila["modelo_A"])
+        if not fila["significativo"]:
+            empata.append(otro)
+        elif fila["mejor"] == modelo:
+            supera.append(otro)
+        else:
+            pierde.append(otro)
+    y = lambda nombres: " y ".join([", ".join(nombres[:-1]), nombres[-1]]) if len(nombres) > 1 else nombres[0]  # noqa: E731
+    if supera and not empata and not pierde:
+        return (
+            "supera a los demás con diferencias estadísticamente significativas "
+            "(prueba de McNemar con corrección de Holm)"
+        )
+    partes = []
+    if supera:
+        partes.append(f"supera con significancia estadística a {y(supera)}")
+    if empata:
+        partes.append(f"frente a {y(empata)} la diferencia no es estadísticamente significativa")
+    if pierde:
+        partes.append(f"{y(pierde)} lo supera con significancia")
+    return "; ".join(partes) + " (prueba de McNemar con corrección de Holm)"
+
+
 def mostrar_error_datos(e: Exception) -> None:
     """Mensaje claro y accionable cuando falta un archivo, sin trazas internas."""
     st.error(str(e) if isinstance(e, DatosFaltantes) else "No se pudieron cargar los datos de esta página.")

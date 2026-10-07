@@ -5,7 +5,7 @@ Las cifras se calculan a partir de los resultados versionados; el texto interpre
 """
 
 import streamlit as st
-from core.datos import NOMBRES, comparativa, mostrar_error_datos
+from core.datos import NOMBRES, comparativa, frase_significancia, mostrar_error_datos
 from core.estilo import decimal
 from core.guia import siguiente_paso
 from core.pie import REPO, pie
@@ -37,8 +37,7 @@ st.markdown(
     f"Para clasificar tráfico cifrado usando solo metadatos de flujo, el modelo recomendado es **{NOMBRES[mejor]}**. "
     f"Alcanza un F1 macro de **{decimal(t.loc[mejor, 'f1_macro'])}** en octubre, se mantiene en "
     f"**{decimal(t.loc[mejor, 'f1_macro_sin_repetidos'])}** cuando se excluyen las secuencias ya vistas, clasifica un "
-    f"flujo en **{decimal(t.loc[mejor, 'latencia_ms'])} ms** y supera a los demás con diferencias estadísticamente "
-    f"significativas según la prueba de McNemar con corrección de Holm."
+    f"flujo en **{decimal(t.loc[mejor, 'latencia_ms'])} ms** y {frase_significancia(C['mcnemar'], mejor)}."
 )
 st.markdown(
     "El resultado coincide con la revisión crítica publicada en 2025 sobre este campo: cuando se evalúa con rigor, "
