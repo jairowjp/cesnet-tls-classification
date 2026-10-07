@@ -45,3 +45,12 @@ def test_promedio_con_mascara_ignora_relleno():
     h = torch.tensor([[[1.0], [3.0], [100.0]]])      # la tercera posición es relleno
     mask = torch.tensor([[False, False, True]])
     assert masked_mean(h, mask).item() == pytest.approx(2.0)
+
+
+def test_claves_de_entrenamiento_no_llegan_a_la_arquitectura():
+    """La configuración v2 agrega programador y paciencia: el constructor de la red no debe recibirlas."""
+    from src.config import load_config
+    from src.models.deep import build_deep_model
+
+    for nombre in ("cnn1d", "transformer"):
+        assert build_deep_model(nombre, load_config()["modelos"][nombre], 23) is not None

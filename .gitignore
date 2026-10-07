@@ -52,3 +52,6 @@ results/diagnostico/mlruns/
 # MLflow: bases y artefactos en cualquier carpeta (se regeneran con scripts/09_diagnostico.py)
 **/mlflow.db
 mlruns/
+
+# Respaldo local de los modelos v1 (se regeneran con scripts 03 y 05 usando modelos_v1)
+models/v1/

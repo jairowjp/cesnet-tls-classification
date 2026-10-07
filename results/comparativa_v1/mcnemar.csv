@@ -1,0 +1,7 @@
+modelo_A,modelo_B,discrepancias_A_acierta,discrepancias_B_acierta,estadistico,p_valor,mejor,p_holm,significativo
+random_forest,xgboost,16315,63820,28160.354601609783,0.0,xgboost,0.0,True
+random_forest,cnn1d,124944,44240,38496.39569344619,0.0,random_forest,0.0,True
+random_forest,transformer,89563,60124,5789.38614575748,0.0,random_forest,0.0,True
+xgboost,cnn1d,156878,28669,88588.28902650003,0.0,xgboost,0.0,True
+xgboost,transformer,113262,36318,39578.98949725899,0.0,xgboost,0.0,True
+cnn1d,transformer,45569,96834,18454.65120819084,0.0,transformer,0.0,True

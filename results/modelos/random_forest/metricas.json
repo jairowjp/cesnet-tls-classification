@@ -2,106 +2,107 @@
  "modelo": "random_forest",
  "modo_prueba": false,
  "parametros": {
-  "n_estimators": 150,
-  "max_depth": 25,
-  "min_samples_leaf": 10,
+  "n_estimators": 100,
+  "max_depth": 20,
+  "min_samples_leaf": 1,
   "max_samples": 0.5,
   "max_features": "sqrt",
   "n_jobs": -1
  },
  "entrenamiento": {
   "flujos": 640102,
-  "segundos": 36.7
+  "segundos": 23.0
  },
  "validacion": {
-  "f1_macro": 0.8132124155027722,
-  "f1_weighted": 0.8454200186797005,
-  "accuracy": 0.8435504230562534
+  "f1_macro": 0.8758618412398036,
+  "f1_weighted": 0.8819121719920933,
+  "accuracy": 0.8811880569407471
  },
  "prueba_octubre": {
-  "f1_macro": 0.8040824439162384,
-  "f1_weighted": 0.8322940575504997,
-  "accuracy": 0.8301951002084262
+  "f1_macro": 0.8602367017544147,
+  "f1_weighted": 0.8681326115737804,
+  "accuracy": 0.8672534836049137
  },
  "prueba_sin_repetidos": {
-  "f1_macro_sin_repetidos": 0.7750112962940378,
+  "f1_macro_sin_repetidos": 0.8328797946829157,
   "flujos_evaluados": 608031,
   "fraccion_excluida": 0.30330078798621796
  },
  "deriva_f1_macro": {
-  "2022-11": 0.7763018864113564,
-  "2022-12": 0.7686890627623598
+  "2022-11": 0.8279213531209265,
+  "2022-12": 0.8171779223658868
  },
- "caida_f1_octubre_a_diciembre_puntos": 3.54,
+ "caida_f1_octubre_a_diciembre_puntos": 4.31,
  "costo": {
-  "latencia_ms_por_flujo": 0.04441,
-  "tamano_modelo_MB": 142.0
+  "memoria_pico_GB": 8.39,
+  "latencia_ms_por_flujo": 0.03397,
+  "tamano_modelo_MB": 173.0
  },
  "top_variables": [
   [
    "BYTES_REV",
-   0.08119425494742515
+   0.07503438464392136
   ],
   [
    "BYTES",
-   0.06590364586406788
+   0.06394190664935079
   ],
   [
    "DURATION",
-   0.049335962315108305
-  ],
-  [
-   "PHIST_DST_SIZES_7",
-   0.04573537051343407
+   0.04881490243522935
   ],
   [
    "PPI_DURATION",
-   0.043796737199511625
+   0.04393638871929714
+  ],
+  [
+   "PHIST_DST_SIZES_7",
+   0.04346680665715463
   ],
   [
    "PACKETS_REV",
-   0.043532000624021745
+   0.042166177605473615
   ],
   [
    "PHIST_DST_IPT_0",
-   0.040692757733977514
-  ],
-  [
-   "PHIST_DST_SIZES_2",
-   0.03969076593208571
-  ],
-  [
-   "PHIST_SRC_SIZES_4",
-   0.039584874231190184
+   0.040707455962418114
   ],
   [
    "PPI_LEN",
-   0.039044585987767534
+   0.03743293744352693
+  ],
+  [
+   "PHIST_DST_SIZES_2",
+   0.037282781063525144
+  ],
+  [
+   "PHIST_SRC_SIZES_4",
+   0.03514653399431618
   ],
   [
    "PHIST_DST_SIZES_5",
-   0.030398289314739427
-  ],
-  [
-   "PHIST_SRC_SIZES_3",
-   0.029332666700607864
-  ],
-  [
-   "PHIST_SRC_SIZES_1",
-   0.02823761475868362
-  ],
-  [
-   "PHIST_DST_SIZES_1",
-   0.02802874200278703
+   0.030781042477223016
   ],
   [
    "PHIST_SRC_IPT_0",
-   0.027719388927378037
+   0.028951896438386762
+  ],
+  [
+   "PHIST_SRC_SIZES_3",
+   0.027773927895722958
+  ],
+  [
+   "PHIST_DST_SIZES_1",
+   0.02651797404258927
+  ],
+  [
+   "PHIST_SRC_SIZES_1",
+   0.026401903764219005
   ]
  ],
  "umbrales": {
   "f1_macro_minimo_cumplido": true,
-  "f1_macro_excelencia_cumplido": false,
+  "f1_macro_excelencia_cumplido": true,
   "latencia_cumplida": true
  }
 }

@@ -1,7 +1,7 @@
 {
  "xgboost.joblib": {
-  "sha256": "4a7662b492a083ec2fcba3b6b5a69a1d41acf7e1b092ff91987cad4d6aff3a08",
-  "bytes": 36017650,
+  "sha256": "ed3fcaab0d9765ae4cdf5a330a29976629d81e155d2e15d683e0666efedec798",
+  "bytes": 58908722,
   "clases": [
    "Advertising",
    "Analytics & Telemetry",
@@ -29,6 +29,6 @@
   ],
   "variables": 60,
   "origen": "models/xgboost.joblib, generado por scripts/03_entrenar_clasicos.py",
-  "preparado": "2026-09-27"
+  "preparado": "2026-10-07"
  }
 }

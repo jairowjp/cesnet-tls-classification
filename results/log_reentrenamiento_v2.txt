@@ -1,0 +1,205 @@
+
+===== 1/7 CNN 1D v2  (02:38)
+Entrenamiento: 640,102 · validación: 160,026 · 23 clases · dispositivo: cpu (carga en 2 s)
+Parámetros entrenables: 28,695
+Época  1/50 · pérdida 2.5603 · F1 macro validación 0.3377 · 44 s  ← mejor
+Época  2/50 · pérdida 1.9604 · F1 macro validación 0.4204 · 45 s  ← mejor
+Época  3/50 · pérdida 1.6679 · F1 macro validación 0.4844 · 47 s  ← mejor
+Época  4/50 · pérdida 1.4769 · F1 macro validación 0.5274 · 48 s  ← mejor
+Época  5/50 · pérdida 1.3430 · F1 macro validación 0.5708 · 55 s  ← mejor
+Época  6/50 · pérdida 1.2411 · F1 macro validación 0.6036 · 87 s  ← mejor
+Época  7/50 · pérdida 1.1549 · F1 macro validación 0.6232 · 69 s  ← mejor
+Época  8/50 · pérdida 1.0848 · F1 macro validación 0.6253 · 54 s  ← mejor
+Época  9/50 · pérdida 1.0258 · F1 macro validación 0.6216 · 53 s
+Época 10/50 · pérdida 0.9739 · F1 macro validación 0.6548 · 52 s  ← mejor
+Época 11/50 · pérdida 0.9279 · F1 macro validación 0.6716 · 53 s  ← mejor
+Época 12/50 · pérdida 0.8967 · F1 macro validación 0.6800 · 53 s  ← mejor
+Época 13/50 · pérdida 0.8605 · F1 macro validación 0.6879 · 52 s  ← mejor
+Época 14/50 · pérdida 0.8351 · F1 macro validación 0.6926 · 52 s  ← mejor
+Época 15/50 · pérdida 0.8085 · F1 macro validación 0.7007 · 52 s  ← mejor
+Época 16/50 · pérdida 0.7888 · F1 macro validación 0.7266 · 53 s  ← mejor
+Época 17/50 · pérdida 0.7647 · F1 macro validación 0.7095 · 51 s
+Época 18/50 · pérdida 0.7472 · F1 macro validación 0.7442 · 52 s  ← mejor
+Época 19/50 · pérdida 0.7317 · F1 macro validación 0.7386 · 55 s
+Época 20/50 · pérdida 0.7109 · F1 macro validación 0.7453 · 57 s  ← mejor
+Época 21/50 · pérdida 0.7001 · F1 macro validación 0.7545 · 58 s  ← mejor
+Época 22/50 · pérdida 0.6807 · F1 macro validación 0.7306 · 57 s
+Época 23/50 · pérdida 0.6713 · F1 macro validación 0.7504 · 59 s
+Época 24/50 · pérdida 0.6667 · F1 macro validación 0.7448 · 58 s
+Época 25/50 · pérdida 0.6455 · F1 macro validación 0.7601 · 56 s  ← mejor
+Época 26/50 · pérdida 0.6373 · F1 macro validación 0.7541 · 57 s
+Época 27/50 · pérdida 0.6330 · F1 macro validación 0.7324 · 58 s
+Época 28/50 · pérdida 0.6206 · F1 macro validación 0.7864 · 58 s  ← mejor
+Época 29/50 · pérdida 0.6113 · F1 macro validación 0.7760 · 58 s
+Época 30/50 · pérdida 0.5997 · F1 macro validación 0.7724 · 58 s
+Época 31/50 · pérdida 0.5926 · F1 macro validación 0.7867 · 57 s  ← mejor
+Época 32/50 · pérdida 0.5865 · F1 macro validación 0.7923 · 58 s  ← mejor
+Época 33/50 · pérdida 0.5778 · F1 macro validación 0.7925 · 58 s  ← mejor
+Época 34/50 · pérdida 0.5680 · F1 macro validación 0.7970 · 57 s  ← mejor
+Época 35/50 · pérdida 0.5631 · F1 macro validación 0.7971 · 58 s  ← mejor
+Época 36/50 · pérdida 0.5540 · F1 macro validación 0.7986 · 59 s  ← mejor
+Época 37/50 · pérdida 0.5486 · F1 macro validación 0.7849 · 57 s
+Época 38/50 · pérdida 0.5422 · F1 macro validación 0.8096 · 57 s  ← mejor
+Época 39/50 · pérdida 0.5357 · F1 macro validación 0.8035 · 58 s
+Época 40/50 · pérdida 0.5313 · F1 macro validación 0.8029 · 58 s
+Época 41/50 · pérdida 0.5249 · F1 macro validación 0.8034 · 57 s
+Época 42/50 · pérdida 0.5188 · F1 macro validación 0.8086 · 56 s
+Época 43/50 · pérdida 0.5150 · F1 macro validación 0.8115 · 58 s  ← mejor
+Época 44/50 · pérdida 0.5108 · F1 macro validación 0.8075 · 56 s
+Época 45/50 · pérdida 0.5073 · F1 macro validación 0.8100 · 58 s
+Época 46/50 · pérdida 0.5057 · F1 macro validación 0.8102 · 57 s
+Época 47/50 · pérdida 0.5028 · F1 macro validación 0.8136 · 56 s  ← mejor
+Época 48/50 · pérdida 0.5007 · F1 macro validación 0.8121 · 56 s
+Época 49/50 · pérdida 0.4999 · F1 macro validación 0.8129 · 57 s
+Época 50/50 · pérdida 0.5001 · F1 macro validación 0.8125 · 58 s
+
+================ RESULTADOS ================
+F1 macro octubre ............ 0.8010  (mínimo 0.7, excelencia 0.85)
+F1 macro sin repetidos ...... 0.7893  (30.3% de la prueba excluida)
+F1 ponderado / exactitud .... 0.8265 / 0.8260
+Deriva (F1 macro) ........... 2022-11: 0.7628 · 2022-12: 0.7482
+Latencia por flujo (CPU) .... 0.0150 ms (máximo 10 ms)
+Parámetros / tamaño ......... 28,695 / 0.12 MB
+Entrenamiento ............... 46.8 min en cpu, 50 épocas
+Umbrales .................... {'f1_macro_minimo_cumplido': True, 'f1_macro_excelencia_cumplido': False, 'latencia_cumplida': True, 'transformer_menos_de_2M_parametros': None}
+Resultados en ............... results/modelos/cnn1d
+
+===== 2/7 XGBoost v2  (03:27)
+Entrenamiento: 640,102 · validación: 160,026 · 23 clases (carga en 2 s)
+Entrenado en 89.6 min · F1 macro en validación: 0.9159
+
+================ RESULTADOS ================
+F1 macro octubre ............ 0.9032  (mínimo 0.7, excelencia 0.85)
+F1 macro sin repetidos ...... 0.8853  (30.3% de la prueba excluida)
+F1 ponderado / exactitud .... 0.9006 / 0.9004
+Deriva (F1 macro) ........... 2022-11: 0.8706 · 2022-12: 0.8556
+Latencia por flujo .......... 0.1486 ms (máximo 10 ms)
+Tamaño del modelo ........... 58.9 MB
+Umbrales .................... {'f1_macro_minimo_cumplido': True, 'f1_macro_excelencia_cumplido': True, 'latencia_cumplida': True}
+Resultados en ............... results/modelos/xgboost
+
+===== 3/7 Random Forest v2  (05:01)
+Entrenamiento: 640,102 · validación: 160,026 · 23 clases (carga en 2 s)
+Entrenado en 0.4 min · F1 macro en validación: 0.8759
+
+================ RESULTADOS ================
+F1 macro octubre ............ 0.8602  (mínimo 0.7, excelencia 0.85)
+F1 macro sin repetidos ...... 0.8329  (30.3% de la prueba excluida)
+F1 ponderado / exactitud .... 0.8681 / 0.8673
+Deriva (F1 macro) ........... 2022-11: 0.8279 · 2022-12: 0.8172
+Latencia por flujo .......... 0.0340 ms (máximo 10 ms)
+Tamaño del modelo ........... 173.0 MB
+Umbrales .................... {'f1_macro_minimo_cumplido': True, 'f1_macro_excelencia_cumplido': True, 'latencia_cumplida': True}
+Resultados en ............... results/modelos/random_forest
+
+===== 4/7 Transformer v2  (05:02)
+Entrenamiento: 640,102 · validación: 160,026 · 23 clases · dispositivo: cpu (carga en 2 s)
+Parámetros entrenables: 70,743
+Época  1/40 · pérdida 2.7865 · F1 macro validación 0.1984 · 290 s  ← mejor
+Época  2/40 · pérdida 2.1291 · F1 macro validación 0.3387 · 291 s  ← mejor
+Época  3/40 · pérdida 1.6686 · F1 macro validación 0.4812 · 289 s  ← mejor
+Época  4/40 · pérdida 1.3177 · F1 macro validación 0.5612 · 291 s  ← mejor
+Época  5/40 · pérdida 1.0862 · F1 macro validación 0.6239 · 291 s  ← mejor
+Época  6/40 · pérdida 0.9487 · F1 macro validación 0.6687 · 293 s  ← mejor
+Época  7/40 · pérdida 0.8455 · F1 macro validación 0.6938 · 293 s  ← mejor
+Época  8/40 · pérdida 0.7908 · F1 macro validación 0.7035 · 290 s  ← mejor
+Época  9/40 · pérdida 0.7377 · F1 macro validación 0.6786 · 290 s
+Época 10/40 · pérdida 0.6995 · F1 macro validación 0.7038 · 292 s  ← mejor
+Época 11/40 · pérdida 0.6792 · F1 macro validación 0.7090 · 291 s  ← mejor
+Época 12/40 · pérdida 0.6355 · F1 macro validación 0.7450 · 292 s  ← mejor
+Época 13/40 · pérdida 0.6025 · F1 macro validación 0.7486 · 291 s  ← mejor
+Época 14/40 · pérdida 0.5982 · F1 macro validación 0.7592 · 295 s  ← mejor
+Época 15/40 · pérdida 0.5697 · F1 macro validación 0.7481 · 295 s
+Época 16/40 · pérdida 0.5563 · F1 macro validación 0.7624 · 297 s  ← mejor
+Época 17/40 · pérdida 0.5343 · F1 macro validación 0.7981 · 298 s  ← mejor
+Época 18/40 · pérdida 0.5157 · F1 macro validación 0.7817 · 297 s
+Época 19/40 · pérdida 0.5057 · F1 macro validación 0.7887 · 296 s
+Época 20/40 · pérdida 0.4789 · F1 macro validación 0.7760 · 297 s
+Época 21/40 · pérdida 0.4770 · F1 macro validación 0.8042 · 295 s  ← mejor
+Época 22/40 · pérdida 0.4585 · F1 macro validación 0.7825 · 295 s
+Época 23/40 · pérdida 0.4548 · F1 macro validación 0.7949 · 293 s
+Época 24/40 · pérdida 0.4437 · F1 macro validación 0.8007 · 279 s
+Época 25/40 · pérdida 0.4218 · F1 macro validación 0.8179 · 273 s  ← mejor
+Época 26/40 · pérdida 0.4138 · F1 macro validación 0.8114 · 268 s
+Época 27/40 · pérdida 0.4132 · F1 macro validación 0.8062 · 269 s
+Época 28/40 · pérdida 0.3986 · F1 macro validación 0.8205 · 267 s  ← mejor
+Época 29/40 · pérdida 0.3856 · F1 macro validación 0.8360 · 267 s  ← mejor
+Época 30/40 · pérdida 0.3797 · F1 macro validación 0.8254 · 267 s
+Época 31/40 · pérdida 0.3713 · F1 macro validación 0.8354 · 269 s
+Época 32/40 · pérdida 0.3637 · F1 macro validación 0.8315 · 269 s
+Época 33/40 · pérdida 0.3548 · F1 macro validación 0.8438 · 268 s  ← mejor
+Época 34/40 · pérdida 0.3526 · F1 macro validación 0.8408 · 267 s
+Época 35/40 · pérdida 0.3464 · F1 macro validación 0.8427 · 268 s
+Época 36/40 · pérdida 0.3420 · F1 macro validación 0.8460 · 269 s  ← mejor
+Época 37/40 · pérdida 0.3390 · F1 macro validación 0.8449 · 274 s
+Época 38/40 · pérdida 0.3375 · F1 macro validación 0.8458 · 283 s
+Época 39/40 · pérdida 0.3353 · F1 macro validación 0.8461 · 265 s  ← mejor
+Época 40/40 · pérdida 0.3351 · F1 macro validación 0.8461 · 239 s  ← mejor
+
+================ RESULTADOS ================
+F1 macro octubre ............ 0.8332  (mínimo 0.7, excelencia 0.85)
+F1 macro sin repetidos ...... 0.8355  (30.3% de la prueba excluida)
+F1 ponderado / exactitud .... 0.8653 / 0.8650
+Deriva (F1 macro) ........... 2022-11: 0.7904 · 2022-12: 0.7734
+Latencia por flujo (CPU) .... 0.0443 ms (máximo 10 ms)
+Parámetros / tamaño ......... 70,743 / 0.30 MB
+Entrenamiento ............... 188.4 min en cpu, 40 épocas
+Umbrales .................... {'f1_macro_minimo_cumplido': True, 'f1_macro_excelencia_cumplido': False, 'latencia_cumplida': True, 'transformer_menos_de_2M_parametros': True}
+Resultados en ............... results/modelos/transformer
+
+===== 5/7 Versión 1 frente a versión 2 (decisión por validación)  (08:14)
+
+================ VERSIÓN 1 FRENTE A VERSIÓN 2 ================
+       modelo  f1_validacion_v1  f1_validacion_v2 decision  f1_prueba_v1  f1_prueba_v2  mejora_prueba_puntos  tamano_MB_v1  tamano_MB_v2  memoria_pico_GB_v2
+random_forest            0.8132            0.8759       v2        0.8041        0.8602                5.6154        142.00        173.00                8.39
+      xgboost            0.9026            0.9159       v2        0.8861        0.9032                1.7113         36.00         58.90                4.84
+        cnn1d            0.7107            0.8136       v2        0.7004        0.8010               10.0590          0.12          0.12                3.34
+  transformer            0.7607            0.8461       v2        0.7474        0.8332                8.5791          0.29          0.30                3.48
+
+Decisión: se conserva la versión con mejor F1 macro de VALIDACIÓN (la prueba no interviene).
+
+===== 6/7 Comparativa y app  (08:14)
+
+================ TABLA COMPARATIVA ================
+               f1_macro  f1_macro_sin_repetidos  f1_ponderado  exactitud  f1_macro_2022-11  f1_macro_2022-12  latencia_ms  tamano_MB  entrenamiento_min
+modelo                                                                                                                                                 
+random_forest    0.8602                  0.8329        0.8681     0.8673            0.8279            0.8172       0.0340     173.00                0.4
+xgboost          0.9032                  0.8853        0.9006     0.9004            0.8706            0.8556       0.1486      58.90               89.6
+cnn1d            0.8010                  0.7893        0.8265     0.8260            0.7628            0.7482       0.0150       0.12               46.8
+transformer      0.8332                  0.8355        0.8653     0.8650            0.7904            0.7734       0.0443       0.30              188.4
+
+================ McNEMAR (corrección de Holm) ================
+     modelo_A    modelo_B  discrepancias_A_acierta  discrepancias_B_acierta       p_holm  significativo         mejor
+random_forest     xgboost                    16790                    45756 0.000000e+00           True       xgboost
+random_forest       cnn1d                    82717                    46711 0.000000e+00           True random_forest
+random_forest transformer                    58760                    56751 3.459560e-09           True random_forest
+      xgboost       cnn1d                    97108                    32136 0.000000e+00           True       xgboost
+      xgboost transformer                    68759                    37784 0.000000e+00           True       xgboost
+        cnn1d transformer                    32020                    66017 0.000000e+00           True   transformer
+
+================ RECOMENDACIÓN ================
+Mayor F1 macro: xgboost (0.9032)
+xgboost supera con significancia a todos los demás modelos (p de Holm < 0.05)
+Modelo recomendado: xgboost (el más simple entre los estadísticamente equivalentes al mejor)
+Resultados en results/comparativa
+Muestra de la app: 6,900 flujos de octubre, 23 categorías
+  random_forest  acierto sobre la muestra de la app: 87.2%
+  xgboost        acierto sobre la muestra de la app: 89.9%
+  cnn1d          acierto sobre la muestra de la app: 85.7%
+  transformer    acierto sobre la muestra de la app: 89.3%
+
+Predicciones: app/assets/predicciones_muestra.parquet
+Modelo de la app: app/models/xgboost.joblib (58.9 MB)
+SHA-256: ed3fcaab0d9765ae4cdf5a330a29976629d81e155d2e15d683e0666efedec798
+
+===== 7/7 Pruebas  (08:14)
+..................................................................       [100%]
+=============================== warnings summary ===============================
+tests/test_diagnostico.py::test_mlflow_usa_una_sola_base_para_todas_las_corridas
+  /home/ransomware/proyecto_integrador/.venv/lib/python3.13/site-packages/mlflow/store/tracking/utils/sql_trace_metrics_utils.py:155: SADeprecationWarning: The ``noload`` loader strategy is deprecated and will be removed in a future release.  This option produces incorrect results by returning ``None`` for related items. (deprecated since: 2.1) (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    _SESSION_TRACE_METADATA = aliased(SqlTraceMetadata)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+66 passed, 1 warning in 13.08s
+
+Listo en 335 minutos.

@@ -2,101 +2,106 @@
  "modelo": "xgboost",
  "modo_prueba": false,
  "parametros": {
-  "n_estimators": 400,
+  "n_estimators": 1000,
   "max_depth": 8,
   "learning_rate": 0.1,
   "tree_method": "hist",
   "early_stopping_rounds": 30,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "reg_lambda": 5.0,
+  "min_child_weight": 5,
   "n_jobs": -1
  },
  "entrenamiento": {
   "flujos": 640102,
-  "segundos": 1420.5
+  "segundos": 5373.4
  },
  "validacion": {
-  "f1_macro": 0.9025969930542511,
-  "f1_weighted": 0.8985201394476204,
-  "accuracy": 0.8984040093484809
+  "f1_macro": 0.9159413088352857,
+  "f1_weighted": 0.9134616899810699,
+  "accuracy": 0.9133765763063502
  },
  "prueba_octubre": {
-  "f1_macro": 0.8861349466383731,
-  "f1_weighted": 0.8847896319091131,
-  "accuracy": 0.884627680235949
+  "f1_macro": 0.9032481014633994,
+  "f1_weighted": 0.9005746404546066,
+  "accuracy": 0.9004435501890043
  },
  "prueba_sin_repetidos": {
-  "f1_macro_sin_repetidos": 0.8634091323261571,
+  "f1_macro_sin_repetidos": 0.8853418311379609,
   "flujos_evaluados": 608031,
   "fraccion_excluida": 0.30330078798621796
  },
  "deriva_f1_macro": {
-  "2022-11": 0.8494122156363275,
-  "2022-12": 0.8346050161145616
+  "2022-11": 0.8706299123247424,
+  "2022-12": 0.8556193553975145
  },
- "caida_f1_octubre_a_diciembre_puntos": 5.15,
+ "caida_f1_octubre_a_diciembre_puntos": 4.76,
  "costo": {
-  "latencia_ms_por_flujo": 0.04148,
-  "tamano_modelo_MB": 36.0
+  "memoria_pico_GB": 4.84,
+  "latencia_ms_por_flujo": 0.14861,
+  "tamano_modelo_MB": 58.9
  },
  "top_variables": [
   [
-   "FLAG_FIN_REV",
-   0.041470013558864594
-  ],
-  [
    "FLAG_RST_REV",
-   0.04038470983505249
+   0.04938777536153793
   ],
   [
    "PHIST_DST_SIZES_2",
-   0.040231429040431976
+   0.03966754302382469
   ],
   [
    "PHIST_SRC_SIZES_4",
-   0.03914997726678848
+   0.03578685596585274
   ],
   [
    "PHIST_SRC_SIZES_7",
-   0.033307578414678574
-  ],
-  [
-   "FLOW_ENDREASON_END",
-   0.03244861215353012
+   0.03215998783707619
   ],
   [
    "PHIST_SRC_SIZES_1",
-   0.031819455325603485
+   0.03168221935629845
   ],
   [
    "PHIST_DST_SIZES_1",
-   0.03123079612851143
+   0.031664635986089706
+  ],
+  [
+   "FLAG_ECE_REV",
+   0.030613791197538376
+  ],
+  [
+   "FLAG_FIN_REV",
+   0.029414832592010498
   ],
   [
    "PHIST_DST_SIZES_7",
-   0.03038470633327961
+   0.027519775554537773
   ],
   [
-   "FLAG_FIN",
-   0.029620015993714333
-  ],
-  [
-   "PHIST_SRC_SIZES_3",
-   0.02657192386686802
+   "FLOW_ENDREASON_IDLE",
+   0.02724662981927395
   ],
   [
    "PHIST_SRC_SIZES_2",
-   0.024950718507170677
+   0.026722442358732224
   ],
   [
-   "PHIST_DST_IPT_0",
-   0.02450244128704071
+   "PHIST_SRC_SIZES_3",
+   0.025396814569830894
   ],
   [
-   "BYTES_REV",
-   0.0231639314442873
+   "FLOW_ENDREASON_END",
+   0.02384738065302372
+  ],
+  [
+   "PHIST_DST_SIZES_0",
+   0.023142531514167786
   ],
   [
    "PHIST_DST_SIZES_3",
-   0.022956600412726402
+   0.022371292114257812
   ]
  ],
  "umbrales": {

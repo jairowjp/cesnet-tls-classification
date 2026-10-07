@@ -1,7 +1,7 @@
 modelo_A,modelo_B,discrepancias_A_acierta,discrepancias_B_acierta,estadistico,p_valor,mejor,p_holm,significativo
-random_forest,xgboost,16315,63820,28160.354601609783,0.0,xgboost,0.0,True
-random_forest,cnn1d,124944,44240,38496.39569344619,0.0,random_forest,0.0,True
-random_forest,transformer,89563,60124,5789.38614575748,0.0,random_forest,0.0,True
-xgboost,cnn1d,156878,28669,88588.28902650003,0.0,xgboost,0.0,True
-xgboost,transformer,113262,36318,39578.98949725899,0.0,xgboost,0.0,True
-cnn1d,transformer,45569,96834,18454.65120819084,0.0,transformer,0.0,True
+random_forest,xgboost,16790,45756,13413.667140984235,0.0,xgboost,0.0,True
+random_forest,cnn1d,82717,46711,10016.070904286553,0.0,random_forest,0.0,True
+random_forest,transformer,58760,56751,34.90632061015834,3.4595597333078637e-09,random_forest,3.4595597333078637e-09,True
+xgboost,cnn1d,97108,32136,32660.942411253134,0.0,xgboost,0.0,True
+xgboost,transformer,68759,37784,9004.708671616156,0.0,xgboost,0.0,True
+cnn1d,transformer,32020,66017,11788.69218764344,0.0,transformer,0.0,True

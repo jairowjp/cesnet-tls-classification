@@ -2,6 +2,19 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
+## [Sin publicar] · Versión 2 de los modelos
+### Cambiado
+- `configs/experiment.yaml`: configuración v2 validada por el diagnóstico de la semana 3 (Random Forest con hojas de 1
+  flujo y profundidad 20; XGBoost con hasta 1 000 rondas y regularización; redes con hasta 50 y 40 épocas, tasa OneCycle
+  y paciencia 6). La v1 se conserva como `modelos_v1`, punto de partida reproducible del diagnóstico.
+- `scripts/05_entrenar_profundos.py`: programador OneCycle y paciencia por modelo. Los scripts 03 y 05 registran la
+  memoria máxima usada.
+### Añadido
+- `scripts/11_comparar_versiones.py` y `scripts/utilidades/07_reentrenar_v2.sh`: reentrenamiento con respaldo de la v1,
+  prueba piloto de memoria y decisión por F1 de validación (la prueba no interviene).
+### Corregido
+- `src/models/deep.py`: las claves de entrenamiento (programador, paciencia) ya no llegan al constructor de la red.
+
 ## [Sin publicar] · Semana 3: diagnóstico de sobreajuste y subajuste
 ### Añadido
 - `src/diagnostico/`: tracking con MLflow (SQLite local), callback personalizado de XGBoost y bucle de PyTorch con

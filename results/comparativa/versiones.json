@@ -1,0 +1,50 @@
+[
+ {
+  "modelo": "random_forest",
+  "f1_validacion_v1": 0.8132124155027722,
+  "f1_validacion_v2": 0.8758618412398036,
+  "decision": "v2",
+  "f1_prueba_v1": 0.8040824439162384,
+  "f1_prueba_v2": 0.8602367017544147,
+  "mejora_prueba_puntos": 5.61542578381763,
+  "tamano_MB_v1": 142.0,
+  "tamano_MB_v2": 173.0,
+  "memoria_pico_GB_v2": 8.39
+ },
+ {
+  "modelo": "xgboost",
+  "f1_validacion_v1": 0.9025969930542511,
+  "f1_validacion_v2": 0.9159413088352857,
+  "decision": "v2",
+  "f1_prueba_v1": 0.8861349466383731,
+  "f1_prueba_v2": 0.9032481014633994,
+  "mejora_prueba_puntos": 1.7113154825026289,
+  "tamano_MB_v1": 36.0,
+  "tamano_MB_v2": 58.9,
+  "memoria_pico_GB_v2": 4.84
+ },
+ {
+  "modelo": "cnn1d",
+  "f1_validacion_v1": 0.7106912286569518,
+  "f1_validacion_v2": 0.8136354836061044,
+  "decision": "v2",
+  "f1_prueba_v1": 0.7003957868686748,
+  "f1_prueba_v2": 0.8009859670218747,
+  "mejora_prueba_puntos": 10.059018015319998,
+  "tamano_MB_v1": 0.12,
+  "tamano_MB_v2": 0.12,
+  "memoria_pico_GB_v2": 3.34
+ },
+ {
+  "modelo": "transformer",
+  "f1_validacion_v1": 0.7606819825450175,
+  "f1_validacion_v2": 0.8461409974821753,
+  "decision": "v2",
+  "f1_prueba_v1": 0.7474357590677083,
+  "f1_prueba_v2": 0.8332271839989632,
+  "mejora_prueba_puntos": 8.579142493125492,
+  "tamano_MB_v1": 0.29,
+  "tamano_MB_v2": 0.3,
+  "memoria_pico_GB_v2": 3.48
+ }
+]

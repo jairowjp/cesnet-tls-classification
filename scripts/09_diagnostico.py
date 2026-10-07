@@ -52,6 +52,8 @@ SALIDA = ROOT / "results/diagnostico"
 EXPERIMENTO = "diagnostico-overfitting"
 CFG = load_config()
 SEMILLA = CFG["semilla"]
+# Punto de partida ("antes") del diagnóstico: la configuración v1, para que los resultados sean reproducibles
+MODELOS_BASE = CFG.get("modelos_v1", CFG["modelos"])
 
 
 # --------------------------------------------------------------------------------------------- datos
@@ -116,7 +118,7 @@ def elegir_parametro(valores, p_ent, p_val, tolerancia=0.01):
 def ejecutar_rf(muestra: int) -> None:
     from sklearn.ensemble import RandomForestClassifier
 
-    base = {k: v for k, v in CFG["modelos"]["random_forest"].items()}
+    base = {k: v for k, v in MODELOS_BASE["random_forest"].items()}
     d = preparar_datos(muestra, "tabular")
     carpeta = SALIDA / "random_forest"
     # Las curvas con validación cruzada entrenan muchos bosques: se usan hasta 100 000 flujos
@@ -245,7 +247,7 @@ def ejecutar_xgb(muestra: int) -> None:
 
     d = preparar_datos(muestra, "tabular")
     carpeta = SALIDA / "xgboost"
-    base = {k: v for k, v in CFG["modelos"]["xgboost"].items()}
+    base = {k: v for k, v in MODELOS_BASE["xgboost"].items()}
     regularizado = {**base, "subsample": 0.8, "colsample_bytree": 0.8, "reg_lambda": 5.0, "min_child_weight": 5}
     # El callback mide en una submuestra fija del entrenamiento (igual tamaño que la validación como máximo)
     n_seg = min(50_000, len(d["y_tr"]))
@@ -317,7 +319,7 @@ def ejecutar_red(nombre: str, variante: str, muestra: int, epocas: int | None = 
 
     d = preparar_datos(muestra, "secuencia")
     (X_tr, M_tr), (X_val, M_val), (X_te, M_te) = d["X_tr"], d["X_val"], d["X_te"]
-    params = CFG["modelos"][nombre]
+    params = MODELOS_BASE[nombre]
     if variante == "base":
         conf = {"epocas": params["epocas"], "programador": "constante", "paciencia": None}
     else:  # estrategia 2 contra el subajuste: más épocas, tasa de aprendizaje OneCycle y parada temprana

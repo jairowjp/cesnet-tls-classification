@@ -24,6 +24,7 @@ Uso:
     python scripts/03_entrenar_clasicos.py --modelo random_forest
     python scripts/03_entrenar_clasicos.py --modelo xgboost
 """
+
 import argparse
 import json
 import sys
@@ -45,11 +46,22 @@ from src.evaluation.report import plot_confusion  # noqa: E402
 from src.models.classic import MODELS, top_features  # noqa: E402
 
 
+def memoria_pico_gb() -> float:
+    """Memoria RAM máxima usada por el proceso hasta ahora, en GB (para dimensionar el equipo necesario)."""
+    import resource
+
+    return round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024**2, 2)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--modelo", choices=list(MODELS), default="random_forest")
-    ap.add_argument("--limite-filas", type=int, default=0,
-                    help="usar solo N flujos de entrenamiento (prueba rápida del pipeline; 0 = todos)")
+    ap.add_argument(
+        "--limite-filas",
+        type=int,
+        default=0,
+        help="usar solo N flujos de entrenamiento (prueba rápida del pipeline; 0 = todos)",
+    )
     a = ap.parse_args()
 
     cfg = load_config()
@@ -66,14 +78,18 @@ def main():
         # Prueba rápida: submuestra aleatoria con semilla fija. Los resultados NO son los oficiales.
         train_df = train_df.sample(n=min(a.limite_filas, len(train_df)), random_state=seed)
         print(f"MODO PRUEBA: {len(train_df):,} flujos de entrenamiento", flush=True)
-    y_all, classes = labels(train_df)                      # el orden de clases lo fija entrenamiento
+    y_all, classes = labels(train_df)  # el orden de clases lo fija entrenamiento
     X_all = tabular_features(train_df)
     train_hashes = train_df["SEQ_HASH"].to_numpy()
     X_tr, X_val, y_tr, y_val = train_test_split(
-        X_all, y_all, test_size=cfg["datos"]["fraccion_validacion"], stratify=y_all, random_state=seed)
+        X_all, y_all, test_size=cfg["datos"]["fraccion_validacion"], stratify=y_all, random_state=seed
+    )
     del train_df
-    print(f"Entrenamiento: {len(y_tr):,} · validación: {len(y_val):,} · {len(classes)} clases "
-          f"(carga en {time.time() - t0:.0f} s)", flush=True)
+    print(
+        f"Entrenamiento: {len(y_tr):,} · validación: {len(y_val):,} · {len(classes)} clases "
+        f"(carga en {time.time() - t0:.0f} s)",
+        flush=True,
+    )
 
     # ------------------------------------------------------------------ 2. entrenamiento
     build, fit = MODELS[a.modelo]
@@ -94,13 +110,20 @@ def main():
     sin_rep = f1_without_repeats(y_te, pred, test_df["SEQ_HASH"].to_numpy(), train_hashes)
     np.savez_compressed(out / "predicciones_prueba.npz", y_true=y_te, y_pred=pred)
 
-    rep = pd.DataFrame(classification_report(y_te, pred, labels=range(len(classes)), target_names=classes,
-                                             output_dict=True, zero_division=0)).T
+    rep = pd.DataFrame(
+        classification_report(
+            y_te, pred, labels=range(len(classes)), target_names=classes, output_dict=True, zero_division=0
+        )
+    ).T
     rep.to_csv(out / "reporte_por_clase.csv")
     cm = confusion_matrix(y_te, pred, labels=range(len(classes)))
     pd.DataFrame(cm, index=classes, columns=classes).to_csv(out / "matriz_confusion.csv")
-    plot_confusion(cm, classes, out / "matriz_confusion.png",
-                   f"{a.modelo.replace('_', ' ').title()} · octubre 2022 · F1 macro {test_perf['f1_macro']:.3f}")
+    plot_confusion(
+        cm,
+        classes,
+        out / "matriz_confusion.png",
+        f"{a.modelo.replace('_', ' ').title()} · octubre 2022 · F1 macro {test_perf['f1_macro']:.3f}",
+    )
 
     # ------------------------------------------------------------------ 4. deriva (noviembre y diciembre)
     deriva = {}
@@ -127,7 +150,11 @@ def main():
         "prueba_sin_repetidos": sin_rep,
         "deriva_f1_macro": deriva,
         "caida_f1_octubre_a_diciembre_puntos": round(100 * (test_perf["f1_macro"] - deriva.get("2022-12", np.nan)), 2),
-        "costo": {"latencia_ms_por_flujo": round(latency, 5), "tamano_modelo_MB": round(size_mb, 1)},
+        "costo": {
+            "memoria_pico_GB": memoria_pico_gb(),
+            "latencia_ms_por_flujo": round(latency, 5),
+            "tamano_modelo_MB": round(size_mb, 1),
+        },
         "top_variables": top_features(model, TABULAR),
         "umbrales": {
             "f1_macro_minimo_cumplido": test_perf["f1_macro"] >= umbrales["f1_macro_minimo"],
@@ -138,10 +165,14 @@ def main():
     (out / "metricas.json").write_text(json.dumps(res, indent=1, ensure_ascii=False))
 
     print("\n================ RESULTADOS ================")
-    print(f"F1 macro octubre ............ {test_perf['f1_macro']:.4f}  (mínimo {umbrales['f1_macro_minimo']}, "
-          f"excelencia {umbrales['f1_macro_excelencia']})")
-    print(f"F1 macro sin repetidos ...... {sin_rep['f1_macro_sin_repetidos']:.4f}  "
-          f"({sin_rep['fraccion_excluida']:.1%} de la prueba excluida)")
+    print(
+        f"F1 macro octubre ............ {test_perf['f1_macro']:.4f}  (mínimo {umbrales['f1_macro_minimo']}, "
+        f"excelencia {umbrales['f1_macro_excelencia']})"
+    )
+    print(
+        f"F1 macro sin repetidos ...... {sin_rep['f1_macro_sin_repetidos']:.4f}  "
+        f"({sin_rep['fraccion_excluida']:.1%} de la prueba excluida)"
+    )
     print(f"F1 ponderado / exactitud .... {test_perf['f1_weighted']:.4f} / {test_perf['accuracy']:.4f}")
     print("Deriva (F1 macro) ........... " + " · ".join(f"{m}: {v:.4f}" for m, v in deriva.items()))
     print(f"Latencia por flujo .......... {latency:.4f} ms (máximo {umbrales['latencia_ms_maxima']} ms)")

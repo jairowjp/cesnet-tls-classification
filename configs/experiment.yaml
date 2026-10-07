@@ -34,18 +34,34 @@ excluidos:
   TIME_FIRST: solo para particionar
 
 modelos:
-  # Random Forest acotado a propósito. Con 23 clases, scikit-learn guarda 23 valores por nodo:
-  # 300 árboles sin límite entrenados con ~640 000 flujos superarían la RAM del equipo (16 GB).
-  # Con estos límites (150 árboles, hojas de ≥ 10 flujos, cada árbol ve el 50 % de los datos)
-  # el modelo cabe en unos 2 GB de memoria. El ajuste fino se hace en el Sprint 3 (US-12).
+  # ---------------------------------------------------------------------------------------------------
+  # Versión 2 (octubre de 2026): ajustes validados por el diagnóstico de sobreajuste y subajuste de la
+  # semana 3 (results/diagnostico/). La versión 1 se conserva al final de esta sección y sus resultados en
+  # results/modelos_v1/. Un modelo v2 solo reemplaza al v1 si mejora el F1 macro de VALIDACIÓN.
+  # ---------------------------------------------------------------------------------------------------
+  # Random Forest: estaba en subajuste. Las curvas de validación mostraron que el F1 cae al aumentar
+  # min_samples_leaf (1 → 0,818; 10 → 0,673) y que max_depth se estabiliza desde 20. Con hojas de 1 flujo
+  # el modelo crece mucho. Prueba piloto (160 000 flujos): 26 987 nodos por árbol; proyección con 640 000 flujos:
+  # 8,9 GB con 150 árboles (margen ~1 GB) y 7,9 GB con 100 (margen ~2 GB). Se eligen 100 árboles.
+  random_forest: {n_estimators: 100, max_depth: 20, min_samples_leaf: 1, max_samples: 0.5, max_features: sqrt, n_jobs: -1}
+  # XGBoost: diagnóstico mixto (seguía mejorando en la ronda 391 de 400 y con brecha de 0,105). Más rondas con
+  # parada temprana atienden el subajuste; el submuestreo y L2 contienen la brecha.
+  xgboost: {n_estimators: 1000, max_depth: 8, learning_rate: 0.1, tree_method: hist, early_stopping_rounds: 30,
+            subsample: 0.8, colsample_bytree: 0.8, reg_lambda: 5.0, min_child_weight: 5, n_jobs: -1}
+  # Redes profundas: ambas en subajuste (mejor época = última). Más épocas, tasa OneCycle (sube y luego baja,
+  # ayuda a converger) y paciencia 6 para que la parada temprana no corte una mejora lenta.
+  cnn1d: {canales: [64, 128], kernel: 3, dropout: 0.2, epocas: 50, lr: 0.001, programador: onecycle, paciencia: 6}
+  transformer: {d_model: 64, cabezas: 4, capas: 2, ff: 128, dropout: 0.1, epocas: 40, lr: 0.0005, programador: onecycle,
+                paciencia: 6}
+  lstm: {unidades: 128, capas: 1, dropout: 0.2, epocas: 15, lr: 0.001}   # opcional (no comprometido)
+
+# Versión 1 (septiembre de 2026): configuración original. Sus resultados están en results/modelos_v1/ y es el punto
+# de partida ("antes") del diagnóstico de la semana 3 (scripts/09_diagnostico.py), que así sigue siendo reproducible.
+modelos_v1:
   random_forest: {n_estimators: 150, max_depth: 25, min_samples_leaf: 10, max_samples: 0.5, max_features: sqrt, n_jobs: -1}
-  # XGBoost: hasta 400 árboles; se detiene antes si la validación no mejora en 30 rondas seguidas.
   xgboost: {n_estimators: 400, max_depth: 8, learning_rate: 0.1, tree_method: hist, early_stopping_rounds: 30, n_jobs: -1}
-  # Redes profundas (rama B): reciben la secuencia de 30 paquetes (30 × 3). Se entrenan con la misma
-  # partición, los mismos pesos por clase y parada temprana sobre el F1 macro de validación.
   cnn1d: {canales: [64, 128], kernel: 3, dropout: 0.2, epocas: 15, lr: 0.001}
   transformer: {d_model: 64, cabezas: 4, capas: 2, ff: 128, dropout: 0.1, epocas: 15, lr: 0.0005}
-  lstm: {unidades: 128, capas: 1, dropout: 0.2, epocas: 15, lr: 0.001}   # opcional (no comprometido)
 
 entrenamiento_profundo:
   lote: 1024          # flujos por paso de optimización

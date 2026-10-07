@@ -97,12 +97,16 @@ class TrafficLSTM(nn.Module):
         return self.head(masked_mean(h, mask))
 
 
+# Claves de configs/experiment.yaml que controlan el ENTRENAMIENTO, no la arquitectura de la red
+CLAVES_ENTRENAMIENTO = ("epocas", "lr", "programador", "paciencia")
+
+
 def build_deep_model(name: str, params: dict, n_classes: int) -> nn.Module:
     """Construye el modelo a partir de su sección en configs/experiment.yaml.
 
-    Las claves de entrenamiento (epocas, lr) se separan de las de arquitectura.
+    Las claves de entrenamiento (CLAVES_ENTRENAMIENTO) se separan de las de arquitectura.
     """
-    arch = {k: v for k, v in params.items() if k not in ("epocas", "lr")}
+    arch = {k: v for k, v in params.items() if k not in CLAVES_ENTRENAMIENTO}
     if name == "cnn1d":
         return TrafficCNN1D(n_classes, canales=tuple(arch["canales"]), kernel=arch["kernel"], dropout=arch["dropout"])
     if name == "transformer":
