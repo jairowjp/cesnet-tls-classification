@@ -85,6 +85,15 @@ Versiones exactas guardadas en `requirements-lock.txt`. Script derivado: `script
 - Corrección posterior a la primera entrega: el informe indicaba +12,2 puntos para el Transformer; el valor correcto es
   +11,2. El informe y el notebook ahora calculan todas sus cifras y frases desde los resultados.
 
+## Versión 2 de los modelos (07/10/2026)
+- Configuración v2 validada por el diagnóstico: Random Forest con hojas de 1 flujo y profundidad 20 (100 árboles por
+  memoria, tras una prueba piloto: 8,39 GB reales frente a 7,9 estimados); XGBoost con hasta 1 000 rondas y
+  regularización; redes con más épocas, tasa OneCycle y paciencia 6. Reentrenamiento de 335 minutos.
+- Los 4 modelos mejoraron en validación y adoptaron la v2. F1 macro de prueba: XGBoost 0,886 → 0,903;
+  Random Forest 0,804 → 0,860; Transformer 0,747 → 0,833; CNN 1D 0,700 → 0,801.
+- Hallazgos: XGBoost y Random Forest superan el umbral de excelencia; el Transformer obtiene más F1 sin secuencias
+  repetidas (0,836) que con ellas. Ninguna red activó la parada temprana: todavía podían mejorar.
+
 ## Herramientas utilizadas
 Python 3.13, pandas, scikit-learn, XGBoost, PyTorch, Jupyter, VS Code, Git y GitHub en Kali Linux;
 Google Colab para pruebas. El código se desarrolló con apoyo de un asistente de IA (Claude, de Anthropic);

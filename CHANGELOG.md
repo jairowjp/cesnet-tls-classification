@@ -2,21 +2,24 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
-## [Sin publicar] · Versión 2 de los modelos
-### Cambiado
+## [0.4.0] – 2026-10-07 · Aplicación web, seguridad, diagnóstico y modelos v2
+
+### Versión 2 de los modelos
+- `README.md`: estado real del proyecto y resultados de la versión 1 y la 2.
+#### Cambiado
 - `configs/experiment.yaml`: configuración v2 validada por el diagnóstico de la semana 3 (Random Forest con hojas de 1
   flujo y profundidad 20; XGBoost con hasta 1 000 rondas y regularización; redes con hasta 50 y 40 épocas, tasa OneCycle
   y paciencia 6). La v1 se conserva como `modelos_v1`, punto de partida reproducible del diagnóstico.
 - `scripts/05_entrenar_profundos.py`: programador OneCycle y paciencia por modelo. Los scripts 03 y 05 registran la
   memoria máxima usada.
-### Añadido
+#### Añadido
 - `scripts/11_comparar_versiones.py` y `scripts/utilidades/07_reentrenar_v2.sh`: reentrenamiento con respaldo de la v1,
   prueba piloto de memoria y decisión por F1 de validación (la prueba no interviene).
-### Corregido
+#### Corregido
 - `src/models/deep.py`: las claves de entrenamiento (programador, paciencia) ya no llegan al constructor de la red.
 
-## [Sin publicar] · Semana 3: diagnóstico de sobreajuste y subajuste
-### Añadido
+### Semana 3: diagnóstico de sobreajuste y subajuste
+#### Añadido
 - `src/diagnostico/`: tracking con MLflow (SQLite local), callback personalizado de XGBoost y bucle de PyTorch con
   registro por época; curvas A-D a 300 DPI; diagnóstico cuantitativo con reglas y umbrales; análisis en lenguaje claro
   calculado desde las métricas (`narrativa.py`), compartido por el informe y el notebook.
@@ -28,8 +31,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
 - Página **Diagnóstico** en la aplicación web, con curvas interactivas; el recorrido guiado pasa a ocho pasos.
 - 8 pruebas nuevas (reglas de diagnóstico, registro, narrativa y página web).
 
-## [Sin publicar] · Sprint 3: aplicación web
-### Añadido
+### Sprint 3: aplicación web
+#### Añadido
 - Aplicación Streamlit de cinco páginas (`app/`) con sistema de diseño propio: la firma del flujo como elemento
   central, cobalto y ámbar reservados para la dirección de los paquetes y tipografía Archivo servida desde la app.
 - Núcleo de seguridad (`app/core/seguridad.py`): verificación SHA-256 del modelo antes de cargarlo, validación

@@ -35,12 +35,36 @@ y con una latencia de hasta 10 ms por flujo.
 
 ## Estado del proyecto
 
-| Sprint | Fechas | Contenido | Estado |
-|---|---|---|---|
-| 1 | 28/09 – 04/10/2026 | Datos, EDA y línea base Random Forest | EDA terminado; línea base en curso |
-| 2 | 05/10 – 18/10/2026 | XGBoost, CNN 1D y Transformer | Pendiente |
-| 3 | 19/10 – 01/11/2026 | Ajuste, McNemar, aplicación web, OWASP y prueba de usabilidad | Pendiente |
-| 4 | 02/11 – 08/11/2026 | Pruebas integrales, informe y presentación final | Pendiente |
+| Etapa | Contenido | Estado |
+|---|---|---|
+| Datos y EDA | Muestra del 2 % (3 133 138 flujos), análisis exploratorio | Completo (v0.2.0) |
+| Modelos v1 | Random Forest, XGBoost, CNN 1D y Transformer; comparación con McNemar y Holm | Completo (v0.3.0) |
+| Aplicación web | 9 páginas, seguridad desde el diseño, OWASP ZAP y `pip-audit`, publicada | Completo |
+| Diagnóstico (semana 3) | Sobreajuste y subajuste con curvas de aprendizaje y MLflow; 3 estrategias de mejora | Completo |
+| Modelos v2 | Reentrenamiento con los ajustes validados por el diagnóstico | Completo |
+| Usabilidad | Prueba SUS con al menos 5 evaluadores | En curso |
+| Cierre | Informe técnico final, presentación y video | Pendiente |
+
+## Resultados de los modelos
+
+Versión 2 (07/10/2026). Prueba: octubre de 2022 (872 731 flujos que ningún modelo vio al entrenar). Cada modelo v2
+reemplazó al v1 porque mejoró el F1 macro de **validación**; la prueba no intervino en esa decisión.
+
+| Modelo | F1 macro v1 | **F1 macro v2** | Sin secuencias repetidas | Diciembre (deriva) | Latencia | Tamaño |
+|---|---|---|---|---|---|---|
+| XGBoost | 0,886 | **0,903** | 0,885 | 0,856 | 0,149 ms | 58,9 MB |
+| Random Forest | 0,804 | **0,860** | 0,833 | 0,817 | 0,034 ms | 173 MB |
+| Transformer | 0,747 | **0,833** | 0,836 | 0,773 | 0,044 ms | 0,30 MB |
+| CNN 1D | 0,700 | **0,801** | 0,789 | 0,748 | 0,015 ms | 0,12 MB |
+
+- **XGBoost y Random Forest superan el umbral de excelencia** (F1 macro ≥ 0,85); los cuatro superan el mínimo (0,70) y
+  cumplen la latencia comprometida (≤ 10 ms por flujo).
+- **El Transformer no memoriza:** sin las secuencias repetidas obtiene 0,836, más que con ellas, e iguala a Random Forest
+  con ese criterio.
+- La mejora de la v2 viene del diagnóstico de la semana 3, que mostró que los modelos v1 estaban en **subajuste**
+  (`results/diagnostico/`, `docs/semana3/diagnostic_report.pdf` y la página **Diagnóstico** de la aplicación).
+- Detalle completo: `results/comparativa/` (tabla, prueba de McNemar con corrección de Holm y comparación v1/v2) y
+  `results/modelos_v1/` (resultados de la versión 1).
 
 ## Resultados del EDA
 

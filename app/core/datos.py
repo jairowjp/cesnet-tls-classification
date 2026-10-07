@@ -3,7 +3,7 @@ Carga de datos y del modelo de la aplicación.
 
 Todo se carga una sola vez y queda en caché:
   * st.cache_data     → tablas (se copian en cada uso, así una página no altera los datos de otra)
-  * st.cache_resource → el modelo XGBoost (un único objeto compartido, sin copiar 36 MB)
+  * st.cache_resource → el modelo XGBoost (un único objeto compartido, sin copiar todo el modelo)
 
 La aplicación solo LEE archivos generados por el propio proyecto y versionados en el repositorio.
 Si falta alguno, se informa qué script lo genera, sin mostrar trazas internas (OWASP A05).
