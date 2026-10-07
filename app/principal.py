@@ -23,6 +23,9 @@ st.set_page_config(
     layout="wide",
 )
 aplicar_estilo()
+# Isotipo en la barra de navegación: una mini firma de paquetes con el nombre del sitio
+# (generado con scripts/utilidades/08_generar_isotipo.py)
+st.logo(str(Path(__file__).resolve().parent / "static/isotipo.png"), size="large")
 
 paginas = [
     st.Page("paginas/inicio.py", title="Inicio", default=True),

@@ -79,6 +79,30 @@ CSS = f"""
     .portada-datos {{ grid-template-columns: 1fr; }}
   }}
 
+  /* Barra superior como membrete institucional (como la franja de los informes UEES).
+     Selectores de Streamlit 1.64: stHeader y stTopNavLink; la página activa se reconoce por el atributo
+     estándar de accesibilidad aria-current="page". tests/test_app_estilo.py avisa si Streamlit los cambia. */
+  [data-testid="stHeader"] {{ background: #FFFFFF !important; border-top: 3px solid {GRANATE};
+                              border-bottom: 1px solid {LINEA}; }}
+  [data-testid="stTopNavLink"] {{ background: transparent !important; border-radius: 0 !important;
+                                  color: {TINTA_SUAVE} !important; border-bottom: 2px solid transparent;
+                                  padding: 0.35rem 0.1rem !important; margin: 0 0.4rem;
+                                  transition: color 0.15s ease, border-color 0.15s ease; }}
+  [data-testid="stTopNavLink"] * {{ color: inherit !important; }}
+  [data-testid="stTopNavLink"]:hover {{ color: {TINTA} !important; border-bottom-color: {NEUTRO}; }}
+  [data-testid="stTopNavLink"][aria-current="page"] {{ color: {GRANATE} !important; font-weight: 600;
+                                                       border-bottom-color: {GRANATE}; }}
+
+  /* Pie de página: banda oscura que cierra cada página */
+  .pie-banda {{ background: {TINTA}; border-top: 3px solid {GRANATE}; padding: 1.6rem 1.8rem 1.4rem;
+                margin-top: 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.2rem 2rem; }}
+  [data-testid="stMarkdownContainer"] .pie-banda p {{ color: #C9D2DB; font-size: 0.87rem; line-height: 1.55;
+                                                      margin: 0 0 0.35rem 0; text-align: left; max-width: none; }}
+  .pie-banda .pie-nombre {{ color: #FFFFFF; font-weight: 700; font-stretch: 112%; font-size: 1.05rem; }}
+  .pie-banda .pie-titulo {{ color: {NEUTRO}; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; }}
+  .pie-banda a {{ color: #FFFFFF !important; text-decoration: underline; text-underline-offset: 3px; }}
+  @media (max-width: 720px) {{ .pie-banda {{ grid-template-columns: 1fr; }} }}
+
   /* Participación guiada: sugerencias, marcador del reto y posición en el recorrido */
   .sugerencia {{ background: #E8ECF0; border-left: 3px solid {TINTA}; padding: 0.7rem 1rem; margin: 0.6rem 0 1.2rem 0;
                  max-width: 72ch; line-height: 1.55; text-align: justify; }}

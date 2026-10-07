@@ -56,8 +56,10 @@ def construir_html(
         "animar": bool(animar),
         "clave": clave,
     }
+    # Sin márgenes ni desplazamiento interno: el recuadro mide exactamente lo que su contenido
     html = f"""
-<div id="firma" style="font-family:{FUENTE}; color:{TINTA}; margin:0;">
+<style>html, body {{ margin: 0; padding: 0; overflow: hidden; }}</style>
+<div id="firma" style="font-family:{FUENTE}; color:{TINTA}; margin:0; padding-bottom:6px;">
   <!-- Las etiquetas son texto HTML, no parte del dibujo: así mantienen su tamaño en cualquier ancho -->
   <div style="color:{COBALTO}; font-size:13px; font-weight:600;">cliente → servidor</div>
   <!-- El dibujo ocupa todo el ancho y su alto se ajusta en proporción (viewBox + height:auto) -->

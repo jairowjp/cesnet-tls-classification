@@ -2,6 +2,15 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Las fechas son las reales de cada entrega.
 
+## [Sin publicar] · Identidad visual de la barra y el pie
+### Cambiado
+- Barra superior como membrete institucional: fondo blanco con la franja granate de los informes UEES, isotipo propio
+  (mini firma de paquetes con el nombre del sitio) y página activa marcada en granate con una barra inferior.
+- Pie de página: banda oscura con créditos, enlaces al código, al informe de seguridad y a los datos (CC BY 4.0).
+### Añadido
+- `scripts/utilidades/08_generar_isotipo.py` y `tests/test_app_estilo.py`, que avisa si una actualización de Streamlit
+  cambia los identificadores en los que se apoya el estilo del menú.
+
 ## [0.4.0] – 2026-10-07 · Aplicación web, seguridad, diagnóstico y modelos v2
 
 ### Versión 2 de los modelos
