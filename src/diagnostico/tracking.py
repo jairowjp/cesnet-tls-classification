@@ -28,6 +28,17 @@ import pandas as pd
 from sklearn.metrics import f1_score
 
 
+def _carpeta_diagnostico(carpeta: Path) -> Path:
+    """Carpeta raíz del diagnóstico (results/diagnostico): ahí va la ÚNICA base de MLflow de todas las corridas.
+
+    Se busca hacia arriba la carpeta "diagnostico"; si no existe, se usa la carpeta de la corrida.
+    """
+    for padre in [carpeta, *carpeta.parents]:
+        if padre.name == "diagnostico":
+            return padre
+    return carpeta
+
+
 class RegistroMetricas:
     """Registra métricas por paso y las envía a MLflow (si está disponible).
 
@@ -55,8 +66,11 @@ class RegistroMetricas:
                 import mlflow
             except ImportError as e:
                 raise ImportError("Falta MLflow. Instálalo con: uv pip install mlflow") from e
-            db = Path(db or self.carpeta.parent / "mlflow.db").resolve()
+            db = Path(db or _carpeta_diagnostico(self.carpeta) / "mlflow.db").resolve()
             mlflow.set_tracking_uri(f"sqlite:///{db}")
+            # Los artefactos van junto a la base (results/diagnostico/mlruns), no a la carpeta desde donde se ejecuta
+            if mlflow.get_experiment_by_name(experimento) is None:
+                mlflow.create_experiment(experimento, artifact_location=(db.parent / "mlruns").resolve().as_uri())
             mlflow.set_experiment(experimento)
             mlflow.start_run(run_name=corrida)
             # MLflow acepta parámetros como texto; las listas y None se convierten para que no falle

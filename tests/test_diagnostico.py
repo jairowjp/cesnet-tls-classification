@@ -74,3 +74,24 @@ def test_narrativa_respeta_coma_decimal_y_miles():
                                             "validacion": [0.78, 0.85], "elegido": None}}}
     texto = analisis_rf(rf)
     assert "0,800" in texto and "96 000" in texto and "sigue creciendo" in texto and "sin límite" in texto
+
+
+def test_mlflow_usa_una_sola_base_para_todas_las_corridas(tmp_path):
+    """Todas las corridas comparten results/diagnostico/mlflow.db, y los artefactos quedan a su lado."""
+    import pytest
+
+    pytest.importorskip("mlflow")
+    import os
+
+    base = tmp_path / "diagnostico"
+    anterior = os.getcwd()
+    os.chdir(tmp_path)  # los artefactos NO deben ir a la carpeta desde donde se ejecuta
+    try:
+        for modelo, momento in (("xgboost", "antes"), ("cnn1d", "despues")):
+            with RegistroMetricas("prueba", f"{modelo}-{momento}", base / modelo / momento) as reg:
+                reg.registrar(1, f1_validacion=0.5)
+                reg.cerrar({"diagnostico": "óptimo"})
+    finally:
+        os.chdir(anterior)
+    assert sorted(p.relative_to(base).as_posix() for p in base.rglob("mlflow.db")) == ["mlflow.db"]
+    assert (base / "mlruns").exists() and not (tmp_path / "mlruns").exists()
