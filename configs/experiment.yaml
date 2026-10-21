@@ -73,3 +73,36 @@ umbrales:                                # comprometidos en la Presentación del
   latencia_ms_maxima: 10
   alfa_mcnemar: 0.05
   sus_minimo: 68
+
+# ---------------------------------------------------------------------------------------------------
+# Semana 5: validación en contextos simulados y sensibilidad de hiperparámetros (scripts 12 y 13).
+# Todo lo que sigue se fija ANTES de ejecutar, como exige el workshop: así ningún umbral ni rango se
+# ajusta después de ver los resultados.
+# ---------------------------------------------------------------------------------------------------
+semana5:
+  # Criterio de aceptación de los escenarios críticos: caída máxima del F1 macro (en puntos de 0 a 1).
+  # 5 puntos: igual que el notebook de la docente y del orden de la deriva observada en dos meses (4,7 puntos).
+  umbral_caida_f1: 0.05
+  repeticiones: 10                 # semillas por escenario (notebook: n_rep = 10)
+  muestra_entrenamiento: 60000     # submuestra estratificada de septiembre (validación cruzada y Optuna)
+  muestra_estres: 100000           # submuestra estratificada de octubre (pruebas de estrés)
+  bootstrap: 2000                  # remuestreos para los intervalos de confianza
+  validacion_cruzada: {pliegues: 5, repeticiones: 3}   # 5 x 3 = 15 evaluaciones, como el notebook
+  escenarios:
+    ruido: [0.25, 0.5, 1.0, 1.5]           # sigma x desviación estándar de cada variable continua
+    faltantes: [0.1, 0.3, 0.5]             # fracción de valores perdidos (imputados con la mediana)
+    dominancia: [0.5, 0.8, 0.95]           # fracción del tráfico de prueba que ocupa una sola categoría
+    relleno: [0.25, 0.5, 1.0]              # fracción de flujos con paquetes rellenados hasta 1 500 bytes
+  optuna:
+    pruebas: 60                    # notebook: n_trials = 60
+    pliegues: 3                    # pliegues agrupados por pruebas (5 sería prohibitivo con XGBoost)
+    horas_maximas: 4.5             # tope de tiempo: si no alcanza las 60 pruebas, se informa cuántas hubo
+    rondas_maximas: 400            # con parada temprana
+    parada_temprana: 30
+    espacio:                       # incluye los valores de la v2 para poder compararlos
+      max_depth: [3, 12]
+      learning_rate: [0.01, 0.3]   # escala logarítmica
+      subsample: [0.5, 1.0]
+      colsample_bytree: [0.5, 1.0]
+      reg_lambda: [0.1, 20.0]      # escala logarítmica
+      min_child_weight: [1, 20]

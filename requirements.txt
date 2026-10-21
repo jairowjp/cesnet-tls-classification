@@ -19,3 +19,7 @@ pytest>=8.0
 # Tracking de experimentos (Actividad semana 3)
 mlflow>=3.0
 reportlab>=4.0
+
+# Semana 5: optimización y equidad
+optuna>=4.0
+fairlearn>=0.12
