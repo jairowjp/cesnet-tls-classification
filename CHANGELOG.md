@@ -7,6 +7,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). L
 - Barra superior como membrete institucional: fondo blanco con la franja granate de los informes UEES, isotipo propio
   (mini firma de paquetes con el nombre del sitio) y página activa marcada en granate con una barra inferior.
 - Pie de página: banda oscura con créditos, enlaces al código, al informe de seguridad y a los datos (CC BY 4.0).
+### Seguridad
+- Manejo seguro de errores (`app/core/errores.py`): Streamlit Community Cloud mostraba trazas internas aunque la
+  configuración lo prohibía; ahora el usuario ve un mensaje claro y el detalle queda solo en los registros.
+- Las afirmaciones de significancia de Inicio y Conclusiones se calculan desde la prueba de McNemar.
 ### Añadido
 - `scripts/utilidades/08_generar_isotipo.py` y `tests/test_app_estilo.py`, que avisa si una actualización de Streamlit
   cambia los identificadores en los que se apoya el estilo del menú.
