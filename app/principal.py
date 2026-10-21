@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import streamlit as st  # noqa: E402
+from core.errores import ejecutar_pagina  # noqa: E402
 from core.estilo import aplicar_estilo  # noqa: E402
 
 st.set_page_config(
@@ -39,4 +40,5 @@ paginas = [
     st.Page("paginas/seguridad.py", title="Seguridad"),
 ]
 # Navegación en la parte superior: más limpia que la barra lateral por defecto de Streamlit
-st.navigation(paginas, position="top").run()
+# La página se ejecuta con manejo seguro de errores: sin trazas internas para el usuario (ver core/errores.py)
+ejecutar_pagina(st.navigation(paginas, position="top"))
