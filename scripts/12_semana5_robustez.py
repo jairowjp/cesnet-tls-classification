@@ -7,6 +7,7 @@ Subcomandos (en este orden):
   workshop1  Escenarios críticos sobre el modelo de producción (v2): ruido, faltantes, dominancia de una
              categoría, cambio de distribución, variables caídas y relleno de paquetes (TAREA 2), con el
              umbral de aceptación fijado ANTES en configs/experiment.yaml.
+  ruido_realista  Agrega el escenario A' (jitter en tiempos y bytes) a la tabla del Workshop 1 ya calculada.
   errores    Análisis de errores del modelo de producción sobre todo octubre: pares confundidos, error según
              la longitud del flujo, calibración, secuencias repetidas frente a nuevas y equidad por categoría.
   cierre     Evaluación final única: v2 frente al modelo optimizado (requiere el script 13), con IC de la
@@ -117,6 +118,8 @@ def workshop1(log):
 
     for s in esc["ruido"]:
         agregar("A · Ruido", f"σ={s}", ev.ruido(s, desviacion))
+    for nivel in esc["ruido_realista"]:
+        agregar("A' · Ruido realista", f"±{int(nivel * 100)} % en tiempos y bytes", ev.ruido_realista(nivel))
     for p in esc["faltantes"]:
         agregar("B · Faltantes", f"{int(p * 100)} %", ev.faltantes(p, mediana))
     mayoritaria = int(np.bincount(yte).argmax())
@@ -187,15 +190,40 @@ def workshop1(log):
     )
 
 
+def ruido_realista(log):
+    """Agrega el escenario A' a la tabla del Workshop 1 ya calculada, sin repetir los demás escenarios."""
+    ruta = RESULTADOS / "workshop1" / "resumen_escenarios.csv"
+    if not ruta.exists():
+        raise FileNotFoundError("Primero ejecuta el Workshop 1 (scripts/12_semana5_robustez.py workshop1)")
+    tabla = pd.read_csv(ruta)
+    f1_base = float(tabla.loc[tabla.escenario == "Base", "f1_macro"].iloc[0])
+    _, _, _, clases, _ = datos_entrenamiento(S5["muestra_entrenamiento"])
+    Xte, yte, _ = datos_prueba(clases, S5["muestra_estres"])
+    predecir = predictor(cargar_modelo(MODELO_V2)["modelo"])
+    filas = []
+    for nivel in S5["escenarios"]["ruido_realista"]:
+        m = ev.evaluar_perturbado(predecir, Xte, yte, ev.ruido_realista(nivel), S5["repeticiones"], SEMILLA)
+        filas.append({"escenario": "A' · Ruido realista", "nivel": f"±{int(nivel * 100)} % en tiempos y bytes", **m})
+        log.info("A' · Ruido realista ±%d %%  F1 macro %.4f", int(nivel * 100), m["f1_macro"])
+    nuevas = ev.veredicto(pd.DataFrame(filas), f1_base, S5["umbral_caida_f1"])
+    tabla = tabla[tabla.escenario != "A' · Ruido realista"]
+    corte = int((tabla.escenario == "A · Ruido").to_numpy().nonzero()[0].max()) + 1  # justo después del escenario A
+    tabla = pd.concat([tabla.iloc[:corte], nuevas[tabla.columns], tabla.iloc[corte:]], ignore_index=True)
+    guardar(tabla, ruta)
+    figura_escenarios(tabla, RESULTADOS / "workshop1" / "escenarios.png")
+    log.info("Tabla del Workshop 1 actualizada con el ruido realista")
+
+
 def figura_escenarios(t: pd.DataFrame, ruta: Path) -> None:
     """Tres paneles como el notebook: F1 macro, F1 de la peor categoría y exactitud por nivel de perturbación."""
     paneles = [
-        ("A · Ruido", "Ruido (σ × desviación)"),
+        ("A · Ruido", "Ruido genérico (σ × desviación)"),
+        ("A' · Ruido realista", "Ruido realista (jitter)"),
         ("B · Faltantes", "Datos faltantes"),
         ("C · Dominancia", "Una categoría domina el tráfico"),
         ("F · Relleno (TAREA 2)", "Relleno de paquetes"),
     ]
-    fig, axes = plt.subplots(1, 4, figsize=(19, 4))
+    fig, axes = plt.subplots(1, len(paneles), figsize=(4.8 * len(paneles), 4))
     for ax, (esc, titulo) in zip(axes, paneles, strict=True):
         sub = t[t.escenario == esc]
         for col, marca, nombre in (
@@ -307,12 +335,18 @@ def cierre(log):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("paso", choices=["parte0", "workshop1", "errores", "cierre"])
+    ap.add_argument("paso", choices=["parte0", "workshop1", "ruido_realista", "errores", "cierre"])
     paso = ap.parse_args().paso
     log = configurar_logging(f"12_{paso}")
     t0 = time.time()
     try:
-        {"parte0": parte0, "workshop1": workshop1, "errores": errores, "cierre": cierre}[paso](log)
+        {
+            "parte0": parte0,
+            "workshop1": workshop1,
+            "ruido_realista": ruido_realista,
+            "errores": errores,
+            "cierre": cierre,
+        }[paso](log)
     except Exception:
         log.exception("Falló el paso %s", paso)
         raise

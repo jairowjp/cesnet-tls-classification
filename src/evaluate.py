@@ -191,6 +191,31 @@ def ruido(sigma: float, desviacion: np.ndarray) -> Perturbacion:
     return f
 
 
+# Mediciones continuas que una red real altera (tiempos y tamaños). Los conteos no se tocan.
+MEDICIONES = ["DURATION", "PPI_DURATION", "BYTES", "BYTES_REV"]
+
+
+def ruido_realista(nivel: float) -> Perturbacion:
+    """A' · Ruido realista: jitter multiplicativo sobre tiempos y bytes; los conteos quedan intactos.
+
+    El escenario A suma ruido gaussiano también a conteos discretos (paquetes por intervalo del histograma),
+    lo que produce valores imposibles en una red, como -0,3 paquetes. Aquí cada medición continua se
+    multiplica por (1 + e), con e ~ N(0, nivel): un nivel de 0,10 equivale a variaciones típicas del 10 %,
+    como las que producen el jitter, las retransmisiones o las cabeceras. Ningún valor queda negativo.
+    """
+    columnas = [TABULAR.index(c) for c in MEDICIONES]
+
+    def f(X, y, rng):
+        X2 = X.copy()
+        for c in columnas:
+            bruto = 10 ** X2[:, c] - 1 if TABULAR[c] in SKEWED else X2[:, c]
+            alterado = np.clip(bruto * (1 + rng.normal(0, nivel, len(X2))), 0, None)
+            X2[:, c] = np.log10(1 + alterado) if TABULAR[c] in SKEWED else alterado
+        return X2, y
+
+    return f
+
+
 def faltantes(p: float, mediana: np.ndarray) -> Perturbacion:
     """B · Una fracción p de los valores se pierde y se imputa con la mediana de entrenamiento."""
 

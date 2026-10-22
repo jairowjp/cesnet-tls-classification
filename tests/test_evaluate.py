@@ -116,3 +116,14 @@ def test_entrenador_tolera_categorias_ausentes_en_el_entrenamiento(datos):
     )
     pred, proba = predecir(X)
     assert proba.shape == (len(X), 4) and np.allclose(proba[:, 2], 0) and not np.any(pred == 2)
+
+
+def test_ruido_realista_altera_mediciones_y_respeta_los_conteos(datos):
+    """El ruido realista cambia tiempos y bytes, nunca los conteos, y no produce valores negativos."""
+    X, y, _ = datos
+    X = np.abs(X)
+    X2, _ = ev.ruido_realista(0.2)(X, y, np.random.default_rng(0))
+    medidas = [TABULAR.index(c) for c in ev.MEDICIONES]
+    otras = [i for i in range(len(TABULAR)) if i not in medidas]
+    assert np.array_equal(X2[:, otras], X[:, otras])
+    assert not np.allclose(X2[:, medidas], X[:, medidas]) and (X2[:, medidas] >= 0).all()

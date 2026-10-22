@@ -93,6 +93,7 @@ semana5:
     faltantes: [0.1, 0.3, 0.5]             # fracción de valores perdidos (imputados con la mediana)
     dominancia: [0.5, 0.8, 0.95]           # fracción del tráfico de prueba que ocupa una sola categoría
     relleno: [0.25, 0.5, 1.0]              # fracción de flujos con paquetes rellenados hasta 1 500 bytes
+    ruido_realista: [0.05, 0.10, 0.20]     # jitter multiplicativo en tiempos y bytes (conteos intactos)
   optuna:
     pruebas: 60                    # notebook: n_trials = 60
     pliegues: 3                    # pliegues agrupados por pruebas (5 sería prohibitivo con XGBoost)
