@@ -1,0 +1,19 @@
+20:11:24  INFO    A · Ruido                σ=0.25                 F1 macro 0.0780
+20:13:07  INFO    A · Ruido                σ=0.5                  F1 macro 0.0554
+20:14:49  INFO    A · Ruido                σ=1.0                  F1 macro 0.0439
+20:16:33  INFO    A · Ruido                σ=1.5                  F1 macro 0.0399
+20:18:10  INFO    B · Faltantes            10 %                   F1 macro 0.8215
+20:19:46  INFO    B · Faltantes            30 %                   F1 macro 0.5585
+20:21:21  INFO    B · Faltantes            50 %                   F1 macro 0.2917
+20:22:57  INFO    C · Dominancia           Social 50 %            F1 macro 0.8721
+20:24:34  INFO    C · Dominancia           Social 80 %            F1 macro 0.7900
+20:26:11  INFO    C · Dominancia           Social 95 %            F1 macro 0.5864
+20:26:20  INFO    E · Variable caída       FLAG_RST_REV           F1 macro 0.8935
+20:26:30  INFO    E · Variable caída       PHIST_DST_SIZES_2      F1 macro 0.8762
+20:26:39  INFO    E · Variable caída       PHIST_SRC_SIZES_4      F1 macro 0.8909
+20:26:49  INFO    E · Variable caída       las 3 juntas           F1 macro 0.8511
+20:28:26  INFO    F · Relleno (TAREA 2)    25 % de los flujos     F1 macro 0.7532
+20:30:03  INFO    F · Relleno (TAREA 2)    50 % de los flujos     F1 macro 0.5850
+20:31:37  INFO    F · Relleno (TAREA 2)    100 % de los flujos    F1 macro 0.0704
+20:33:59  INFO    Escenarios que FALLAN el umbral: [['A · Ruido', 'σ=0.25'], ['A · Ruido', 'σ=0.5'], ['A · Ruido', 'σ=1.0'], ['A · Ruido', 'σ=1.5'], ['B · Faltantes', '10 %'], ['B · Faltantes', '30 %'], ['B · Faltantes', '50 %'], ['C · Dominancia', 'Social 80 %'], ['C · Dominancia', 'Social 95 %'], ['F · Relleno (TAREA 2)', '25 % de los flujos'], ['F · Relleno (TAREA 2)', '50 % de los flujos'], ['F · Relleno (TAREA 2)', '100 % de los flujos'], ['D · Cambio de distribución', 'flujos largos (población distinta)']]
+20:33:59  INFO    Paso workshop1 terminado en 24.5 min

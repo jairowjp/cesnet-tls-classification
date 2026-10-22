@@ -1,0 +1,11 @@
+{
+  "umbral_caida_f1": 0.05,
+  "f1_base": 0.9008920447901052,
+  "categoria_dominante": "Social",
+  "variables_top3": [
+    "FLAG_RST_REV",
+    "PHIST_DST_SIZES_2",
+    "PHIST_SRC_SIZES_4"
+  ],
+  "flujos_cortos_entrenamiento": 31356
+}
