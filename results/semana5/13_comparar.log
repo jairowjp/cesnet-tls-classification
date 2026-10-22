@@ -1,0 +1,18 @@
+02:25:51  INFO    Comparación · mejor configuración en los mismos 15 pliegues de la parte 0
+02:28:54  INFO    CV repetición 1 pliegue 1: F1 macro 0.8236
+02:32:21  INFO    CV repetición 1 pliegue 2: F1 macro 0.8303
+02:37:27  INFO    CV repetición 1 pliegue 3: F1 macro 0.8001
+02:43:49  INFO    CV repetición 1 pliegue 4: F1 macro 0.8090
+02:48:19  INFO    CV repetición 1 pliegue 5: F1 macro 0.8004
+02:52:14  INFO    CV repetición 2 pliegue 1: F1 macro 0.7996
+02:56:54  INFO    CV repetición 2 pliegue 2: F1 macro 0.8026
+03:01:38  INFO    CV repetición 2 pliegue 3: F1 macro 0.8249
+03:05:38  INFO    CV repetición 2 pliegue 4: F1 macro 0.8120
+03:10:48  INFO    CV repetición 2 pliegue 5: F1 macro 0.8151
+03:17:58  INFO    CV repetición 3 pliegue 1: F1 macro 0.8194
+03:24:14  INFO    CV repetición 3 pliegue 2: F1 macro 0.8170
+03:28:30  INFO    CV repetición 3 pliegue 3: F1 macro 0.8051
+03:35:01  INFO    CV repetición 3 pliegue 4: F1 macro 0.8028
+03:38:13  INFO    CV repetición 3 pliegue 5: F1 macro 0.8174
+03:38:13  INFO    Wilcoxon (15 pliegues) · mediana de la diferencia +0.0039 · p = 0.001526 · significativo
+03:38:13  INFO    Paso comparar terminado en 72.4 min

@@ -1,0 +1,28 @@
+{
+  "parametros": {
+    "tree_method": "hist",
+    "n_jobs": -1,
+    "max_depth": 11,
+    "learning_rate": 0.09528250808553941,
+    "subsample": 0.6290930058577996,
+    "colsample_bytree": 0.8287428702820269,
+    "reg_lambda": 2.5645522172095796,
+    "min_child_weight": 2,
+    "n_estimators": 1000,
+    "early_stopping_rounds": 30
+  },
+  "rondas_usadas": 973,
+  "minutos_entrenamiento": 91.81703517039617,
+  "validacion_optimizado": {
+    "accuracy": 0.9212253008886055,
+    "f1_macro": 0.9238659753993942,
+    "recall_macro": 0.9195427293624654,
+    "precision_macro": 0.9284569851876275,
+    "f1_peor_categoria": 0.8633355153102044,
+    "peor_categoria": 11,
+    "auc_ovr": 0.997379757544663,
+    "auc_pr": 0.968695598171748
+  },
+  "f1_macro_validacion_v2": 0.9159413088352857,
+  "mejora_validacion_puntos": 0.7924666564108507
+}
