@@ -1,0 +1,39 @@
+{
+ "modelo": "CNN 1D",
+ "momento": "Más capacidad",
+ "pasos": 89,
+ "f1_entrenamiento": 0.8354,
+ "f1_validacion": 0.8041,
+ "mejor_f1_validacion": 0.8041,
+ "mejor_paso": 89,
+ "mejor_es_ultimo": true,
+ "brecha_final": 0.0313,
+ "brecha_relativa": 0.0375,
+ "pendiente_val": -0.00031,
+ "pendiente_ent": -0.0008,
+ "mejora_final": 0.0076,
+ "f1_prueba": 0.7908217156073915,
+ "brecha": 0.0313,
+ "epocas_ejecutadas": 89,
+ "parada_activada": true,
+ "tasa_final": 1e-05,
+ "parametros_arquitectura": {
+  "canales": [
+   128,
+   256
+  ],
+  "kernel": 3,
+  "dropout": 0.2
+ },
+ "segundos": 3799.0,
+ "diagnostico": "subajuste",
+ "razones": [
+  "seguía mejorando al terminar (+0.008 de F1 de validación en el tramo final)"
+ ],
+ "configuracion": {
+  "epocas": 150,
+  "programador": "plateau",
+  "paciencia": 10,
+  "delta_minimo": 0.001
+ }
+}

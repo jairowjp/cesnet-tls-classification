@@ -1,0 +1,29 @@
+{
+ "modelo": "Transformer",
+ "momento": "Parada temprana",
+ "pasos": 46,
+ "f1_entrenamiento": 0.7799,
+ "f1_validacion": 0.7633,
+ "mejor_f1_validacion": 0.765,
+ "mejor_paso": 36,
+ "mejor_es_ultimo": false,
+ "brecha_final": 0.0166,
+ "brecha_relativa": 0.0212,
+ "pendiente_val": -0.00758,
+ "pendiente_ent": -0.01015,
+ "mejora_final": 0.0309,
+ "f1_prueba": 0.7527198054271562,
+ "brecha": 0.0166,
+ "epocas_ejecutadas": 46,
+ "parada_activada": true,
+ "tasa_final": 6.25e-05,
+ "parametros_arquitectura": {
+  "d_model": 64,
+  "cabezas": 4,
+  "capas": 2,
+  "ff": 128,
+  "dropout": 0.1
+ },
+ "segundos": 3873.0,
+ "diagnostico": "subajuste"
+}

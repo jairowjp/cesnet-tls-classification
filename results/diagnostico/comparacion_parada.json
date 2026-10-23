@@ -1,0 +1,56 @@
+{
+ "CNN 1D (Antes)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.622 < 0.8) con brecha pequeña",
+   "seguía mejorando al terminar (+0.051 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": null
+ },
+ "CNN 1D (Después)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.774 < 0.8) con brecha pequeña",
+   "seguía mejorando al terminar (+0.017 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": null
+ },
+ "CNN 1D (Parada temprana)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.736 < 0.8) con brecha pequeña",
+   "seguía mejorando al terminar (+0.007 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": true
+ },
+ "CNN 1D (Más capacidad)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "seguía mejorando al terminar (+0.008 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": true
+ },
+ "Transformer (Antes)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.664 < 0.8) con brecha pequeña",
+   "seguía mejorando al terminar (+0.042 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": null
+ },
+ "Transformer (Después)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.790 < 0.8) con brecha pequeña",
+   "seguía mejorando al terminar (+0.027 de F1 de validación en el tramo final)"
+  ],
+  "parada_activada": null
+ },
+ "Transformer (Parada temprana)": {
+  "diagnostico": "subajuste",
+  "razones": [
+   "F1 de entrenamiento bajo (0.780 < 0.8) con brecha pequeña"
+  ],
+  "parada_activada": true
+ }
+}
