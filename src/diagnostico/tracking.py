@@ -168,6 +168,7 @@ def entrenar_red(
     lote: int = 1024,
     programador: str = "constante",
     paciencia: int | None = None,
+    delta_minimo: float = 0.0,
     muestra_f1: int = 50_000,
     semilla: int = 42,
     dispositivo: str = "cpu",
@@ -178,8 +179,14 @@ def entrenar_red(
     ponderada que se optimiza, para que las curvas de entrenamiento y validación sean comparables.
     El F1 de entrenamiento se mide sobre una submuestra fija (`muestra_f1`) para no duplicar el costo.
 
-    programador: "constante" (tasa fija) u "onecycle" (sube y luego baja la tasa: ayuda a converger).
+    programador: "constante" (tasa fija), "onecycle" (sube y luego baja la tasa: ayuda a converger, pero fija
+        de antemano la duración y lleva la tasa casi a cero al final, por lo que la parada temprana casi nunca
+        actúa) o "plateau" (ReduceLROnPlateau: reduce la tasa a la mitad cuando el F1 de validación se estanca
+        3 épocas; la duración la decide el propio entrenamiento y la parada temprana sí puede actuar).
     paciencia: épocas sin mejorar el F1 de validación antes de detener (None = sin parada temprana).
+    delta_minimo: mejora mínima del F1 de validación para reiniciar la paciencia. Con 0 (semana 3) cualquier
+        mejora ínfima la reinicia; con una tasa decreciente esas mejoras son constantes y la parada nunca
+        llegaría. Los mejores pesos se guardan ante CUALQUIER mejora, sea cual sea este valor.
     Devuelve el modelo con los pesos de la MEJOR época y el número de épocas ejecutadas.
     """
     import torch
@@ -199,8 +206,19 @@ def entrenar_red(
         generator=g,
     )
     sched = None
+    meseta = None
     if programador == "onecycle":
         sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=lr * 5, total_steps=epocas * len(cargador))
+    elif programador == "plateau":
+        meseta = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            opt,
+            mode="max",
+            factor=0.5,
+            patience=3,
+            min_lr=1e-5,
+            threshold=max(delta_minimo, 1e-4),
+            threshold_mode="abs",
+        )
     idx_f1 = rng.choice(len(y_tr), size=min(muestra_f1, len(y_tr)), replace=False)
 
     @torch.no_grad()
@@ -217,6 +235,7 @@ def entrenar_red(
         return sum(perdidas) / len(y), float(f1_score(y, np.concatenate(preds), average="macro"))
 
     mejor_f1, mejor_estado, sin_mejora, ep = -1.0, None, 0, 0
+    referencia = -1.0  # F1 que hay que superar en al menos delta_minimo para reiniciar la paciencia
     for ep in range(1, epocas + 1):
         modelo.train()
         t0 = time.time()
@@ -238,9 +257,13 @@ def entrenar_red(
             tasa_aprendizaje=opt.param_groups[0]["lr"],
             segundos=round(time.time() - t0, 1),
         )
+        if meseta:
+            meseta.step(f1_val)
         marca = ""
-        if f1_val > mejor_f1:
-            mejor_f1, mejor_estado, sin_mejora, marca = f1_val, copy.deepcopy(modelo.state_dict()), 0, "  ← mejor"
+        if f1_val > mejor_f1:  # los mejores pesos se guardan ante cualquier mejora
+            mejor_f1, mejor_estado, marca = f1_val, copy.deepcopy(modelo.state_dict()), "  ← mejor"
+        if f1_val > referencia + delta_minimo:  # solo una mejora de al menos delta_minimo reinicia la paciencia
+            referencia, sin_mejora = f1_val, 0
         else:
             sin_mejora += 1
         print(

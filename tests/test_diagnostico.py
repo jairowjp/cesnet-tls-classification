@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from src.diagnostico.diagnostico import diagnosticar, metricas_curvas, metricas_tamano
 from src.diagnostico.tracking import RegistroMetricas
@@ -69,9 +70,19 @@ def test_narrativa_respeta_coma_decimal_y_miles():
     """El análisis en lenguaje claro usa coma decimal y no confunde los miles con los decimales."""
     from src.diagnostico.narrativa import analisis_rf
 
-    rf = {"tamanos": [9600, 96000], "entrenamiento": [[0.99], [0.99]], "validacion": [[0.80], [0.85]],
-          "hiperparametros": {"max_depth": {"valores": [5, None], "entrenamiento": [0.8, 0.99],
-                                            "validacion": [0.78, 0.85], "elegido": None}}}
+    rf = {
+        "tamanos": [9600, 96000],
+        "entrenamiento": [[0.99], [0.99]],
+        "validacion": [[0.80], [0.85]],
+        "hiperparametros": {
+            "max_depth": {
+                "valores": [5, None],
+                "entrenamiento": [0.8, 0.99],
+                "validacion": [0.78, 0.85],
+                "elegido": None,
+            }
+        },
+    }
     texto = analisis_rf(rf)
     assert "0,800" in texto and "96 000" in texto and "sigue creciendo" in texto and "sin límite" in texto
 
@@ -95,3 +106,86 @@ def test_mlflow_usa_una_sola_base_para_todas_las_corridas(tmp_path):
         os.chdir(anterior)
     assert sorted(p.relative_to(base).as_posix() for p in base.rglob("mlflow.db")) == ["mlflow.db"]
     assert (base / "mlruns").exists() and not (tmp_path / "mlruns").exists()
+
+
+class _RegistroEnMemoria:
+    """Registro mínimo para probar entrenar_red sin MLflow ni archivos."""
+
+    def __init__(self):
+        self.filas = []
+
+    def registrar(self, paso, **metricas):
+        self.filas.append({"paso": paso, **metricas})
+
+
+def _datos_secuencia(n=400, clases=4, semilla=0):
+    """Secuencias de 30 paquetes con etiquetas al azar: el F1 de validación no puede mejorar de forma sostenida."""
+    rng = np.random.default_rng(semilla)
+    X = rng.normal(0, 1, (n, 30, 3)).astype(np.float32)
+    M = np.ones((n, 30), dtype=bool)
+    y = rng.integers(0, clases, n).astype(np.int64)
+    return X, M, y
+
+
+def test_plateau_activa_la_parada_temprana_y_reduce_la_tasa():
+    """Comentario de la semana 3: con ReduceLROnPlateau la parada temprana SÍ actúa antes del límite de épocas."""
+    pytest.importorskip("torch")
+    from src.diagnostico.tracking import entrenar_red
+    from src.models.deep import build_deep_model
+
+    X, M, y = _datos_secuencia()
+    reg = _RegistroEnMemoria()
+    modelo = build_deep_model("cnn1d", {"canales": [8, 16], "kernel": 3, "dropout": 0.0}, 4)
+    _, epocas = entrenar_red(
+        modelo,
+        X[:300],
+        M[:300],
+        y[:300],
+        X[300:],
+        M[300:],
+        y[300:],
+        reg,
+        epocas=40,
+        lr=0.01,
+        pesos_clase=np.ones(4),
+        lote=64,
+        programador="plateau",
+        paciencia=5,
+        delta_minimo=0.001,
+        muestra_f1=300,
+    )
+    assert epocas < 40, "la parada temprana no actuó"
+    tasas = [f["tasa_aprendizaje"] for f in reg.filas]
+    assert min(tasas) < tasas[0], "ReduceLROnPlateau no redujo la tasa de aprendizaje"
+
+
+def test_delta_minimo_cero_reproduce_el_comportamiento_de_la_semana_3():
+    """Con delta_minimo = 0 (valor por defecto) el entrenamiento es idéntico al de la semana 3."""
+    pytest.importorskip("torch")
+    from src.diagnostico.tracking import entrenar_red
+    from src.models.deep import build_deep_model
+
+    X, M, y = _datos_secuencia(semilla=1)
+    resultados = []
+    for extra in ({}, {"delta_minimo": 0.0}):
+        reg = _RegistroEnMemoria()
+        modelo = build_deep_model("cnn1d", {"canales": [8, 16], "kernel": 3, "dropout": 0.0}, 4)
+        _, ep = entrenar_red(
+            modelo,
+            X[:300],
+            M[:300],
+            y[:300],
+            X[300:],
+            M[300:],
+            y[300:],
+            reg,
+            epocas=6,
+            lr=0.01,
+            pesos_clase=np.ones(4),
+            lote=64,
+            paciencia=3,
+            muestra_f1=300,
+            **extra,
+        )
+        resultados.append((ep, [round(f["f1_validacion"], 6) for f in reg.filas]))
+    assert resultados[0] == resultados[1]

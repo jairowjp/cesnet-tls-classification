@@ -7,8 +7,10 @@ Subcomandos (cada uno se puede repetir por separado):
   xgb          XGBoost con callback de registro por ronda (curvas A y B), antes y con la
                estrategia 3: regularización (submuestreo de filas y columnas, L2).
   red          CNN 1D o Transformer con registro por época (curvas A y B). Variante "base" (el
-               entrenamiento del proyecto) o "mejorada" (estrategia 2: más épocas, OneCycle y
-               parada temprana).
+               entrenamiento del proyecto), "mejorada" (estrategia 2: más épocas, OneCycle y parada
+               temprana), "parada" (ReduceLROnPlateau y límite alto de épocas, para que la parada temprana
+               actúe de verdad) o "capacidad" (lo mismo con una arquitectura más grande).
+  resumen_parada  Las cuatro variantes de cada red, lado a lado (respuesta al comentario de la semana 3).
   resumen      Reúne los diagnósticos y la comparación antes/después (tabla y figura).
   todo         Ejecuta todo en orden.
 
@@ -312,6 +314,17 @@ def ejecutar_xgb(muestra: int) -> None:
 
 
 # ------------------------------------------------------------------------------- redes profundas
+# Variantes de entrenamiento de las redes: carpeta de resultados y nombre para tablas y figuras
+VARIANTES = {
+    "base": ("antes", "Antes"),
+    "mejorada": ("despues", "Después"),
+    "parada": ("parada", "Parada temprana"),  # comentario de la docente (semana 3): entrenar hasta que actúe la parada
+    "capacidad": ("capacidad", "Más capacidad"),  # la otra opción del comentario: aumentar la capacidad
+}
+# Arquitecturas con más capacidad (el doble de canales en la CNN; mayor dimensión en el Transformer)
+CAPACIDAD = {"cnn1d": {"canales": [128, 256]}, "transformer": {"d_model": 128, "ff": 256}}
+
+
 def ejecutar_red(nombre: str, variante: str, muestra: int, epocas: int | None = None) -> None:
     import torch
 
@@ -319,14 +332,23 @@ def ejecutar_red(nombre: str, variante: str, muestra: int, epocas: int | None = 
 
     d = preparar_datos(muestra, "secuencia")
     (X_tr, M_tr), (X_val, M_val), (X_te, M_te) = d["X_tr"], d["X_val"], d["X_te"]
-    params = MODELOS_BASE[nombre]
+    params = dict(MODELOS_BASE[nombre])
     if variante == "base":
         conf = {"epocas": params["epocas"], "programador": "constante", "paciencia": None}
-    else:  # estrategia 2 contra el subajuste: más épocas, tasa de aprendizaje OneCycle y parada temprana
+    elif variante == "mejorada":  # estrategia 2 contra el subajuste: más épocas, tasa OneCycle y parada temprana
         conf = {"epocas": 40, "programador": "onecycle", "paciencia": 6}
+    else:  # parada y capacidad: límite alto de épocas y una tasa que baja SOLO cuando la validación se estanca
+        conf = {
+            "epocas": 150 if nombre == "cnn1d" else 100,
+            "programador": "plateau",
+            "paciencia": 10,
+            "delta_minimo": 0.001,
+        }
+        if variante == "capacidad":
+            params.update(CAPACIDAD[nombre])
     if epocas:  # límite opcional de épocas (pruebas o falta de tiempo); queda registrado en la configuración
         conf["epocas"] = epocas
-    carpeta = SALIDA / nombre / ("antes" if variante == "base" else "despues")
+    carpeta = SALIDA / nombre / VARIANTES[variante][0]
     torch.manual_seed(SEMILLA)
     modelo = build_deep_model(nombre, params, len(d["clases"]))
     pesos = compute_class_weight("balanced", classes=np.arange(len(d["clases"])), y=d["y_tr"])
@@ -347,6 +369,7 @@ def ejecutar_red(nombre: str, variante: str, muestra: int, epocas: int | None = 
             lote=CFG["entrenamiento_profundo"]["lote"],
             programador=conf["programador"],
             paciencia=conf["paciencia"],
+            delta_minimo=conf.get("delta_minimo", 0.0),
             semilla=SEMILLA,
         )
         seg = time.time() - t0
@@ -363,11 +386,14 @@ def ejecutar_red(nombre: str, variante: str, muestra: int, epocas: int | None = 
             )
         r = {
             "modelo": {"cnn1d": "CNN 1D", "transformer": "Transformer"}[nombre],
-            "momento": "Antes" if variante == "base" else "Después",
+            "momento": VARIANTES[variante][1],
             **m,
             "f1_prueba": f1_score(d["y_te"], pred, average="macro"),
             "brecha": m["brecha_final"],
             "epocas_ejecutadas": epocas,
+            "parada_activada": bool(epocas < conf["epocas"]),
+            "tasa_final": float(hist["tasa_aprendizaje"].iloc[-1]),
+            "parametros_arquitectura": {k: v for k, v in params.items() if k not in ("epocas", "lr")},
             "segundos": round(seg, 1),
             "diagnostico": diag,
             "razones": razones,
@@ -449,6 +475,78 @@ def ejecutar_resumen() -> None:
     print(f"\nResultados en {SALIDA.relative_to(ROOT)}")
 
 
+def ejecutar_resumen_parada() -> None:
+    """Respuesta al comentario de la semana 3: las cuatro variantes de cada red, lado a lado.
+
+    No modifica los resultados ya entregados de la semana 3 (comparacion_antes_despues.*): escribe
+    comparacion_parada.csv, comparacion_parada.json y comparacion_parada.png.
+    """
+    import matplotlib.pyplot as plt
+
+    filas, historiales = [], {}
+    for red in ("cnn1d", "transformer"):
+        for carpeta, _ in VARIANTES.values():
+            ruta = SALIDA / red / carpeta
+            if (ruta / "resultado.json").exists():
+                r = json.loads((ruta / "resultado.json").read_text())
+                filas.append(r)
+                historiales[(red, r["momento"])] = pd.read_csv(ruta / "historial.csv")
+    if not filas:
+        sys.exit("No hay resultados de redes. Ejecuta primero: red --modelo ... --variante parada")
+    tabla = pd.DataFrame(filas)
+    cols = [
+        c
+        for c in (
+            "modelo",
+            "momento",
+            "diagnostico",
+            "f1_entrenamiento",
+            "f1_validacion",
+            "f1_prueba",
+            "brecha",
+            "mejor_paso",
+            "epocas_ejecutadas",
+            "parada_activada",
+            "tasa_final",
+            "segundos",
+        )
+        if c in tabla
+    ]
+    tabla[cols].to_csv(SALIDA / "comparacion_parada.csv", index=False)
+    guardar_json(
+        SALIDA / "comparacion_parada.json",
+        {
+            f"{f['modelo']} ({f['momento']})": {
+                "diagnostico": f["diagnostico"],
+                "razones": f.get("razones", []),
+                "parada_activada": f.get("parada_activada"),
+            }
+            for f in filas
+        },
+    )
+    redes = [r for r in ("cnn1d", "transformer") if any(k[0] == r for k in historiales)]
+    fig, ejes = plt.subplots(2, len(redes), figsize=(7 * len(redes), 8), squeeze=False)
+    for j, red in enumerate(redes):
+        for (r, momento), h in historiales.items():
+            if r != red:
+                continue
+            ejes[0, j].plot(h["paso"], h["f1_validacion"], label=momento)
+            ejes[1, j].plot(h["paso"], h["tasa_aprendizaje"], label=momento)
+        nombre = {"cnn1d": "CNN 1D", "transformer": "Transformer"}[red]
+        ejes[0, j].set_title(f"{nombre}: F1 macro de validación por época")
+        ejes[1, j].set_title(f"{nombre}: tasa de aprendizaje por época")
+        ejes[1, j].set_yscale("log")
+        ejes[1, j].set_xlabel("Época")
+        for i in range(2):
+            ejes[i, j].grid(alpha=0.3)
+            ejes[i, j].legend()
+    fig.tight_layout()
+    fig.savefig(SALIDA / "comparacion_parada.png", dpi=150)
+    plt.close(fig)
+    pd.set_option("display.width", 200)
+    print(tabla[cols].round(4).to_string(index=False))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="comando", required=True)
@@ -459,10 +557,16 @@ def main():
         )
     p = sub.add_parser("red")
     p.add_argument("--modelo", choices=["cnn1d", "transformer"], required=True)
-    p.add_argument("--variante", choices=["base", "mejorada"], default="base")
-    p.add_argument("--epocas", type=int, default=None, help="límite de épocas (por defecto: 15 base, 40 mejorada)")
+    p.add_argument("--variante", choices=list(VARIANTES), default="base")
+    p.add_argument(
+        "--epocas",
+        type=int,
+        default=None,
+        help="límite de épocas (por defecto: 15 base, 40 mejorada; parada y capacidad: 150 la CNN, 100 el Transformer)",
+    )
     p.add_argument("--muestra", type=int, default=0)
     sub.add_parser("resumen")
+    sub.add_parser("resumen_parada")
     a = ap.parse_args()
     if a.comando == "rf":
         ejecutar_rf(a.muestra)
@@ -472,6 +576,8 @@ def main():
         ejecutar_red(a.modelo, a.variante, a.muestra, a.epocas)
     elif a.comando == "resumen":
         ejecutar_resumen()
+    elif a.comando == "resumen_parada":
+        ejecutar_resumen_parada()
     else:  # todo: el orden va de lo más rápido a lo más lento, así los primeros resultados llegan pronto
         ejecutar_rf(a.muestra)
         for red, variante in (
