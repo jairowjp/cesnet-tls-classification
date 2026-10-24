@@ -1,0 +1,38 @@
+{
+  "mejor_f1_cv": 0.8079043890289347,
+  "mejores_parametros": {
+    "max_depth": 11,
+    "learning_rate": 0.09528250808553941,
+    "subsample": 0.6290930058577996,
+    "colsample_bytree": 0.8287428702820269,
+    "reg_lambda": 2.5645522172095796,
+    "min_child_weight": 2
+  },
+  "rondas_medias_mejor": 394.6666666666667,
+  "pruebas": {
+    "COMPLETE": 28,
+    "PRUNED": 13
+  },
+  "importancias": {
+    "fanova": {
+      "min_child_weight": 0.5559875952547849,
+      "colsample_bytree": 0.14821562798785687,
+      "reg_lambda": 0.11134940867374932,
+      "max_depth": 0.08386066074058686,
+      "learning_rate": 0.07142325888767619,
+      "subsample": 0.029163448455345832
+    },
+    "impureza": {
+      "min_child_weight": 0.5140148117546227,
+      "reg_lambda": 0.1626592519862726,
+      "colsample_bytree": 0.14321093828916026,
+      "learning_rate": 0.07604483539999697,
+      "max_depth": 0.07588160207313878,
+      "subsample": 0.028188560496808627
+    }
+  },
+  "rango_f1_completas": [
+    0.7057177782763127,
+    0.8079043890289347
+  ]
+}

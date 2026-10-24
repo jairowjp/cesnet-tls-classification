@@ -8,7 +8,10 @@ datasets/
 
 # Muestra completa del 2 % (377 MB). Se regenera en minutos con
 # scripts/01_extraer_muestra.py. Solo se sube la muestra pequeña de data/samples/.
-data/processed/
+data/processed/*
+!data/processed/README.md
+data/raw/*
+!data/raw/README.md
 
 # Modelos entrenados pesados: se publican con la app, no en el repositorio de código.
 models/*.joblib
@@ -55,3 +58,6 @@ mlruns/
 
 # Respaldo local de los modelos v1 (se regeneran con scripts 03 y 05 usando modelos_v1)
 models/v1/
+
+# Notas de trabajo de cada semana (no forman parte de la documentación final)
+docs/semana*/notas_*.md

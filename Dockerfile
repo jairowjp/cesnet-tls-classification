@@ -27,4 +27,4 @@ EXPOSE 7860
 # Docker comprueba que la app responde en el endpoint de salud de Streamlit
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7860/_stcore/health', timeout=4)"
-CMD ["streamlit", "run", "app/principal.py", "--server.port=7860", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app/app.py", "--server.port=7860", "--server.address=0.0.0.0"]

@@ -11,4 +11,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."                      # raíz del repositorio, esté donde esté la terminal
 PY="${VIRTUAL_ENV:-$(pwd)/../.venv}/bin/python"  # el Python del entorno del proyecto
-exec "$PY" -m streamlit run app/principal.py --server.address=localhost --server.port=8501
+exec "$PY" -m streamlit run app/app.py --server.address=localhost --server.port=8501

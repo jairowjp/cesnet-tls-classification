@@ -18,7 +18,8 @@ Aplicación Streamlit de nueve páginas que demuestra el proyecto de forma inter
 
 ```
 app/
-├── principal.py      punto de entrada y navegación superior
+├── app.py            punto de entrada y navegación superior
+├── principal.py      lanzador de compatibilidad con Streamlit Cloud (ejecuta app.py)
 ├── paginas/          una página por archivo
 ├── core/
 │   ├── seguridad.py  integridad del modelo (SHA-256) y validación de CSV
@@ -39,7 +40,7 @@ Desde la raíz del repositorio:
 
 ```bash
 python scripts/06_preparar_app.py
-streamlit run app/principal.py
+streamlit run app/app.py
 ```
 
 La configuración de seguridad y del tema está en `.streamlit/config.toml`; los controles, en `SECURITY.md`.
