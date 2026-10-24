@@ -116,6 +116,15 @@ def analizar(estudio: optuna.Study, log) -> None:
         SALIDA / "resumen.json",
     )
     ax = plot_optimization_history(estudio)
+    ax.set_title("Historial de la optimización")
+    ax.set_xlabel("Número de prueba")
+    ax.set_ylabel("F1 macro (validación cruzada)")
+    for linea in ax.get_legend().get_texts():
+        linea.set_text(
+            {"Objective Value": "F1 de cada prueba", "Best Value": "Mejor F1 hasta esa prueba"}.get(
+                linea.get_text(), linea.get_text()
+            )
+        )
     ax.figure.set_size_inches(8, 4)
     ax.figure.savefig(SALIDA / "historial.png", dpi=150, bbox_inches="tight")
     plt.close("all")
@@ -150,12 +159,14 @@ def analizar(estudio: optuna.Study, log) -> None:
     # Interacción del par más importante: contorno de Optuna y dependencia parcial 2D
     par = list(imp["fanova"])[:2]
     ax = plot_contour(estudio, params=par)
+    ax.set_title(f"F1 macro según {par[0]} y {par[1]} (pruebas de Optuna)")
+    ax.figure.axes[-1].set_ylabel("F1 macro (validación cruzada)")  # barra de color, en español
     ax.figure.set_size_inches(7, 5)
     ax.figure.savefig(SALIDA / "contorno.png", dpi=150, bbox_inches="tight")
     plt.close("all")
     fig, ax = plt.subplots(figsize=(6, 5))
     PartialDependenceDisplay.from_estimator(sustituto, Xp, features=[(par[0], par[1])], ax=ax)
-    ax.set_title(f"Interacción {par[0]} × {par[1]} (dependencia parcial 2D)")
+    ax.set_title(f"Interacción entre {par[0]}\ny {par[1]} (dependencia parcial 2D)", fontsize=11)
     fig.tight_layout()
     fig.savefig(SALIDA / "dependencia_parcial_2d.png", dpi=150)
     plt.close(fig)
