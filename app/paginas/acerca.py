@@ -54,14 +54,14 @@ st.header("Cómo decide y cuándo se abstiene", divider="gray", anchor=False)
 st.markdown(
     f"Junto a cada clasificación, la aplicación muestra **las variables que más pesaron en la decisión** (valores SHAP "
     f"calculados por el propio modelo). Además, si la confianza del modelo es menor que "
-    f"**{decimal(umbral['umbral'] * 100, 0)} %**, no da una respuesta: indica que el flujo queda sin clasificar. "
+    f"**{decimal(umbral['umbral'] * 100, 0)} %**, no da una respuesta: indica que el flujo queda sin clasificar. "
     "El modelo está bien calibrado, así que su confianza es una señal fiable de cuándo duda."
 )
 if "cobertura" in umbral:
     st.markdown(
         "Con ese umbral, en los datos de validación el modelo clasifica el "
-        f"**{decimal(umbral['cobertura'] * 100, 1)} %** "
-        f"de los flujos y acierta en el **{decimal(umbral['acierto'] * 100, 1)} %** de ellos."
+        f"**{decimal(umbral['cobertura'] * 100, 1)} %** "
+        f"de los flujos y acierta en el **{decimal(umbral['acierto'] * 100, 1)} %** de ellos."
     )
 
 st.header("Limitaciones", divider="gray", anchor=False)

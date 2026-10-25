@@ -133,9 +133,9 @@ tabla = pd.DataFrame(
             "Campo con fuga de información (ASN de destino)",
         ],
         "Resultado": [
-            f"{decimal(Q['completitud_%'], 1)} %",
+            f"{decimal(Q['completitud_%'], 1)} %",
             "Ninguno",
-            f"{decimal(S['prueba_con_secuencia_vista_en_entrenamiento_%'], 1)} %",
+            f"{decimal(S['prueba_con_secuencia_vista_en_entrenamiento_%'], 1)} %",
             f"NMI {decimal(F['DST_ASN']['NMI_con_categoria'])}: se excluye",
         ],
     }

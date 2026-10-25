@@ -1,0 +1,11 @@
+00:42:31  INFO    SHAP sobre 3000 flujos de octubre en 1.0 min
+00:42:32  INFO    Top 5 por SHAP: ['BYTES_REV', 'BYTES', 'PACKETS_REV', 'DURATION', 'PHIST_DST_SIZES_7'] · coinciden 4 de las 10 primeras entre ambos métodos
+00:48:09  INFO    sin_asn: F1 macro en octubre 0.8124 (5.5 min)
+00:52:19  INFO    con_asn: F1 macro en octubre 0.8738 (4.2 min)
+00:53:22  INFO    Con ASN +6.15 puntos de F1 · el ASN concentra el 9.8 % de la ganancia
+00:57:30  INFO    Actual (joblib, zlib nivel 3)                      154.0 MB · NO cabe
+00:57:30  INFO    joblib, zlib nivel 9                               139.5 MB · NO cabe
+00:57:30  INFO    joblib, lzma nivel 9                               108.6 MB · NO cabe
+00:57:30  INFO    Formato nativo de XGBoost (.ubj, sin comprimir)    326.0 MB · NO cabe
+00:57:30  INFO    Formato nativo de XGBoost (.json, sin comprimir)   558.6 MB · NO cabe
+00:57:30  INFO    Evidencias terminadas en 16.1 min · {"A": "completado", "B": "completado", "C": "completado"}

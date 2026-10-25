@@ -1,0 +1,6 @@
+metodo,MB,segundos,cabe_en_github
+"Actual (joblib, zlib nivel 3)",154.046039,0.0,False
+"joblib, zlib nivel 9",139.503872,109.06411504745483,False
+"joblib, lzma nivel 9",108.590528,122.91563868522644,False
+"Formato nativo de XGBoost (.ubj, sin comprimir)",326.034616,3.847095489501953,False
+"Formato nativo de XGBoost (.json, sin comprimir)",558.626532,6.429013252258301,False

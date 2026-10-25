@@ -1,0 +1,61 @@
+variable,descripcion,ganancia_%,shap_%,puesto_ganancia,puesto_shap
+BYTES_REV,Bytes enviados por el servidor,1.854061149299965,6.7716103,29,1
+BYTES,Bytes enviados por el cliente,1.4769470151662165,5.517326,37,2
+PACKETS_REV,Paquetes enviados por el servidor,1.6926231136592473,5.3986845,32,3
+DURATION,Duración del flujo,1.0777503333160359,4.2612643,40,4
+PHIST_DST_SIZES_7,Paquetes del servidor de tamaño en el intervalo 8 de 8,2.751977432912973,4.093696,9,5
+PPI_DURATION,Duración de la secuencia inicial,0.9929740367426555,4.006054,43,6
+PHIST_DST_IPT_0,Esperas entre paquetes del servidor de duración en el intervalo 1 de 8,2.0012452919055423,3.9222186,23,7
+PHIST_DST_SIZES_2,Paquetes del servidor de tamaño en el intervalo 3 de 8,3.9667540013964344,3.8819687,2,8
+PHIST_DST_SIZES_1,Paquetes del servidor de tamaño en el intervalo 2 de 8,3.1664632203852814,3.4916759,6,9
+PHIST_SRC_SIZES_4,Paquetes del cliente de tamaño en el intervalo 5 de 8,3.578685439442005,3.4654248,3,10
+PPI_LEN,Paquetes en la secuencia inicial,1.9199761677269962,3.412822,26,11
+PHIST_DST_SIZES_5,Paquetes del servidor de tamaño en el intervalo 6 de 8,1.8569702227598754,2.951787,28,12
+PHIST_SRC_IPT_0,Esperas entre paquetes del cliente de duración en el intervalo 1 de 8,1.60554209821243,2.7255166,35,13
+PHIST_SRC_SIZES_3,Paquetes del cliente de tamaño en el intervalo 4 de 8,2.5396813411481096,2.724935,12,14
+PHIST_SRC_SIZES_7,Paquetes del cliente de tamaño en el intervalo 8 de 8,3.2159985971848015,2.7197516,4,15
+PHIST_DST_SIZES_4,Paquetes del servidor de tamaño en el intervalo 5 de 8,2.033443521412164,2.5852752,20,16
+PHIST_SRC_SIZES_2,Paquetes del cliente de tamaño en el intervalo 3 de 8,2.672244071189978,2.5040193,11,17
+PHIST_DST_SIZES_6,Paquetes del servidor de tamaño en el intervalo 7 de 8,1.3959996660642788,2.486147,38,18
+PPI_ROUNDTRIPS,Idas y vueltas en la secuencia inicial,1.6650222015746217,2.2856152,33,19
+PHIST_DST_SIZES_3,Paquetes del servidor de tamaño en el intervalo 4 de 8,2.2371290997965274,2.2692943,15,20
+PACKETS,Paquetes enviados por el cliente,0.6849548935313352,2.2499123,48,21
+PHIST_SRC_SIZES_1,Paquetes del cliente de tamaño en el intervalo 2 de 8,3.168221840427305,2.1519203,5,22
+FLAG_FIN_REV,Bandera TCP FIN del servidor,2.9414830131461325,1.983771,8,23
+PHIST_SRC_SIZES_6,Paquetes del cliente de tamaño en el intervalo 7 de 8,1.9274876413257869,1.8289572,25,24
+PHIST_SRC_SIZES_5,Paquetes del cliente de tamaño en el intervalo 6 de 8,2.019954186289913,1.8156168,21,25
+FLAG_RST,Bandera TCP RST del cliente,2.0842196675988256,1.5018916,17,26
+FLAG_FIN,Bandera TCP FIN del cliente,2.1088555963378117,1.3609812,16,27
+PHIST_DST_IPT_4,Esperas entre paquetes del servidor de duración en el intervalo 5 de 8,1.4979562299190283,1.1896782,36,28
+PHIST_SRC_IPT_1,Esperas entre paquetes del cliente de duración en el intervalo 2 de 8,1.1262400388611338,1.1697538,39,29
+PHIST_DST_IPT_1,Esperas entre paquetes del servidor de duración en el intervalo 2 de 8,0.6180627227832662,1.1134957,49,30
+PHIST_DST_IPT_2,Esperas entre paquetes del servidor de duración en el intervalo 3 de 8,0.8691018728722173,1.0917796,44,31
+PHIST_SRC_IPT_2,Esperas entre paquetes del cliente de duración en el intervalo 3 de 8,1.0503109929816028,1.0777484,42,32
+FLAG_RST_REV,Bandera TCP RST del servidor,4.938777079141339,0.9962525,1,33
+PHIST_SRC_IPT_4,Esperas entre paquetes del cliente de duración en el intervalo 5 de 8,2.0120384412096968,0.9462862,22,34
+PHIST_SRC_IPT_7,Esperas entre paquetes del cliente de duración en el intervalo 8 de 8,0.8465937453612667,0.9081716,45,35
+PHIST_SRC_IPT_3,Esperas entre paquetes del cliente de duración en el intervalo 4 de 8,1.0719532014756408,0.867345,41,36
+PHIST_DST_IPT_7,Esperas entre paquetes del servidor de duración en el intervalo 8 de 8,1.638099929938627,0.8442743,34,37
+PHIST_DST_IPT_3,Esperas entre paquetes del servidor de duración en el intervalo 4 de 8,0.8444444403310277,0.82910883,46,38
+FLOW_ENDREASON_END,Fin del flujo por cierre normal,2.3847378447510685,0.82030493,13,39
+FLOW_ENDREASON_IDLE,Fin del flujo por inactividad,2.724662716886765,0.7005536,10,40
+PHIST_SRC_SIZES_0,Paquetes del cliente de tamaño en el intervalo 1 de 8,1.9456810309246066,0.6246563,24,41
+PHIST_DST_IPT_5,Esperas entre paquetes del servidor de duración en el intervalo 6 de 8,0.5003715824948332,0.4335444,50,42
+PHIST_DST_SIZES_0,Paquetes del servidor de tamaño en el intervalo 1 de 8,2.314253072866684,0.4024682,14,43
+FLAG_ECE_REV,Bandera TCP ECE del servidor,3.0613788307554786,0.39394435,7,44
+PHIST_SRC_IPT_5,Esperas entre paquetes del cliente de duración en el intervalo 6 de 8,0.4200474526785748,0.33833864,52,45
+PHIST_SRC_IPT_6,Esperas entre paquetes del cliente de duración en el intervalo 7 de 8,0.4686824066331017,0.2722625,51,46
+PHIST_DST_IPT_6,Esperas entre paquetes del servidor de duración en el intervalo 7 de 8,0.4016118031990215,0.25545034,53,47
+FLAG_CWR,Bandera TCP CWR del cliente,2.080706532786108,0.16432828,18,48
+FLAG_ECE,Bandera TCP ECE del cliente,1.862559060952563,0.1569258,27,49
+FLOW_ENDREASON_ACTIVE,Fin del flujo por tiempo máximo activo,0.7608696198334898,0.015396185,47,50
+FLAG_SYN_REV,Bandera TCP SYN del servidor,1.7351054388251332,0.0123751005,31,51
+FLAG_CWR_REV,Bandera TCP CWR del servidor,2.046930901643305,0.00409656,19,52
+FLOW_ENDREASON_OTHER,Fin del flujo por otro motivo,0.21873931511691816,0.0029959786,54,53
+FLAG_PSH_REV,Bandera TCP PSH del servidor,0.09499041323996286,0.00030503774,55,54
+FLAG_SYN,Bandera TCP SYN del cliente,1.8284284215842916,9.091761e-06,30,55
+FLAG_ACK_REV,Bandera TCP ACK del servidor,0.0,0.0,58,58
+FLAG_PSH,Bandera TCP PSH del cliente,0.0,0.0,58,58
+FLAG_ACK,Bandera TCP ACK del cliente,0.0,0.0,58,58
+FLAG_URG_REV,Bandera TCP URG del servidor,0.0,0.0,58,58
+FLAG_URG,Bandera TCP URG del cliente,0.0,0.0,58,58
