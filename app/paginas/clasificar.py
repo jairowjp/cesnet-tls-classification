@@ -1,7 +1,7 @@
 """
 Clasificar: el modelo recomendado (XGBoost) trabajando en vivo.
 
-Dos formas de probarlo:
+Dos formas de probarlo (con abstención cuando el modelo duda y la explicación de cada decisión):
   1. Flujos reales de octubre de 2022, que ningún modelo usó para entrenar.
   2. Un CSV propio con el formato de la plantilla. Pasa por core/seguridad.py → validar_csv
      antes de tocar el modelo: tamaño, filas, columnas, tipos y rangos (OWASP A03 y A04).
@@ -24,6 +24,7 @@ from core.datos import (
     probabilidades,
 )
 from core.estilo import CONFIG_GRAFICO, NEUTRO, TINTA, decimal, miles
+from core.explicacion import decidir, explicar, umbral_abstencion
 from core.firma import mostrar_firma
 from core.guia import siguiente_paso, sugerencia
 from core.pie import pie
@@ -43,6 +44,29 @@ except Exception:
     comp = None
 
 modelo, clases = paquete["modelo"], list(paquete["clases"])
+UMBRAL = umbral_abstencion()["umbral"]
+
+
+def mostrar_explicacion(X_flujo, clase: int) -> None:
+    """¿Por qué esta categoría? Las cinco variables que más pesaron, con valores SHAP del propio XGBoost."""
+    e = explicar(modelo, X_flujo, clase)
+    fig = go.Figure(
+        go.Bar(
+            x=e["Aporte"][::-1],
+            y=e["Variable"][::-1],
+            orientation="h",
+            marker_color=[TINTA if v > 0 else NEUTRO for v in e["Aporte"][::-1]],
+            hovertemplate="<b>%{y}</b><br>Aporte: %{x:.2f}<extra></extra>",
+        )
+    )
+    fig.update_layout(height=260, margin=dict(l=10, r=10, t=5, b=5), xaxis=dict(title="Aporte a la decisión"))
+    st.plotly_chart(fig, config=CONFIG_GRAFICO, theme=None, key=f"explicacion_{clase}")
+    st.markdown(
+        '<p class="nota">Las barras oscuras empujan el flujo hacia esta categoría y las claras lo alejan. Son valores '
+        "SHAP calculados por el propio modelo: sumados, reproducen exactamente su decisión.</p>",
+        unsafe_allow_html=True,  # texto fijo del código
+    )
+
 
 st.title("Clasificar un flujo", anchor=False)
 st.markdown(
@@ -76,23 +100,43 @@ with tab_real:
     )
     i = st.session_state.clasificar_fila
     fila = df.loc[i]
-    t0 = time.perf_counter()
-    prob = modelo.predict_proba(tabular_features(df.loc[[i]]))[0]
-    ms = (time.perf_counter() - t0) * 1000
+    with st.spinner("Clasificando el flujo…"):
+        X_flujo = tabular_features(df.loc[[i]])
+        t0 = time.perf_counter()
+        prob = modelo.predict_proba(X_flujo)[0]
+        ms = (time.perf_counter() - t0) * 1000
     pred, real = clases[int(prob.argmax())], fila["CATEGORY"]
+    se_abstiene = bool(decidir(prob.max(), UMBRAL))
+    if se_abstiene:
+        dos = pd.Series(prob, index=clases).nlargest(2)
+        veredicto = {
+            "titulo": f"XGBoost se abstiene: confianza baja ({decimal(prob.max() * 100, 0)} %)",
+            "detalle": f"Duda entre {dos.index[0]} y {dos.index[1]}. Categoría real: {real}.",
+        }
+    else:
+        veredicto = {
+            "titulo": f"XGBoost dice: {pred}",
+            "detalle": f"Categoría real: {real}. {'Acertó' if pred == real else 'Se equivocó'}.",
+        }
 
     mostrar_firma(
         fila[SIZE].to_numpy(),
         fila[DIR].to_numpy(),
         fila[IPT].to_numpy(),
-        veredicto={
-            "titulo": f"XGBoost dice: {pred}",
-            "detalle": f"Categoría real: {real}. {'Acertó' if pred == real else 'Se equivocó'}.",
-        },
+        veredicto=veredicto,
         animar=True,
         clave=str(i),
         alto=270,
     )
+
+    st.subheader(f"¿Por qué {pred}?", anchor=False)
+    mostrar_explicacion(X_flujo, int(prob.argmax()))
+    if se_abstiene:
+        st.info(
+            f"La confianza del modelo es menor que {decimal(UMBRAL * 100, 0)} %, así que la aplicación no da una "
+            "respuesta: prefiere reconocer la duda antes que arriesgar un error. La explicación muestra hacia dónde se "
+            "inclinaba."
+        )
 
     st.subheader("Qué dice cada modelo", anchor=False)
     st.markdown(
@@ -153,23 +197,42 @@ with tab_csv:
         st.download_button(
             "Descargar la plantilla", plantilla.read_bytes(), file_name="plantilla_clasificador.csv", mime="text/csv"
         )
+    ejemplo = ROOT / "data/samples/ejemplo_clasificador.csv"
+    if st.button("Probar con un ejemplo", help="Carga 20 flujos reales de octubre con el formato de la plantilla"):
+        st.session_state.csv_ejemplo = True
     archivo = st.file_uploader("Archivo CSV", type=["csv"], accept_multiple_files=False)
     if archivo is not None:
-        resultado = validar_csv(archivo.getvalue())
+        st.session_state.csv_ejemplo = False  # un archivo propio reemplaza al ejemplo
+    contenido = archivo.getvalue() if archivo is not None else None
+    if contenido is None and st.session_state.get("csv_ejemplo") and ejemplo.exists():
+        contenido = ejemplo.read_bytes()
+        st.caption("Clasificando el archivo de ejemplo: 20 flujos reales de octubre de 2022.")
+    if contenido is not None:
+        resultado = validar_csv(contenido)  # el ejemplo pasa por la misma validación que un archivo subido
         if not resultado.valido:
             # Los mensajes son textos fijos de validar_csv: nunca repiten el contenido del archivo
             st.error("El archivo no se puede clasificar:\n\n" + "\n".join(f"- {e}" for e in resultado.errores))
         else:
             datos = resultado.datos
-            prob = modelo.predict_proba(tabular_features(datos))
+            with st.spinner(f"Clasificando {miles(len(datos))} flujos…"):
+                prob = modelo.predict_proba(tabular_features(datos))
+            dudosos = decidir(prob.max(axis=1), UMBRAL)
             salida = pd.DataFrame(
                 {
                     "Flujo": np.arange(1, len(datos) + 1),
-                    "Categoría predicha": [clases[k] for k in prob.argmax(axis=1)],
+                    "Categoría predicha": [
+                        "No clasificado: confianza baja" if d else clases[k]
+                        for k, d in zip(prob.argmax(axis=1), dudosos, strict=True)
+                    ],
+                    "Más probable": [clases[k] for k in prob.argmax(axis=1)],
                     "Confianza": prob.max(axis=1),
                 }
             )
-            st.success(f"{miles(len(datos))} flujos clasificados.")
+            st.success(
+                f"{miles(len(datos) - int(dudosos.sum()))} de {miles(len(datos))} flujos clasificados. "
+                f"En {miles(int(dudosos.sum()))} el modelo se abstuvo por tener una confianza menor que "
+                f"{decimal(UMBRAL * 100, 0)} %."
+            )
             st.dataframe(
                 salida,
                 hide_index=True,

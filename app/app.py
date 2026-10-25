@@ -38,6 +38,7 @@ paginas = [
     st.Page("paginas/conclusiones.py", title="Conclusiones"),
     st.Page("paginas/encuesta.py", title="Tu opinión"),
     st.Page("paginas/seguridad.py", title="Seguridad"),
+    st.Page("paginas/acerca.py", title="Acerca de"),
 ]
 # Navegación en la parte superior: más limpia que la barra lateral por defecto de Streamlit
 # La página se ejecuta con manejo seguro de errores: sin trazas internas para el usuario (ver core/errores.py)

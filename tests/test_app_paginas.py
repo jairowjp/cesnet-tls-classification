@@ -32,6 +32,7 @@ PAGINAS = [
     "paginas/conclusiones.py",
     "paginas/encuesta.py",
     "paginas/seguridad.py",
+    "paginas/acerca.py",
 ]
 
 
