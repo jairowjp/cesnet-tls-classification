@@ -1,0 +1,42 @@
+{
+  "f1_macro": {
+    "v2": {
+      "media": 0.8078436824580327,
+      "desviacion": 0.010322960088476526,
+      "ic95_bajo": 0.8026769966747366,
+      "ic95_alto": 0.8131712657377377
+    },
+    "optimizado": {
+      "media": 0.8119499381044781,
+      "desviacion": 0.009720349477195285,
+      "ic95_bajo": 0.8069825233218442,
+      "ic95_alto": 0.8169415362537885
+    },
+    "wilcoxon": {
+      "estadistico": 8.0,
+      "p_valor": 0.00152587890625,
+      "mediana_diferencia": 0.0038822962340989697,
+      "significativo": true
+    }
+  },
+  "f1_peor_categoria": {
+    "v2": {
+      "media": 0.5444348692531814,
+      "desviacion": 0.12421749191087744,
+      "ic95_bajo": 0.4741771576562051,
+      "ic95_alto": 0.6025930727370137
+    },
+    "optimizado": {
+      "media": 0.5444275091895795,
+      "desviacion": 0.12580665697333834,
+      "ic95_bajo": 0.4761037707105361,
+      "ic95_alto": 0.6042726090290796
+    },
+    "wilcoxon": {
+      "estadistico": 27.0,
+      "p_valor": 0.9593536340401635,
+      "mediana_diferencia": 0.0,
+      "significativo": false
+    }
+  }
+}

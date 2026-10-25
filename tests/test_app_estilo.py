@@ -48,7 +48,7 @@ def test_isotipo_y_pie_en_todas_las_paginas():
         "encuesta",
         "seguridad",
     ]
-    at = AppTest.from_file(str(ROOT / "app/principal.py"), default_timeout=120)
+    at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=120)
     at.run()
     for pagina in paginas:
         at.switch_page(f"paginas/{pagina}.py").run()

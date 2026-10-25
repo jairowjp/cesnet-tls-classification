@@ -1,0 +1,9 @@
+{
+  "umbral": 0.45,
+  "cobertura": 0.9420906602677065,
+  "acierto": 0.9455554892245239,
+  "acierto_sin_abstencion": 0.9133765763063502,
+  "flujos_validacion": 160026,
+  "fuente": "validación de septiembre de 2022 (scripts/16_calibrar_abstencion.py)",
+  "regla": "umbral más bajo con acierto de al menos 0.94 en los flujos clasificados"
+}

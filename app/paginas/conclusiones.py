@@ -5,7 +5,7 @@ Las cifras se calculan a partir de los resultados versionados; el texto interpre
 """
 
 import streamlit as st
-from core.datos import NOMBRES, comparativa, frase_significancia, mostrar_error_datos
+from core.datos import NOMBRES, comparativa, frase_significancia, mostrar_error_datos, peor_categoria
 from core.estilo import decimal
 from core.guia import siguiente_paso
 from core.pie import REPO, pie
@@ -84,5 +84,12 @@ st.markdown(f"""
 - **Autor:** Jairo Wladimir Jhayya Perlaza, Maestría en Inteligencia Artificial,
   Universidad de Especialidades Espíritu Santo.
 """)
+_peor, _f1_peor = peor_categoria(C["reportes"]["xgboost"])
+st.markdown(
+    f"Detrás del promedio hay diferencias entre servicios: la categoría que XGBoost clasifica peor es **{_peor}**, "
+    f"con un F1 de **{decimal(_f1_peor, 3)}**. Por eso el proyecto reporta siempre la peor categoría junto al "
+    "F1 macro, "
+    "y la aplicación se abstiene de clasificar cuando el modelo duda."
+)
 siguiente_paso("paginas/conclusiones.py")
 pie()

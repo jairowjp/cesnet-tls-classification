@@ -32,13 +32,14 @@ PAGINAS = [
     "paginas/conclusiones.py",
     "paginas/encuesta.py",
     "paginas/seguridad.py",
+    "paginas/acerca.py",
 ]
 
 
 def _app():
     from streamlit.testing.v1 import AppTest
 
-    at = AppTest.from_file(str(ROOT / "app/principal.py"), default_timeout=120)
+    at = AppTest.from_file(str(ROOT / "app/app.py"), default_timeout=120)
     at.run()
     return at
 

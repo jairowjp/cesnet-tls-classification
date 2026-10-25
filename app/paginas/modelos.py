@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from core.datos import NOMBRES, comparativa, mostrar_error_datos
+from core.datos import NOMBRES, comparativa, mostrar_error_datos, peor_categoria
 from core.estilo import COBALTO, CONFIG_GRAFICO, FONDO, LINEA, NEUTRO, TINTA, TINTA_SUAVE, decimal, miles
 from core.guia import siguiente_paso, sugerencia
 from core.pie import pie
@@ -256,6 +256,28 @@ st.markdown(
     f"Todos pierden acierto a medida que se alejan del mes de entrenamiento. El que menos pierde es "
     f"**{nombre(min(caidas, key=caidas.get))}** ({decimal(min(caidas.values()), 1)} puntos entre octubre y "
     f"diciembre) y el que más, **{nombre(max(caidas, key=caidas.get))}** ({decimal(max(caidas.values()), 1)} puntos)."
+)
+st.header("Equidad entre categorías", divider="gray", anchor=False)
+st.markdown(
+    "El F1 macro es un promedio, y un promedio puede esconder un servicio mal clasificado. Por eso cada modelo se "
+    "reporta también con su **peor categoría**: si la clasificación se usara para gestionar una red, ese servicio "
+    "sería el más perjudicado."
+)
+filas_equidad = []
+for m in C["reportes"]:
+    categoria, f1 = peor_categoria(C["reportes"][m])
+    filas_equidad.append(
+        {
+            "Modelo": NOMBRES[m],
+            "F1 macro": C["tabla"].loc[m, "f1_macro"],
+            "Peor categoría": categoria,
+            "F1 de la peor categoría": f1,
+        }
+    )
+st.dataframe(
+    pd.DataFrame(filas_equidad).sort_values("F1 macro", ascending=False),
+    hide_index=True,
+    column_config={c: st.column_config.NumberColumn(format="%.3f") for c in ("F1 macro", "F1 de la peor categoría")},
 )
 siguiente_paso("paginas/modelos.py")
 pie()

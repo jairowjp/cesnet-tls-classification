@@ -75,9 +75,9 @@ def modelo_xgboost() -> dict:
 
 @st.cache_data(show_spinner=False)
 def eda() -> dict:
-    """Resultados del EDA (results/eda), generados por notebooks/01_eda.ipynb."""
+    """Resultados del EDA (results/eda), generados por notebooks/01_exploracion.ipynb."""
     base = ROOT / "results/eda"
-    gen = "jupyter nbconvert --to notebook --execute --inplace notebooks/01_eda.ipynb"
+    gen = "jupyter nbconvert --to notebook --execute --inplace notebooks/01_exploracion.ipynb"
     return {
         "resumen": json.loads(_exigir(base / "resumen_eda.json", gen).read_text(encoding="utf-8")),
         "clases": pd.read_csv(_exigir(base / "clases_por_particion.csv", gen), index_col=0),
@@ -131,6 +131,12 @@ def diagnostico() -> dict | None:
         "historiales": historiales,
         "rf": json.loads(rf.read_text(encoding="utf-8")) if rf.exists() else None,
     }
+
+
+def peor_categoria(reporte: pd.DataFrame) -> tuple[str, float]:
+    """La categoría con menor F1 en un reporte por clase y su F1 (métrica de equidad entre servicios)."""
+    por_clase = reporte.drop(index=[i for i in ("accuracy", "macro avg", "weighted avg") if i in reporte.index])
+    return str(por_clase["f1-score"].idxmin()), float(por_clase["f1-score"].min())
 
 
 def frase_significancia(mcnemar: pd.DataFrame, modelo: str) -> str:
