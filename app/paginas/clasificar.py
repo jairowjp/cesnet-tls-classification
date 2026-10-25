@@ -110,7 +110,7 @@ with tab_real:
     if se_abstiene:
         dos = pd.Series(prob, index=clases).nlargest(2)
         veredicto = {
-            "titulo": f"XGBoost se abstiene: confianza baja ({decimal(prob.max() * 100, 0)} %)",
+            "titulo": f"XGBoost se abstiene: confianza baja ({decimal(prob.max() * 100, 0)} %)",
             "detalle": f"Duda entre {dos.index[0]} y {dos.index[1]}. Categoría real: {real}.",
         }
     else:
@@ -133,7 +133,7 @@ with tab_real:
     mostrar_explicacion(X_flujo, int(prob.argmax()))
     if se_abstiene:
         st.info(
-            f"La confianza del modelo es menor que {decimal(UMBRAL * 100, 0)} %, así que la aplicación no da una "
+            f"La confianza del modelo es menor que {decimal(UMBRAL * 100, 0)} %, así que la aplicación no da una "
             "respuesta: prefiere reconocer la duda antes que arriesgar un error. La explicación muestra hacia dónde se "
             "inclinaba."
         )
@@ -165,7 +165,7 @@ with tab_real:
                         y=etiquetas[::-1],
                         orientation="h",
                         marker_color=[TINTA if c == dice else NEUTRO for c in top.index][::-1],
-                        text=[f"{v * 100:.1f} %".replace(".", ",") for v in top.values[::-1]],
+                        text=[f"{v * 100:.1f} %".replace(".", ",") for v in top.values[::-1]],
                         textposition="outside",
                         hovertemplate="<b>%{y}</b><br>Probabilidad: %{x:.1%}<extra></extra>",
                     )
@@ -231,7 +231,7 @@ with tab_csv:
             st.success(
                 f"{miles(len(datos) - int(dudosos.sum()))} de {miles(len(datos))} flujos clasificados. "
                 f"En {miles(int(dudosos.sum()))} el modelo se abstuvo por tener una confianza menor que "
-                f"{decimal(UMBRAL * 100, 0)} %."
+                f"{decimal(UMBRAL * 100, 0)} %."
             )
             st.dataframe(
                 salida,

@@ -12,15 +12,14 @@ DOI del dataset: [10.5281/zenodo.10608607](https://doi.org/10.5281/zenodo.106086
 
 ## Cómo obtener los datos
 
-1. Descargar el dataset desde Zenodo y guardarlo en `data/raw/`. Su suma MD5 debe ser `d0dd7c84e2140bba362f6bd23de5cab7`:
-   ```bash
-   md5sum data/raw/CESNET-TLS-Year22.zip
-   ```
+1. Descargar el dataset desde Zenodo en la carpeta `datasets/` y verificar su suma MD5, que debe ser
+   `d0dd7c84e2140bba362f6bd23de5cab7` (los comandos exactos están en el README principal).
 2. Extraer la muestra del 2 % (reproducible: semilla fija en `configs/experiment.yaml`):
    ```bash
-   python scripts/01_extraer_muestra.py
+   python scripts/01_extraer_muestra.py --zip datasets/CESNET-TLS-Year22.zip
    ```
-   El resultado queda en `data/processed/muestra_2pct/`.
+   El resultado queda en `data/processed/muestra_2pct/`. La carpeta `raw/` queda disponible si se prefiere guardar
+   ahí el archivo; en ese caso, indica su ruta en `--zip`.
 
 ## Partición
 

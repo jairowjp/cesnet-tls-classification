@@ -71,7 +71,7 @@ mostrar_firma(
     fila[DIR].to_numpy(),
     fila[IPT].to_numpy(),
     veredicto={
-        "titulo": f"XGBoost dice: {pred} ({prob.max() * 100:.0f} %)",
+        "titulo": f"XGBoost dice: {pred} ({prob.max() * 100:.0f} %)",
         "detalle": (
             f"Categoría real: {real}. {'Acertó' if acierto else 'Se equivocó'} a partir de "
             f"{n_paquetes} paquetes, sin leer su contenido."

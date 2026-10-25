@@ -102,16 +102,25 @@ vista = pd.DataFrame(
         "Entrenamiento (min)": [tabla.loc[m, "entrenamiento_min"] for m in modelos],
     }
 ).sort_values("F1 macro", ascending=False)
+# Coma decimal, como en el resto de la aplicación (el formato %.3f de Streamlit siempre usa punto)
+
+
+def formato_decimal(k: int):
+    """Función que muestra un número con k decimales y coma decimal."""
+    return lambda v: decimal(v, k)
+
+
+decimales = {
+    "F1 macro": 3,
+    "F1 sin repetidos": 3,
+    "F1 diciembre": 3,
+    "Latencia (ms)": 4,
+    "Tamaño (MB)": 2,
+    "Entrenamiento (min)": 1,
+}
 st.dataframe(
-    vista,
+    vista.style.format({c: formato_decimal(k) for c, k in decimales.items()}),
     hide_index=True,
-    column_config={
-        "F1 macro": st.column_config.NumberColumn(format="%.3f"),
-        "F1 sin repetidos": st.column_config.NumberColumn(format="%.3f"),
-        "F1 diciembre": st.column_config.NumberColumn(format="%.3f"),
-        "Latencia (ms)": st.column_config.NumberColumn(format="%.4f"),
-        "Tamaño (MB)": st.column_config.NumberColumn(format="%.2f"),
-    },
 )
 
 # ------------------------------------------------------------------ McNemar
@@ -275,9 +284,10 @@ for m in C["reportes"]:
         }
     )
 st.dataframe(
-    pd.DataFrame(filas_equidad).sort_values("F1 macro", ascending=False),
+    pd.DataFrame(filas_equidad)
+    .sort_values("F1 macro", ascending=False)
+    .style.format({c: formato_decimal(3) for c in ("F1 macro", "F1 de la peor categoría")}),
     hide_index=True,
-    column_config={c: st.column_config.NumberColumn(format="%.3f") for c in ("F1 macro", "F1 de la peor categoría")},
 )
 siguiente_paso("paginas/modelos.py")
 pie()
