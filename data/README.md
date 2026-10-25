@@ -6,7 +6,7 @@ DOI del dataset: [10.5281/zenodo.10608607](https://doi.org/10.5281/zenodo.106086
 
 | Carpeta | Contenido | ¿Está en GitHub? |
 |---|---|---|
-| `raw/` | El archivo original del dataset (`CESNET-TLS-Year22.zip`) | No: es demasiado grande para GitHub |
+| `raw/` | El archivo original del dataset (`CESNET-TLS-Year22.zip`) | No: pesa 28,4 GB, demasiado para GitHub |
 | `processed/` | La muestra del 2 % de septiembre a diciembre (3 133 138 flujos, un parquet por día) | No: se regenera con un script |
 | `samples/` | La muestra pequeña que usa la aplicación web y la plantilla del clasificador | Sí |
 
