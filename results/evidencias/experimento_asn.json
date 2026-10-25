@@ -1,0 +1,26 @@
+{
+  "realizado": true,
+  "flujos_entrenamiento": 60003,
+  "flujos_prueba": 99998,
+  "asn_distintos_entrenamiento": 94,
+  "sin_asn": {
+    "accuracy": 0.8233564671293426,
+    "f1_macro": 0.8123554711981642,
+    "recall_macro": 0.8026780512929158,
+    "precision_macro": 0.8256385212716029,
+    "f1_peor_categoria": 0.631578947368421,
+    "auc_ovr": 0.9853856359796825,
+    "auc_pr": 0.8725793018638125
+  },
+  "con_asn": {
+    "accuracy": 0.878037560751215,
+    "f1_macro": 0.8738173727005083,
+    "recall_macro": 0.8723392328609729,
+    "precision_macro": 0.8771100844186804,
+    "f1_peor_categoria": 0.6600985221674877,
+    "auc_ovr": 0.9945895473973634,
+    "auc_pr": 0.9332236296062001
+  },
+  "peso_asn_%": 9.769562442050567,
+  "diferencia_f1_puntos": 6.14619015023441
+}
