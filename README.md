@@ -214,5 +214,5 @@ A CESNET por publicar el dataset, y a la docente por su acompañamiento durante 
 
 ## Videos
 
-- **Video pitch (5 minutos):** *enlace pendiente*
-- **Video de respuestas a las preguntas:** *enlace pendiente*
+- **Video pitch (5 minutos):** https://drive.google.com/file/d/15KGxgjJKAUB4hAQDtrQ4Uwv7KEDben6I/view?usp=sharing
+- **Video de respuestas a las preguntas:** https://drive.google.com/file/d/1WfWEZ1NtMmlX0su0AsMJCCD5pZOdE07O/view?usp=sharing
